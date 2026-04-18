@@ -1,0 +1,105 @@
+{
+  "Metadata": {
+    "title": "LAV PHARMA | Servicios Regulatorios Farmacéuticos",
+    "description": "Expertos en registros sanitarios, permisos de distribución y asuntos regulatorios internacionales para el sector salud."
+  },
+  "Nav": {
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "label": "REGULATORY PHARMACEUTICAL SERVICES",
+    "title": "Llevamos tus productos al mercado global",
+    "subtitle": "Expertos en registros sanitarios y asuntos regulatorios. Tu aliado estratégico para el sector salud.",
+    "cta": "Contáctanos",
+    "whatsapp": "WhatsApp",
+    "stats": {
+      "countries": "Países",
+      "registrations": "Registros",
+      "commitment": "Compromiso"
+    }
+  },
+  "Services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones regulatorias integrales para el sector salud",
+    "items": {
+      "registros": {
+        "title": "Registros Sanitarios",
+        "description": "Gestión e inscripción de permisos para medicamentos, productos cosméticos y productos de salud ante las autoridades sanitarias."
+      },
+      "distribucion": {
+        "title": "Distribución de Medicamentos",
+        "description": "Obtención de permisos y licencias necesarias para la distribución legal de medicamentos en diferentes mercados."
+      },
+      "asesoria": {
+        "title": "Asesoría Regulatoria Internacional",
+        "description": "Consultoría especializada para facilitar la expansión de productos de salud a mercados internacionales."
+      },
+      "cumplimiento": {
+        "title": "Cumplimiento Normativo",
+        "description": "Acompañamiento continuo para garantizar el cumplimiento de normativas sanitarias y legales vigentes."
+      },
+      "permisos": {
+        "title": "Gestión de Permisos",
+        "description": "Tramitación y seguimiento de permisos, licencias y autorizaciones del sector salud de forma ágil y eficiente."
+      }
+    }
+  },
+  "International": {
+    "title": "Presencia Internacional",
+    "subtitle": "Operamos con visión global, ofreciendo soluciones regulatorias en múltiples regiones del mundo.",
+    "regions": {
+      "centralAmerica": "Centroamérica",
+      "southAmerica": "Sudamérica",
+      "asia": "Asia",
+      "europe": "Europa"
+    }
+  },
+  "About": {
+    "title": "Sobre Nosotros",
+    "mission": {
+      "title": "Misión",
+      "text": "Brindar servicios especializados en la gestión, inscripción y obtención de permisos para la distribución de medicamentos, productos cosméticos y productos de salud, garantizando el cumplimiento de las normativas sanitarias vigentes."
+    },
+    "vision": {
+      "title": "Visión",
+      "text": "Ser una empresa líder en servicios regulatorios y sanitarios, reconocida por nuestra eficiencia, experiencia y compromiso con la calidad, convirtiéndonos en el aliado estratégico preferido para empresas del sector salud nacionales e internacionales."
+    },
+    "valuesTitle": "Nuestros Valores",
+    "values": {
+      "integrity": { "title": "Integridad", "description": "Actuamos con honestidad, transparencia y ética en cada proceso." },
+      "responsibility": { "title": "Responsabilidad", "description": "Cumplimos rigurosamente con las normativas sanitarias y legales." },
+      "efficiency": { "title": "Eficiencia", "description": "Optimizamos procesos para ofrecer soluciones ágiles y oportunas." },
+      "quality": { "title": "Compromiso con la Calidad", "description": "Buscamos la excelencia en cada servicio, asegurando precisión." },
+      "confidentiality": { "title": "Confidencialidad", "description": "Protegemos la información de nuestros clientes con total discreción." },
+      "clientFocus": { "title": "Orientación al Cliente", "description": "Escuchamos y damos soluciones personalizadas a cada necesidad." },
+      "innovation": { "title": "Innovación", "description": "Mejoramos continuamente para adaptarnos al entorno regulatorio." }
+    }
+  },
+  "Contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos listos para ayudarte con tus necesidades regulatorias.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "company": "Empresa",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+      "error": "Hubo un error al enviar el mensaje. Por favor intenta de nuevo."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "email": "Correo Electrónico",
+      "phone": "Teléfonos",
+      "location": "Ubicación",
+      "address": "Hacienda San Andrés, Carretera a San Juan Opico, km 32½ Sitio el niño"
+    }
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados.",
+    "tagline": "Regulatory Pharmaceutical Services"
+  }
+}

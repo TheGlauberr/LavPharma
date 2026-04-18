@@ -1,0 +1,105 @@
+{
+  "Metadata": {
+    "title": "LAV PHARMA | Regulatory Pharmaceutical Services",
+    "description": "Experts in health registrations, distribution permits, and international regulatory affairs for the healthcare sector."
+  },
+  "Nav": {
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "label": "REGULATORY PHARMACEUTICAL SERVICES",
+    "title": "We bring your products to the global market",
+    "subtitle": "Experts in health registrations and regulatory affairs. Your strategic partner for the healthcare sector.",
+    "cta": "Contact Us",
+    "whatsapp": "WhatsApp",
+    "stats": {
+      "countries": "Countries",
+      "registrations": "Registrations",
+      "commitment": "Commitment"
+    }
+  },
+  "Services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive regulatory solutions for the healthcare sector",
+    "items": {
+      "registros": {
+        "title": "Health Registrations",
+        "description": "Management and registration of permits for medications, cosmetic products, and health products with health authorities."
+      },
+      "distribucion": {
+        "title": "Drug Distribution",
+        "description": "Obtaining permits and licenses required for the legal distribution of medications in different markets."
+      },
+      "asesoria": {
+        "title": "International Regulatory Consulting",
+        "description": "Specialized consulting to facilitate the expansion of health products into international markets."
+      },
+      "cumplimiento": {
+        "title": "Regulatory Compliance",
+        "description": "Ongoing support to ensure compliance with current health and legal regulations."
+      },
+      "permisos": {
+        "title": "Permit Management",
+        "description": "Processing and tracking of permits, licenses, and health sector authorizations efficiently."
+      }
+    }
+  },
+  "International": {
+    "title": "International Presence",
+    "subtitle": "We operate with a global vision, offering regulatory solutions across multiple regions worldwide.",
+    "regions": {
+      "centralAmerica": "Central America",
+      "southAmerica": "South America",
+      "asia": "Asia",
+      "europe": "Europe"
+    }
+  },
+  "About": {
+    "title": "About Us",
+    "mission": {
+      "title": "Mission",
+      "text": "To provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, cosmetic products, and health products, ensuring compliance with current health regulations."
+    },
+    "vision": {
+      "title": "Vision",
+      "text": "To be a leading company in regulatory and health services, recognized for our efficiency, experience, and commitment to quality, becoming the preferred strategic partner for national and international healthcare companies."
+    },
+    "valuesTitle": "Our Values",
+    "values": {
+      "integrity": { "title": "Integrity", "description": "We act with honesty, transparency, and ethics in every process." },
+      "responsibility": { "title": "Responsibility", "description": "We rigorously comply with health and legal regulations." },
+      "efficiency": { "title": "Efficiency", "description": "We optimize processes to deliver agile and timely solutions." },
+      "quality": { "title": "Quality Commitment", "description": "We pursue excellence in every service, ensuring precision." },
+      "confidentiality": { "title": "Confidentiality", "description": "We protect our clients' information with total discretion." },
+      "clientFocus": { "title": "Client Focus", "description": "We listen and provide personalized solutions for every need." },
+      "innovation": { "title": "Innovation", "description": "We continuously improve to adapt to the regulatory environment." }
+    }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "We're ready to help with your regulatory needs.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully! We'll get back to you soon.",
+      "error": "There was an error sending the message. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "address": "Hacienda San Andrés, Carretera a San Juan Opico, km 32½ Sitio el niño"
+    }
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Regulatory Pharmaceutical Services"
+  }
+}
