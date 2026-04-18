@@ -8,7 +8,7 @@ const WHATSAPP_NUMBER = "50372384539";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Hola, los contacto desde lavpharma.com"
 )}`;
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mojywqwp";
 
 export default function Contact() {
   const t = useTranslations("Contact");
