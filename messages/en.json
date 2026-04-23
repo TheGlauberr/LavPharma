@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "LAV PHARMA | Regulatory Pharmaceutical Services",
-    "description": "Experts in health registrations, distribution permits, and international regulatory affairs for the healthcare sector."
+    "title": "LAV PHARMA | Regulatory Pharmaceutical & Veterinary Services",
+    "description": "Experts in health registrations, distribution permits, and international regulatory affairs for the healthcare and veterinary sectors."
   },
   "Nav": {
     "services": "Services",
@@ -9,9 +9,9 @@
     "contact": "Contact"
   },
   "Hero": {
-    "label": "REGULATORY PHARMACEUTICAL SERVICES",
+    "label": "REGULATORY PHARMACEUTICAL & VETERINARY SERVICES",
     "title": "We bring your products to the global market",
-    "subtitle": "Experts in health registrations and regulatory affairs. Your strategic partner for the healthcare sector.",
+    "subtitle": "Experts in health registrations and regulatory affairs for pharmaceutical and veterinary products. Your strategic partner for entering Latin America.",
     "cta": "Contact Us",
     "whatsapp": "WhatsApp",
     "stats": {
@@ -22,49 +22,85 @@
   },
   "Services": {
     "title": "Our Services",
-    "subtitle": "Comprehensive regulatory solutions for the healthcare sector",
-    "items": {
-      "registros": {
-        "title": "Health Registrations",
-        "description": "Management and registration of permits for medications, cosmetic products, and health products with health authorities."
-      },
-      "distribucion": {
-        "title": "Drug Distribution",
-        "description": "Obtaining permits and licenses required for the legal distribution of medications in different markets."
-      },
-      "asesoria": {
-        "title": "International Regulatory Consulting",
-        "description": "Specialized consulting to facilitate the expansion of health products into international markets."
-      },
-      "cumplimiento": {
-        "title": "Regulatory Compliance",
-        "description": "Ongoing support to ensure compliance with current health and legal regulations."
-      },
-      "permisos": {
-        "title": "Permit Management",
-        "description": "Processing and tracking of permits, licenses, and health sector authorizations efficiently."
+    "subtitle": "Comprehensive regulatory solutions for pharmaceutical and veterinary products",
+    "registration": {
+      "title": "Product Registration",
+      "items": {
+        "genericos": {
+          "title": "Generic Medications",
+          "description": "Health registration of generic medications with the regulatory authorities of each country."
+        },
+        "sintesis": {
+          "title": "Chemical Synthesis",
+          "description": "Registration of chemical synthesis products, including technical documentation and stability studies."
+        },
+        "vacunas": {
+          "title": "Vaccines",
+          "description": "Regulatory management for the registration of human and veterinary vaccines in Latin American markets."
+        },
+        "biotecnologicos": {
+          "title": "Biotechnological",
+          "description": "Registration of biotechnological products and biosimilars with specialized technical support."
+        },
+        "bioequivalentes": {
+          "title": "Bioequivalent",
+          "description": "Registration of bioequivalent medications, including management of bioequivalence studies."
+        }
+      }
+    },
+    "logistics": {
+      "title": "Logistics & Compliance",
+      "items": {
+        "holding": {
+          "title": "Regulatory Holding",
+          "description": "Legal representation and ownership of health registrations with authorities in each country."
+        },
+        "almacenamiento": {
+          "title": "Warehousing",
+          "description": "Warehousing management in compliance with good distribution and storage practices."
+        },
+        "permisos": {
+          "title": "Import Permits",
+          "description": "Processing of import permits and licenses for pharmaceutical and veterinary products."
+        },
+        "distribucion": {
+          "title": "Distribution",
+          "description": "Obtaining permits and licenses for the legal distribution of products in different markets."
+        },
+        "asesoria": {
+          "title": "Regulatory Consulting",
+          "description": "Specialized consulting to facilitate product expansion into Latin American markets."
+        },
+        "cumplimiento": {
+          "title": "Regulatory Compliance",
+          "description": "Ongoing support to ensure compliance with current health regulations."
+        }
       }
     }
   },
   "International": {
-    "title": "International Presence",
-    "subtitle": "We operate with a global vision, offering regulatory solutions across multiple regions worldwide.",
-    "regions": {
-      "centralAmerica": "Central America",
-      "southAmerica": "South America",
-      "asia": "Asia",
-      "europe": "Europe"
+    "title": "International Reach",
+    "subtitle": "We connect global manufacturers with the Latin American market through our regulatory expertise.",
+    "origin": {
+      "badge": "GLOBAL MANUFACTURERS",
+      "title": "Experience with Manufacturers from",
+      "subtitle": "We register products from manufacturers located in these countries, managing all necessary technical and regulatory documentation."
+    },
+    "registration": {
+      "badge": "YOUR GATEWAY TO LATIN AMERICA",
+      "title": "Specialized in Registration across Latin America",
+      "subtitle": "We are your strategic partner for registering pharmaceutical and veterinary products in these markets."
     }
   },
   "About": {
     "title": "About Us",
     "mission": {
       "title": "Mission",
-      "text": "To provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, cosmetic products, and health products, ensuring compliance with current health regulations."
+      "text": "To provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, veterinary products, cosmetics, and health products, ensuring compliance with current health regulations."
     },
     "vision": {
       "title": "Vision",
-      "text": "To be a leading company in regulatory and health services, recognized for our efficiency, experience, and commitment to quality, becoming the preferred strategic partner for national and international healthcare companies."
+      "text": "To be a leading company in regulatory and health services, recognized for our efficiency, experience, and commitment to quality, becoming the preferred strategic partner for national and international healthcare and veterinary companies."
     },
     "valuesTitle": "Our Values",
     "values": {
@@ -100,6 +136,6 @@
   },
   "Footer": {
     "rights": "All rights reserved.",
-    "tagline": "Regulatory Pharmaceutical Services"
+    "tagline": "Regulatory Pharmaceutical & Veterinary Services"
   }
 }
