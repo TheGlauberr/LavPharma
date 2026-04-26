@@ -52,41 +52,61 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder={t("form.name")}
-              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200"
-            />
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder={t("form.email")}
-              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200"
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label htmlFor="contact-name" className="sr-only">{t("form.name")}</label>
               <input
-                type="tel"
-                name="phone"
-                placeholder={t("form.phone")}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200"
-              />
-              <input
+                id="contact-name"
                 type="text"
-                name="company"
-                placeholder={t("form.company")}
+                name="name"
+                required
+                placeholder={t("form.name")}
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200"
               />
             </div>
-            <textarea
-              name="message"
-              required
-              rows={5}
-              placeholder={t("form.message")}
-              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200 resize-none"
-            />
+            <div>
+              <label htmlFor="contact-email" className="sr-only">{t("form.email")}</label>
+              <input
+                id="contact-email"
+                type="email"
+                name="email"
+                required
+                placeholder={t("form.email")}
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200"
+              />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label htmlFor="contact-phone" className="sr-only">{t("form.phone")}</label>
+                <input
+                  id="contact-phone"
+                  type="tel"
+                  name="phone"
+                  placeholder={t("form.phone")}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200"
+                />
+              </div>
+              <div>
+                <label htmlFor="contact-company" className="sr-only">{t("form.company")}</label>
+                <input
+                  id="contact-company"
+                  type="text"
+                  name="company"
+                  placeholder={t("form.company")}
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="contact-message" className="sr-only">{t("form.message")}</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                rows={5}
+                placeholder={t("form.message")}
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/30 transition-colors duration-200 resize-none"
+              />
+            </div>
             <button
               type="submit"
               disabled={status === "sending"}
@@ -112,11 +132,8 @@ export default function Contact() {
                 <Mail className="text-accent-blue mt-1 flex-shrink-0" size={20} />
                 <div>
                   <p className="text-gray-400 text-sm mb-1">{t("info.email")}</p>
-                  <a href="mailto:lavpharmacam@gmail.com" className="text-white hover:text-accent-blue transition-colors block">
-                    lavpharmacam@gmail.com
-                  </a>
-                  <a href="mailto:administracionlavpharma@gmail.com" className="text-white hover:text-accent-blue transition-colors block">
-                    administracionlavpharma@gmail.com
+                  <a href="mailto:info@lavpharma.com" className="text-white hover:text-accent-blue transition-colors block">
+                    info@lavpharma.com
                   </a>
                 </div>
               </div>

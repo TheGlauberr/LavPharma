@@ -51,16 +51,21 @@ export default function About() {
         <h3 className="text-navy text-2xl font-bold text-center mb-10">
           {t("valuesTitle")}
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {VALUE_KEYS.map(({ key, icon: Icon }) => (
-            <div key={key} className="text-center p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {VALUE_KEYS.map(({ key, icon: Icon }, index) => (
+            <div
+              key={key}
+              className={`text-center p-6 bg-card-bg rounded-xl border border-card-border ${
+                index === VALUE_KEYS.length - 1 ? "sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none" : ""
+              }`}
+            >
               <div className="w-12 h-12 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon className="text-accent-blue" size={22} />
               </div>
               <h4 className="text-navy font-bold mb-2">
                 {t(`values.${key}.title`)}
               </h4>
-              <p className="text-muted text-sm">
+              <p className="text-gray-600 text-sm">
                 {t(`values.${key}.description`)}
               </p>
             </div>

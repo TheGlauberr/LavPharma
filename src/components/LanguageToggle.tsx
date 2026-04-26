@@ -16,7 +16,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={switchLocale}
-      className="text-sm font-medium px-3 py-1 rounded-full border border-accent-blue/40 text-accent-blue hover:bg-accent-blue/10 transition-colors duration-200 cursor-pointer"
+      className="text-sm font-medium px-3 py-1 rounded-full border border-white/30 text-white/85 hover:bg-white/10 hover:text-white transition-colors duration-200 cursor-pointer"
       aria-label={locale === "es" ? "Switch to English" : "Cambiar a Español"}
     >
       {locale === "es" ? "EN" : "ES"}

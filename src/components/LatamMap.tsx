@@ -1,196 +1,175 @@
 "use client";
 
-const HIGHLIGHTED_COUNTRIES: Record<string, string> = {
-  GT: "Guatemala",
-  SV: "El Salvador",
-  HN: "Honduras",
-  CR: "Costa Rica",
-  PA: "Panamá",
-  PY: "Paraguay",
-  UY: "Uruguay",
-  EC: "Ecuador",
-  BO: "Bolivia",
-};
+import { useEffect, useRef, useState, useMemo } from "react";
+import { geoMercator, geoPath } from "d3-geo";
+import { feature } from "topojson-client";
+import type { Topology, GeometryCollection } from "topojson-specification";
+
+const HIGHLIGHTED = new Set([
+  "320", // Guatemala
+  "222", // El Salvador
+  "340", // Honduras
+  "188", // Costa Rica
+  "591", // Panama
+  "218", // Ecuador
+  "068", // Bolivia
+  "600", // Paraguay
+  "858", // Uruguay
+]);
+
+interface CountryFeature {
+  type: "Feature";
+  id: string;
+  properties: { name: string };
+  geometry: GeoJSON.Geometry;
+}
 
 export default function LatamMap() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [countries, setCountries] = useState<CountryFeature[]>([]);
+  const [visible, setVisible] = useState(false);
+
+  // Load TopoJSON
+  useEffect(() => {
+    fetch("/countries-110m.json")
+      .then((r) => r.json())
+      .then((topo: Topology) => {
+        const geo = feature(
+          topo,
+          topo.objects.countries as GeometryCollection
+        );
+        setCountries(geo.features as unknown as CountryFeature[]);
+      });
+  }, []);
+
+  // Scroll-triggered entrance
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const projection = useMemo(
+    () =>
+      geoMercator()
+        .center([-72, -4])
+        .scale(420)
+        .translate([280, 280]),
+    []
+  );
+
+  const path = useMemo(() => geoPath().projection(projection), [projection]);
+
+  // Filter to Latin America region
+  const latamFeatures = useMemo(() => {
+    if (!countries.length) return [];
+    return countries.filter((f) => {
+      const c = path.centroid(f);
+      return c[0] > 20 && c[0] < 520 && c[1] > 10 && c[1] < 560;
+    });
+  }, [countries, path]);
+
   return (
-    <svg
-      viewBox="80 50 320 400"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-auto max-w-md mx-auto"
-      aria-label="Map of Latin America highlighting countries where LAV PHARMA registers products"
+    <div
+      ref={ref}
+      className={`relative bg-navy-darker/60 rounded-2xl p-4 border border-white/5 transition-all duration-1000 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
     >
-      {/* Mexico & Central America region */}
-      {/* Mexico (not highlighted) */}
-      <path
-        d="M95 95 L140 80 L165 85 L175 100 L170 115 L155 125 L140 130 L130 125 L120 115 L100 110 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
-      {/* Belize (not highlighted) */}
-      <path
-        d="M155 125 L162 122 L164 132 L157 135 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="0.5"
-      />
-      {/* Guatemala */}
-      <path
-        d="M140 130 L155 125 L157 135 L155 142 L145 145 L138 140 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.9"
-      />
-      {/* Honduras */}
-      <path
-        d="M155 125 L162 122 L178 124 L182 130 L175 138 L163 140 L155 142 L157 135 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.85"
-      />
-      {/* El Salvador */}
-      <path
-        d="M145 145 L155 142 L163 140 L160 148 L150 150 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.9"
-      />
-      {/* Nicaragua (not highlighted) */}
-      <path
-        d="M163 140 L175 138 L182 130 L188 140 L185 155 L170 158 L160 148 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
-      {/* Costa Rica */}
-      <path
-        d="M170 158 L185 155 L188 165 L182 172 L174 168 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.85"
-      />
-      {/* Panamá */}
-      <path
-        d="M182 172 L188 165 L200 162 L210 168 L205 175 L195 178 L185 176 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.9"
-      />
+      <svg
+        viewBox="30 20 500 540"
+        className="w-full h-auto max-w-lg mx-auto"
+        aria-label="Map of Latin America highlighting countries where LAV PHARMA registers products"
+      >
+        <defs>
+          <filter id="country-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
 
-      {/* South America */}
-      {/* Colombia (not highlighted) */}
-      <path
-        d="M195 178 L205 175 L215 172 L230 180 L240 195 L235 215 L220 225 L200 220 L190 205 L185 195 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
-      {/* Venezuela (not highlighted) */}
-      <path
-        d="M230 180 L260 170 L280 178 L275 195 L255 200 L240 195 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
-      {/* Guyana/Suriname/Fr Guiana (not highlighted) */}
-      <path
-        d="M280 178 L310 175 L315 190 L300 200 L285 198 L275 195 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="0.8"
-      />
-      {/* Ecuador */}
-      <path
-        d="M190 205 L200 220 L195 235 L180 230 L178 215 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.85"
-      />
-      {/* Peru (not highlighted) */}
-      <path
-        d="M178 215 L180 230 L195 235 L200 220 L220 225 L225 250 L220 280 L200 290 L185 275 L175 250 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
-      {/* Brazil (not highlighted) */}
-      <path
-        d="M220 225 L235 215 L255 200 L275 195 L300 200 L330 215 L345 240 L350 280 L340 320 L320 350 L290 365 L260 360 L240 340 L230 310 L225 280 L220 280 L225 250 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
-      {/* Bolivia */}
-      <path
-        d="M225 280 L230 310 L240 320 L235 335 L220 340 L210 325 L200 300 L200 290 L220 280 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.85"
-      />
-      {/* Paraguay */}
-      <path
-        d="M240 320 L260 315 L270 330 L265 345 L250 350 L235 335 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.9"
-      />
-      {/* Chile (not highlighted) */}
-      <path
-        d="M210 325 L220 340 L225 360 L220 390 L215 420 L210 440 L205 435 L208 400 L212 370 L215 345 L200 300 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
-      {/* Uruguay */}
-      <path
-        d="M270 330 L280 340 L278 355 L265 360 L260 350 L265 345 Z"
-        fill="#4A90D9"
-        stroke="white"
-        strokeWidth="1"
-        opacity="0.9"
-      />
-      {/* Argentina (not highlighted) */}
-      <path
-        d="M235 335 L250 350 L260 350 L265 360 L278 355 L275 380 L260 405 L245 420 L230 435 L220 440 L215 420 L220 390 L225 360 L220 340 Z"
-        fill="#CBD5E1"
-        stroke="white"
-        strokeWidth="1"
-      />
+        {/* Non-highlighted countries first (back layer) */}
+        {latamFeatures
+          .filter((f) => !HIGHLIGHTED.has(f.id))
+          .map((f) => {
+            const d = path(f);
+            if (!d) return null;
+            return (
+              <path
+                key={f.id}
+                d={d}
+                fill="#64748B"
+                fillOpacity={0.35}
+                stroke="#94A3B8"
+                strokeWidth={0.3}
+                className="transition-all duration-500"
+              />
+            );
+          })}
 
-      {/* Country labels for highlighted countries */}
-      <circle cx="147" cy="136" r="3" fill="white" opacity="0.9" />
-      <circle cx="168" cy="132" r="3" fill="white" opacity="0.9" />
-      <circle cx="155" cy="146" r="3" fill="white" opacity="0.9" />
-      <circle cx="178" cy="165" r="3" fill="white" opacity="0.9" />
-      <circle cx="196" cy="170" r="3" fill="white" opacity="0.9" />
-      <circle cx="188" cy="222" r="3" fill="white" opacity="0.9" />
-      <circle cx="222" cy="318" r="3" fill="white" opacity="0.9" />
-      <circle cx="252" cy="335" r="3" fill="white" opacity="0.9" />
-      <circle cx="272" cy="345" r="3" fill="white" opacity="0.9" />
+        {/* Highlighted countries (front layer with glow) */}
+        {latamFeatures
+          .filter((f) => HIGHLIGHTED.has(f.id))
+          .map((f) => {
+            const d = path(f);
+            if (!d) return null;
+            return (
+              <path
+                key={f.id}
+                d={d}
+                fill="#4A90D9"
+                fillOpacity={0.85}
+                stroke="#BFDBFE"
+                strokeWidth={1}
+                filter="url(#country-glow)"
+                className="transition-all duration-500"
+              />
+            );
+          })}
 
-      {/* Pulse effect on a few key nodes */}
-      <circle cx="147" cy="136" r="6" fill="#4A90D9" opacity="0.3">
-        <animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="196" cy="170" r="6" fill="#4A90D9" opacity="0.3">
-        <animate attributeName="r" values="4;8;4" dur="3s" begin="1s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" begin="1s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="252" cy="335" r="6" fill="#4A90D9" opacity="0.3">
-        <animate attributeName="r" values="4;8;4" dur="3s" begin="2s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" begin="2s" repeatCount="indefinite" />
-      </circle>
-    </svg>
+        {/* Pulse dots on highlighted countries */}
+        {latamFeatures
+          .filter((f) => HIGHLIGHTED.has(f.id))
+          .map((f, i) => {
+            const [cx, cy] = path.centroid(f);
+            if (!cx || !cy) return null;
+            return (
+              <g key={`dot-${f.id}`}>
+                {/* Pulse ring */}
+                <circle cx={cx} cy={cy} r="4" fill="none" stroke="#93C5FD" strokeWidth="1" opacity="0.6">
+                  <animate
+                    attributeName="r" values="4;12;4"
+                    dur={`${3 + (i % 3)}s`}
+                    begin={`${i * 0.4}s`}
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity" values="0.6;0;0.6"
+                    dur={`${3 + (i % 3)}s`}
+                    begin={`${i * 0.4}s`}
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                {/* Solid dot */}
+                <circle cx={cx} cy={cy} r="3" fill="#93C5FD" opacity="0.9" />
+                <circle cx={cx} cy={cy} r="1.2" fill="#DBEAFE" opacity="0.95" />
+              </g>
+            );
+          })}
+      </svg>
+    </div>
   );
 }

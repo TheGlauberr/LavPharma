@@ -26,8 +26,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300 ${
-        scrolled ? "shadow-md" : "shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-navy-darker shadow-lg"
+          : "bg-navy-dark"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +37,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-accent-blue/40 rounded-lg">
             <img
-              src="/logo.svg"
+              src="/logo-alt.svg"
               alt="LAV PHARMA"
               className="h-12 sm:h-14 w-auto"
             />
@@ -47,7 +49,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-navy text-sm font-medium hover:text-accent-blue transition-colors duration-200 cursor-pointer"
+                className="text-white/85 text-sm font-medium hover:text-white transition-colors duration-200 cursor-pointer"
               >
                 {link.label}
               </a>
@@ -60,7 +62,7 @@ export default function Navbar() {
             <LanguageToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 text-navy cursor-pointer hover:text-accent-blue transition-colors duration-200"
+              className="p-2 text-white cursor-pointer hover:text-white/80 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -71,14 +73,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white shadow-lg border-t border-gray-100">
+        <div className="md:hidden bg-navy-darker border-t border-white/10">
           <div className="px-4 py-4 space-y-3">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="block text-navy font-medium text-base hover:text-accent-blue transition-colors duration-200 cursor-pointer"
+                className="block text-white/85 font-medium text-base hover:text-white transition-colors duration-200 cursor-pointer"
               >
                 {link.label}
               </a>
