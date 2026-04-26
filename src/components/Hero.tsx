@@ -72,7 +72,7 @@ export default function Hero() {
       {/* Top edge highlight */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-blue/20 to-transparent" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 pt-14 sm:pt-20 pb-16 w-full">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 pt-20 sm:pt-20 pb-16 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           {/* Text content */}
           <div className="text-left">
@@ -83,7 +83,7 @@ export default function Hero() {
               </span>
             </div>
             <h1
-              className="text-navy-darker text-[44px] sm:text-5xl lg:text-[72px] font-display font-medium leading-[1.06] sm:leading-[0.97] tracking-tight mb-5 sm:mb-6 animate-fade-in-up"
+              className="text-navy-darker text-[38px] sm:text-5xl lg:text-[72px] font-display font-medium leading-[1.1] sm:leading-[0.97] tracking-tight mb-5 sm:mb-6 animate-fade-in-up"
               style={{ animationDelay: "0.15s" }}
             >
               {t.rich("title", {
