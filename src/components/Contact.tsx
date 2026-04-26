@@ -43,7 +43,7 @@ export default function Contact() {
     <section id="contacto" className="py-24 bg-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 lg:mb-14">
           <div>
             <div className="inline-flex items-center gap-2 bg-accent-blue/[0.18] rounded-full px-3.5 py-1.5 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_0_3px_rgba(43,108,223,0.18)]" />
@@ -60,11 +60,11 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white/[0.04] border border-white/10 rounded-2xl p-8"
+            className="bg-white/[0.04] border border-white/10 rounded-2xl p-5 sm:p-8"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <div>

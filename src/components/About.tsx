@@ -28,7 +28,7 @@ export default function About() {
     <section id="nosotros" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 lg:mb-14">
           <div>
             <div className="inline-flex items-center gap-2 bg-accent-blue/10 rounded-full px-3.5 py-1.5 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_0_3px_rgba(43,108,223,0.18)]" />
@@ -49,7 +49,7 @@ export default function About() {
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-          <div className="bg-white rounded-2xl p-9 border border-gray-200 relative overflow-hidden">
+          <div className="bg-white rounded-2xl p-6 sm:p-9 border border-gray-200 relative overflow-hidden">
             {/* Decorative circles */}
             <svg className="absolute -right-10 -top-10 w-48 h-48 opacity-[0.06]" viewBox="0 0 100 100" fill="none">
               <circle cx="50" cy="50" r="40" stroke="#2B6CDF" strokeWidth="0.5"/>
@@ -60,12 +60,12 @@ export default function About() {
               <span className="w-1.5 h-1.5 rounded-full bg-accent-blue" />
               <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-gray-500">{t("mission.title")}</span>
             </div>
-            <h3 className="text-navy-darker font-display font-medium text-2xl lg:text-[28px] tracking-tight leading-snug mb-3">
+            <h3 className="text-navy-darker font-display font-medium text-xl sm:text-2xl lg:text-[28px] tracking-tight leading-snug mb-3">
               {t("mission.headline")}
             </h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">{t("mission.text")}</p>
           </div>
-          <div className="bg-navy-darker rounded-2xl p-9 relative overflow-hidden">
+          <div className="bg-navy-darker rounded-2xl p-6 sm:p-9 relative overflow-hidden">
             {/* Decorative waves */}
             <svg className="absolute -right-10 -top-10 w-48 h-48 opacity-[0.06]" viewBox="0 0 100 100" fill="none">
               <path d="M0 50 Q 25 20, 50 50 T 100 50" stroke="#fff" strokeWidth="0.5"/>
@@ -76,7 +76,7 @@ export default function About() {
               <span className="w-1.5 h-1.5 rounded-full bg-accent-blue" />
               <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-white/55">{t("vision.title")}</span>
             </div>
-            <h3 className="text-white font-display font-medium text-2xl lg:text-[28px] tracking-tight leading-snug mb-3">
+            <h3 className="text-white font-display font-medium text-xl sm:text-2xl lg:text-[28px] tracking-tight leading-snug mb-3">
               {t("vision.headline")}
             </h3>
             <p className="text-white/70 text-[15px] leading-relaxed">{t("vision.text")}</p>
