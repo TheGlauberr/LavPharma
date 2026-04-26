@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "LAV PHARMA | Servicios Regulatorios Farmacéuticos y Veterinarios",
-    "description": "Expertos en registros sanitarios, permisos de distribución y asuntos regulatorios internacionales para el sector salud y veterinario."
+    "title": "LAV PHARMA | Registro Farmacéutico y Veterinario en Latinoamérica",
+    "description": "Registro sanitario, cumplimiento regulatorio y gestión de dossiers para productos farmacéuticos y veterinarios en 9 mercados latinoamericanos. 540+ registros, 96% aprobación al primer intento. Tu ruta más rápida a LATAM."
   },
   "Nav": {
     "services": "Servicios",
@@ -9,15 +9,41 @@
     "contact": "Contacto"
   },
   "Hero": {
-    "label": "REGULATORY PHARMACEUTICAL & VETERINARY SERVICES",
-    "title": "Llevamos tus productos al mercado global",
-    "subtitle": "Expertos en registros sanitarios y asuntos regulatorios para productos farmacéuticos y veterinarios. Tu aliado estratégico para ingresar a Latinoamérica.",
-    "cta": "Contáctanos",
+    "label": "Asuntos Regulatorios · Farma & Veterinaria",
+    "title": "Tu ruta más rápida a <em>Latinoamérica.</em>",
+    "subtitle": "Gestionamos registros sanitarios, compilación de dossiers y cumplimiento regulatorio continuo en 9 jurisdicciones de LATAM — para que tus productos se lancen a tiempo.",
+    "cta": "Iniciar un registro",
     "whatsapp": "WhatsApp",
+    "dossiers": "Dossiers activos en 9 mercados",
     "stats": {
-      "countries": "Países",
+      "countries": "Mercados",
       "registrations": "Registros",
-      "commitment": "Compromiso"
+      "approval": "Aprobación",
+      "practice": "En práctica"
+    },
+    "journey": {
+      "live": "En vivo · Proyecto #LP-4471",
+      "project": "Antimicrobiano veterinario · El Salvador",
+      "onTrack": "En curso",
+      "stage1": "Revisión de dossier",
+      "days1": "Día 1–10",
+      "note1": "Análisis de brechas vs. requisitos del país destino",
+      "stage2": "Traducción",
+      "days2": "Día 11–25",
+      "note2": "Apostilla, traducciones juradas, notarización",
+      "stage3": "Presentación",
+      "days3": "Día 26–35",
+      "note3": "Sometimiento ante la autoridad regulatoria",
+      "stage4": "Revisión de agencia",
+      "days4": "Día 36–75",
+      "note4": "Manejo de preguntas y respuestas a deficiencias",
+      "stage5": "Registro",
+      "days5": "Día 76–90",
+      "note5": "Autorización de comercialización otorgada",
+      "avgTime": "Tiempo promedio",
+      "approvalRate": "Tasa de aprobación",
+      "localAgents": "Agentes locales",
+      "countriesCount": "9 países"
     }
   },
   "Services": {
@@ -92,16 +118,21 @@
     }
   },
   "About": {
-    "title": "Sobre Nosotros",
+    "badge": "Nosotros",
+    "heading": "10 años navegando <em>la regulación LATAM.</em>",
+    "lead": "LavPharma es el respaldo regulatorio para empresas farmacéuticas y veterinarias extranjeras que ingresan a Latinoamérica — con revisores experimentados, trabajando en formato CTD, registrando bajo tu marca.",
     "mission": {
       "title": "Misión",
+      "headline": "Abrir mercados LATAM — con precisión, a tiempo, al primer intento.",
       "text": "Brindar servicios especializados en la gestión, inscripción y obtención de permisos para la distribución de medicamentos, productos veterinarios, cosméticos y productos de salud, garantizando el cumplimiento de las normativas sanitarias vigentes."
     },
     "vision": {
       "title": "Visión",
-      "text": "Ser una empresa líder en servicios regulatorios y sanitarios, reconocida por nuestra eficiencia, experiencia y compromiso con la calidad, convirtiéndonos en el aliado estratégico preferido para empresas del sector salud y veterinario nacionales e internacionales."
+      "headline": "Ser el aliado regulatorio que las empresas eligen por nombre.",
+      "text": "Reconocida por nuestra eficiencia, experiencia y compromiso con la calidad, convirtiéndonos en el aliado estratégico preferido para empresas del sector salud y veterinario nacionales e internacionales."
     },
     "valuesTitle": "Nuestros Valores",
+    "valuesPrinciples": "PRINCIPIOS",
     "values": {
       "integrity": { "title": "Integridad", "description": "Actuamos con honestidad, transparencia y ética en cada proceso." },
       "responsibility": { "title": "Responsabilidad", "description": "Cumplimos rigurosamente con las normativas sanitarias y legales." },
@@ -113,24 +144,31 @@
     }
   },
   "Contact": {
-    "title": "Contáctanos",
-    "subtitle": "Estamos listos para ayudarte con tus necesidades regulatorias.",
+    "badge": "Contacto",
+    "title": "¿Listo para iniciar una entrada al mercado?",
+    "subtitle": "Cuéntanos sobre tu producto y mercados objetivo. Un líder regulatorio senior responderá en un día hábil con un plan de trabajo.",
     "form": {
       "name": "Nombre",
+      "namePlaceholder": "María González",
       "email": "Correo Electrónico",
+      "emailPlaceholder": "maria@acme.com",
       "phone": "Teléfono",
+      "phonePlaceholder": "+1 555 000 0000",
       "company": "Empresa",
-      "message": "Mensaje",
-      "submit": "Enviar Mensaje",
-      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+      "companyPlaceholder": "Acme Pharmaceuticals",
+      "product": "Tipo de producto y mercados destino",
+      "productPlaceholder": "Ej. Atorvastatina genérica 20mg — buscando registro en México, Brasil, Colombia.",
+      "submit": "Enviar mensaje",
+      "success": "¡Mensaje enviado con éxito! Responderemos en un día hábil.",
       "error": "Hubo un error al enviar el mensaje. Por favor intenta de nuevo."
     },
     "info": {
       "title": "Información de Contacto",
       "email": "Correo Electrónico",
       "phone": "Teléfonos",
-      "location": "Ubicación",
-      "address": "Hacienda San Andrés, Carretera a San Juan Opico, km 32½ Sitio el niño"
+      "location": "Sede Principal",
+      "address": "Hacienda San Andrés, Carretera a San Juan Opico, km 32½ Sitio el niño, El Salvador",
+      "scheduleCall": "Agendar llamada →"
     }
   },
   "Footer": {

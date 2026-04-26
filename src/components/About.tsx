@@ -25,47 +25,103 @@ export default function About() {
   const t = useTranslations("About");
 
   return (
-    <section id="nosotros" className="py-20 bg-white">
+    <section id="nosotros" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-navy text-3xl sm:text-4xl font-bold text-center mb-16">
-          {t("title")}
-        </h2>
+        {/* Section header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-accent-blue/10 rounded-full px-3.5 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_0_3px_rgba(43,108,223,0.18)]" />
+              <span className="text-accent-deep text-[11px] tracking-[0.18em] uppercase font-semibold">
+                {t("badge")}
+              </span>
+            </div>
+            <h2 className="text-navy-darker text-3xl sm:text-4xl lg:text-5xl font-display font-medium leading-tight tracking-tight">
+              {t.rich("heading", {
+                em: (chunks) => <em className="italic font-normal text-accent-deep">{chunks}</em>,
+              })}
+            </h2>
+          </div>
+          <p className="text-gray-500 text-base lg:text-[16.5px] max-w-md leading-relaxed lg:text-right">
+            {t("lead")}
+          </p>
+        </div>
 
         {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <div className="bg-card-bg rounded-xl p-8 border border-card-border">
-            <h3 className="text-accent-blue font-bold text-xl mb-4">
-              {t("mission.title")}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+          <div className="bg-white rounded-2xl p-9 border border-gray-200 relative overflow-hidden">
+            {/* Decorative circles */}
+            <svg className="absolute -right-10 -top-10 w-48 h-48 opacity-[0.06]" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="40" stroke="#2B6CDF" strokeWidth="0.5"/>
+              <circle cx="50" cy="50" r="30" stroke="#2B6CDF" strokeWidth="0.5"/>
+              <circle cx="50" cy="50" r="20" stroke="#2B6CDF" strokeWidth="0.5"/>
+            </svg>
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-blue" />
+              <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-gray-500">{t("mission.title")}</span>
+            </div>
+            <h3 className="text-navy-darker font-display font-medium text-2xl lg:text-[28px] tracking-tight leading-snug mb-3">
+              {t("mission.headline")}
             </h3>
-            <p className="text-muted leading-relaxed">{t("mission.text")}</p>
+            <p className="text-gray-500 text-[15px] leading-relaxed">{t("mission.text")}</p>
           </div>
-          <div className="bg-card-bg rounded-xl p-8 border border-card-border">
-            <h3 className="text-accent-blue font-bold text-xl mb-4">
-              {t("vision.title")}
+          <div className="bg-navy-darker rounded-2xl p-9 relative overflow-hidden">
+            {/* Decorative waves */}
+            <svg className="absolute -right-10 -top-10 w-48 h-48 opacity-[0.06]" viewBox="0 0 100 100" fill="none">
+              <path d="M0 50 Q 25 20, 50 50 T 100 50" stroke="#fff" strokeWidth="0.5"/>
+              <path d="M0 60 Q 25 30, 50 60 T 100 60" stroke="#fff" strokeWidth="0.5"/>
+              <path d="M0 70 Q 25 40, 50 70 T 100 70" stroke="#fff" strokeWidth="0.5"/>
+            </svg>
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-blue" />
+              <span className="font-mono text-[11px] tracking-[0.12em] uppercase text-white/55">{t("vision.title")}</span>
+            </div>
+            <h3 className="text-white font-display font-medium text-2xl lg:text-[28px] tracking-tight leading-snug mb-3">
+              {t("vision.headline")}
             </h3>
-            <p className="text-muted leading-relaxed">{t("vision.text")}</p>
+            <p className="text-white/70 text-[15px] leading-relaxed">{t("vision.text")}</p>
           </div>
         </div>
 
-        {/* Values */}
-        <h3 className="text-navy text-2xl font-bold text-center mb-10">
-          {t("valuesTitle")}
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {VALUE_KEYS.map(({ key, icon: Icon }, index) => (
+        {/* Values header */}
+        <div className="pb-4 border-b border-gray-200 mb-0">
+          <h3 className="font-display font-medium text-2xl lg:text-[28px] tracking-tight text-navy-darker">{t("valuesTitle")}</h3>
+        </div>
+
+        {/* Values grid — 7 columns on desktop */}
+        <div className="hidden lg:grid grid-cols-7 border border-gray-200 border-t-0 rounded-b-2xl overflow-hidden bg-white">
+          {VALUE_KEYS.map(({ key, icon: Icon }, i) => (
             <div
               key={key}
-              className={`text-center p-6 bg-card-bg rounded-xl border border-card-border ${
-                index === VALUE_KEYS.length - 1 ? "sm:col-span-2 lg:col-span-1 sm:max-w-sm sm:mx-auto lg:max-w-none" : ""
-              }`}
+              className={`p-5 ${i < VALUE_KEYS.length - 1 ? "border-r border-gray-200" : ""}`}
             >
-              <div className="w-12 h-12 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Icon className="text-accent-blue" size={22} />
+              <div className="w-8 h-8 rounded-lg bg-accent-blue/10 text-accent-deep grid place-items-center">
+                <Icon size={16} />
               </div>
-              <h4 className="text-navy font-bold mb-2">
+              <h4 className="font-display font-medium text-lg tracking-tight text-navy-darker mt-5 mb-2">
                 {t(`values.${key}.title`)}
               </h4>
-              <p className="text-gray-600 text-sm">
+              <p className="text-[12.5px] leading-snug text-gray-500">
+                {t(`values.${key}.description`)}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Values grid — mobile/tablet fallback */}
+        <div className="lg:hidden grid grid-cols-2 sm:grid-cols-3 gap-px bg-gray-200 border border-gray-200 border-t-0 rounded-b-2xl overflow-hidden">
+          {VALUE_KEYS.map(({ key, icon: Icon }, i) => (
+            <div
+              key={key}
+              className={`bg-white p-5 ${i === VALUE_KEYS.length - 1 ? "col-span-2 sm:col-span-1" : ""}`}
+            >
+              <div className="w-8 h-8 rounded-lg bg-accent-blue/10 text-accent-deep grid place-items-center">
+                <Icon size={16} />
+              </div>
+              <h4 className="font-display font-medium text-base tracking-tight text-navy-darker mt-4 mb-1.5">
+                {t(`values.${key}.title`)}
+              </h4>
+              <p className="text-[12.5px] leading-snug text-gray-500">
                 {t(`values.${key}.description`)}
               </p>
             </div>

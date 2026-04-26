@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "LAV PHARMA | Regulatory Pharmaceutical & Veterinary Services",
-    "description": "Experts in health registrations, distribution permits, and international regulatory affairs for the healthcare and veterinary sectors."
+    "title": "LAV PHARMA | Pharmaceutical & Veterinary Registration in Latin America",
+    "description": "Sanitary registration, regulatory compliance, and dossier management for pharmaceutical and veterinary products across 9 Latin American markets. 540+ registrations, 96% first-pass approval. Your fastest path to LATAM."
   },
   "Nav": {
     "services": "Services",
@@ -9,15 +9,41 @@
     "contact": "Contact"
   },
   "Hero": {
-    "label": "REGULATORY PHARMACEUTICAL & VETERINARY SERVICES",
-    "title": "We bring your products to the global market",
-    "subtitle": "Experts in health registrations and regulatory affairs for pharmaceutical and veterinary products. Your strategic partner for entering Latin America.",
-    "cta": "Contact Us",
+    "label": "Regulatory Affairs · Pharma & Veterinary",
+    "title": "Your fastest path to <em>Latin American</em> markets.",
+    "subtitle": "We handle sanitary registrations, dossier compilation, and ongoing regulatory compliance across 9 LATAM jurisdictions — so your products launch on schedule.",
+    "cta": "Start a registration",
     "whatsapp": "WhatsApp",
+    "dossiers": "Active dossiers in 9 markets",
     "stats": {
-      "countries": "Countries",
+      "countries": "Markets",
       "registrations": "Registrations",
-      "commitment": "Commitment"
+      "approval": "Approval",
+      "practice": "In practice"
+    },
+    "journey": {
+      "live": "Live · Project #LP-4471",
+      "project": "Veterinary antimicrobial · El Salvador",
+      "onTrack": "On track",
+      "stage1": "Dossier review",
+      "days1": "Day 1–10",
+      "note1": "Gap analysis vs. target country requirements",
+      "stage2": "Translation",
+      "days2": "Day 11–25",
+      "note2": "Apostille, sworn translations, notarization",
+      "stage3": "Filing",
+      "days3": "Day 26–35",
+      "note3": "Submission to regulatory authority",
+      "stage4": "Agency review",
+      "days4": "Day 36–75",
+      "note4": "Q&A handling, deficiency responses",
+      "stage5": "Registration",
+      "days5": "Day 76–90",
+      "note5": "Marketing authorization granted",
+      "avgTime": "Avg. lead time",
+      "approvalRate": "Approval rate",
+      "localAgents": "Local agents",
+      "countriesCount": "9 countries"
     }
   },
   "Services": {
@@ -92,16 +118,21 @@
     }
   },
   "About": {
-    "title": "About Us",
+    "badge": "About",
+    "heading": "10 years navigating <em>LATAM regulation.</em>",
+    "lead": "LavPharma is the regulatory backbone for foreign pharmaceutical and veterinary companies entering Latin America — staffed by experienced reviewers, working in your CTD format, filing under your brand.",
     "mission": {
       "title": "Mission",
-      "text": "To provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, veterinary products, cosmetics, and health products, ensuring compliance with current health regulations."
+      "headline": "To unlock LATAM markets — accurately, on schedule, on the first filing.",
+      "text": "We provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, veterinary products, cosmetics, and health products — ensuring compliance with current regulations."
     },
     "vision": {
       "title": "Vision",
-      "text": "To be a leading company in regulatory and health services, recognized for our efficiency, experience, and commitment to quality, becoming the preferred strategic partner for national and international healthcare and veterinary companies."
+      "headline": "To be the regulatory partner LATAM-bound companies retain by name.",
+      "text": "Recognized for efficiency, experience, and commitment to quality — becoming the preferred strategic partner for national and international healthcare and veterinary companies."
     },
     "valuesTitle": "Our Values",
+    "valuesPrinciples": "PRINCIPLES",
     "values": {
       "integrity": { "title": "Integrity", "description": "We act with honesty, transparency, and ethics in every process." },
       "responsibility": { "title": "Responsibility", "description": "We rigorously comply with health and legal regulations." },
@@ -113,24 +144,31 @@
     }
   },
   "Contact": {
-    "title": "Contact Us",
-    "subtitle": "We're ready to help with your regulatory needs.",
+    "badge": "Contact",
+    "title": "Ready to begin a market entry?",
+    "subtitle": "Tell us about your product and target markets. A senior regulatory lead will respond within one business day with a scoped engagement plan.",
     "form": {
       "name": "Name",
+      "namePlaceholder": "María González",
       "email": "Email",
+      "emailPlaceholder": "maria@acme.com",
       "phone": "Phone",
+      "phonePlaceholder": "+1 555 000 0000",
       "company": "Company",
-      "message": "Message",
-      "submit": "Send Message",
-      "success": "Message sent successfully! We'll get back to you soon.",
+      "companyPlaceholder": "Acme Pharmaceuticals",
+      "product": "Product type & target markets",
+      "productPlaceholder": "e.g. Generic atorvastatin 20mg — seeking registration in Mexico, Brazil, Colombia.",
+      "submit": "Send message",
+      "success": "Message sent successfully! We'll get back to you within one business day.",
       "error": "There was an error sending the message. Please try again."
     },
     "info": {
       "title": "Contact Information",
       "email": "Email",
       "phone": "Phone",
-      "location": "Location",
-      "address": "Hacienda San Andrés, Carretera a San Juan Opico, km 32½ Sitio el niño"
+      "location": "Headquarters",
+      "address": "Hacienda San Andrés, Carretera a San Juan Opico, km 32½ Sitio el niño, El Salvador",
+      "scheduleCall": "Schedule call →"
     }
   },
   "Footer": {

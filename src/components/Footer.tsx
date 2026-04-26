@@ -58,9 +58,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:lavpharmacam@gmail.com" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm flex items-center gap-2 cursor-pointer">
+                <a href="mailto:info@lavpharma.com" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm flex items-center gap-2 cursor-pointer">
                   <Mail size={14} className="flex-shrink-0" />
-                  lavpharmacam@gmail.com
+                  info@lavpharma.com
                 </a>
               </li>
               <li>

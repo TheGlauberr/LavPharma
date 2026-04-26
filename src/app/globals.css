@@ -12,6 +12,9 @@
   --color-card-bg: #f0f4ff;
   --color-card-bg-alt: #e8f0fe;
   --color-whatsapp: #25D366;
+  --color-accent-deep: #1E4FAA;
+
+  --font-display: var(--font-display);
 
   --animate-spin-slow: spin-slow 25s linear infinite;
   --animate-pulse-soft: pulse-soft 4s ease-in-out infinite;
