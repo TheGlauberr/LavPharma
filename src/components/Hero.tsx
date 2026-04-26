@@ -76,14 +76,14 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           {/* Text content */}
           <div className="text-left">
-            <div className="inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-3 sm:px-4 py-1.5 mb-5 sm:mb-6 animate-fade-in-up">
+            <div className="hidden sm:inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-4 py-1.5 mb-6 animate-fade-in-up">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_0_3px_rgba(43,108,223,0.18)]" />
-              <span className="text-accent-blue text-[10px] sm:text-xs tracking-[1.5px] sm:tracking-[2px] uppercase font-semibold">
+              <span className="text-accent-blue text-xs tracking-[2px] uppercase font-semibold">
                 {t("label")}
               </span>
             </div>
             <h1
-              className="text-navy-darker text-[34px] sm:text-5xl lg:text-[72px] font-display font-medium leading-[1.1] sm:leading-[0.97] tracking-tight mb-5 sm:mb-6 animate-fade-in-up"
+              className="text-navy-darker text-[40px] sm:text-5xl lg:text-[72px] font-display font-medium leading-[1.08] sm:leading-[0.97] tracking-tight mb-5 sm:mb-6 animate-fade-in-up"
               style={{ animationDelay: "0.15s" }}
             >
               {t.rich("title", {
