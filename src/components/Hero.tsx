@@ -120,7 +120,7 @@ export default function Hero() {
 
             {/* Stats row */}
             <div
-              className="grid grid-cols-4 gap-8 mt-10 pt-7 border-t border-gray-200/60 max-w-xl animate-fade-in-up"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-10 pt-7 border-t border-gray-200/60 max-w-xl animate-fade-in-up"
               style={{ animationDelay: "0.6s" }}
             >
               {[
