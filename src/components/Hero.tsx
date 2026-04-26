@@ -72,7 +72,7 @@ export default function Hero() {
       {/* Top edge highlight */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-blue/20 to-transparent" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-6 lg:px-12 pt-24 sm:pt-20 pb-20 sm:pb-16 w-full">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-6 lg:px-12 pt-36 sm:pt-20 pb-20 sm:pb-16 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           {/* Text content */}
           <div className="text-left">
