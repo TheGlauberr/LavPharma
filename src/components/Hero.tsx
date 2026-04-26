@@ -48,7 +48,7 @@ export default function Hero() {
   }, [stages.length]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start sm:items-center overflow-hidden">
       {/* Base gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F0F6FF] to-[#E4EEFB]" />
 
