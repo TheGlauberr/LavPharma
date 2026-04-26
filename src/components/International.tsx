@@ -5,19 +5,14 @@ import { useTranslations } from "next-intl";
 import { MapPin, Factory, Globe } from "lucide-react";
 import LatamMap from "./LatamMap";
 
-const ORIGIN_COUNTRIES = [
-  { name: "India", region: "Asia" },
-  { name: "España", region: "Europa" },
-  { name: "Corea del Sur", region: "Asia" },
-  { name: "Francia", region: "Europa" },
-  { name: "Alemania", region: "Europa" },
-  { name: "Brasil", region: "América" },
-];
+const ORIGIN_KEYS = [
+  "india", "spain", "southKorea", "france", "germany", "brazil",
+] as const;
 
-const REGISTRATION_COUNTRIES = [
-  "Guatemala", "El Salvador", "Honduras", "Costa Rica", "Panamá",
-  "Paraguay", "Uruguay", "Ecuador", "Bolivia",
-];
+const REGISTRATION_KEYS = [
+  "guatemala", "elSalvador", "honduras", "costaRica", "panama",
+  "nicaragua", "paraguay", "uruguay", "ecuador", "bolivia",
+] as const;
 
 export default function International() {
   const t = useTranslations("International");
@@ -63,9 +58,9 @@ export default function International() {
           </div>
 
           <div ref={originRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-            {ORIGIN_COUNTRIES.map((country, i) => (
+            {ORIGIN_KEYS.map((key, i) => (
               <div
-                key={country.name}
+                key={key}
                 className={`bg-white rounded-xl p-5 shadow-sm border border-card-border text-center hover:shadow-md hover:border-accent-blue/30 transition-all duration-300 ${
                   originVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
@@ -74,8 +69,8 @@ export default function International() {
                 <div className="w-10 h-10 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Factory size={16} className="text-accent-blue" />
                 </div>
-                <span className="text-navy font-semibold text-sm block">{country.name}</span>
-                <span className="text-gray-400 text-xs">{country.region}</span>
+                <span className="text-navy font-semibold text-sm block">{t(`origin.countries.${key}.name`)}</span>
+                <span className="text-gray-400 text-xs">{t(`origin.countries.${key}.region`)}</span>
               </div>
             ))}
           </div>
@@ -109,15 +104,15 @@ export default function International() {
             {/* Country grid */}
             <div className="order-1 lg:order-2">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {REGISTRATION_COUNTRIES.map((country) => (
+                {REGISTRATION_KEYS.map((key) => (
                   <div
-                    key={country}
+                    key={key}
                     className="group bg-white/5 border border-white/10 rounded-xl px-5 py-4 flex items-center gap-3 hover:bg-accent-blue/10 hover:border-accent-blue/30 transition-all duration-200"
                   >
                     <div className="w-8 h-8 bg-accent-blue/15 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-accent-blue/25 transition-colors duration-200">
                       <MapPin size={14} className="text-accent-blue" />
                     </div>
-                    <span className="text-white font-medium text-sm">{country}</span>
+                    <span className="text-white font-medium text-sm">{t(`registration.countries.${key}`)}</span>
                   </div>
                 ))}
               </div>

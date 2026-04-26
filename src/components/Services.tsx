@@ -9,7 +9,7 @@ import {
   FileText,
   Warehouse,
   Package,
-  FlaskConical,
+  BadgeCheck,
   Syringe,
   Dna,
   Scale,
@@ -17,7 +17,7 @@ import {
 
 const REGISTRATION_SERVICES = [
   { key: "genericos", icon: ClipboardCheck },
-  { key: "sintesis", icon: FlaskConical },
+  { key: "marca", icon: BadgeCheck },
   { key: "vacunas", icon: Syringe },
   { key: "biotecnologicos", icon: Dna },
   { key: "bioequivalentes", icon: Scale },

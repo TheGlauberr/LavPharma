@@ -11,6 +11,7 @@ const HIGHLIGHTED = new Set([
   "340", // Honduras
   "188", // Costa Rica
   "591", // Panama
+  "558", // Nicaragua
   "218", // Ecuador
   "068", // Bolivia
   "600", // Paraguay

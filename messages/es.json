@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "LAV PHARMA | Registro Farmacéutico y Veterinario en Latinoamérica",
-    "description": "Registro sanitario, cumplimiento regulatorio y gestión de dossiers para productos farmacéuticos y veterinarios en 9 mercados latinoamericanos. 540+ registros, 96% aprobación al primer intento. Tu ruta más rápida a LATAM."
+    "description": "Registro sanitario, cumplimiento regulatorio y gestión de dossiers para productos farmacéuticos y veterinarios en 10 mercados latinoamericanos. 540+ registros, 96% aprobación al primer intento. Tu ruta más rápida a LATAM."
   },
   "Nav": {
     "services": "Servicios",
@@ -11,10 +11,10 @@
   "Hero": {
     "label": "Asuntos Regulatorios · Farma & Veterinaria",
     "title": "Tu ruta más rápida a <em>Latinoamérica.</em>",
-    "subtitle": "Gestionamos registros sanitarios, compilación de dossiers y cumplimiento regulatorio continuo en 9 jurisdicciones de LATAM — para que tus productos se lancen a tiempo.",
+    "subtitle": "Gestionamos registros sanitarios, compilación de dossiers y cumplimiento regulatorio continuo en 10 jurisdicciones de LATAM — para que tus productos se lancen a tiempo.",
     "cta": "Iniciar un registro",
     "whatsapp": "WhatsApp",
-    "dossiers": "Dossiers activos en 9 mercados",
+    "dossiers": "Dossiers activos en 10 mercados",
     "stats": {
       "countries": "Mercados",
       "registrations": "Registros",
@@ -23,7 +23,7 @@
     },
     "journey": {
       "live": "En vivo · Proyecto #LP-4471",
-      "project": "Antimicrobiano veterinario · El Salvador",
+      "project": "Producto farmacéutico · El Salvador",
       "onTrack": "En curso",
       "stage1": "Revisión de dossier",
       "days1": "Día 1–10",
@@ -43,7 +43,7 @@
       "avgTime": "Tiempo promedio",
       "approvalRate": "Tasa de aprobación",
       "localAgents": "Agentes locales",
-      "countriesCount": "9 países"
+      "countriesCount": "10 países"
     }
   },
   "Services": {
@@ -56,9 +56,9 @@
           "title": "Medicamentos Genéricos",
           "description": "Registro sanitario de medicamentos genéricos ante las autoridades regulatorias de cada país."
         },
-        "sintesis": {
-          "title": "Síntesis Química",
-          "description": "Registro de productos de síntesis química, incluyendo documentación técnica y estudios de estabilidad."
+        "marca": {
+          "title": "Productos de Marca",
+          "description": "Registro de productos farmacéuticos de marca, incluyendo medicamentos innovadores y genéricos de marca."
         },
         "vacunas": {
           "title": "Vacunas",
@@ -79,11 +79,11 @@
       "items": {
         "holding": {
           "title": "Holding Regulatorio",
-          "description": "Representación legal y titularidad de registros sanitarios ante las autoridades de cada país."
+          "description": "Representación legal y responsable técnico designado para registros sanitarios ante las autoridades de cada país."
         },
         "almacenamiento": {
           "title": "Almacenamiento",
-          "description": "Gestión de almacenamiento en cumplimiento con las buenas prácticas de distribución y almacenamiento."
+          "description": "Coordinado a través de socios locales según las necesidades de cada producto. Productos veterinarios almacenados internamente; almacén farmacéutico en desarrollo."
         },
         "permisos": {
           "title": "Permisos de Importación",
@@ -91,15 +91,15 @@
         },
         "distribucion": {
           "title": "Distribución",
-          "description": "Obtención de permisos y licencias para la distribución legal de productos en diferentes mercados."
+          "description": "Transporte autorizado y distribución de productos veterinarios y farmacéuticos en distintos mercados."
         },
         "asesoria": {
           "title": "Asesoría Regulatoria",
-          "description": "Consultoría especializada para facilitar la expansión de productos a mercados latinoamericanos."
+          "description": "Tu aliado estratégico en el desarrollo regulatorio de productos, guiando la expansión en toda Latinoamérica."
         },
         "cumplimiento": {
           "title": "Cumplimiento Normativo",
-          "description": "Acompañamiento continuo para garantizar el cumplimiento de normativas sanitarias vigentes."
+          "description": "Proporcionamos una lista actualizada de requisitos alineados con las últimas leyes regulatorias de cada mercado."
         }
       }
     }
@@ -109,27 +109,47 @@
     "subtitle": "Conectamos fabricantes globales con el mercado latinoamericano a través de nuestra experiencia regulatoria.",
     "origin": {
       "badge": "ALCANCE GLOBAL",
-      "subtitle": "Registramos productos de fabricantes en estos países, gestionando toda la documentación técnica y regulatoria necesaria."
+      "subtitle": "Registramos productos de fabricantes en estos países, gestionando toda la documentación técnica y regulatoria necesaria.",
+      "countries": {
+        "india": { "name": "India", "region": "Asia" },
+        "spain": { "name": "España", "region": "Europa" },
+        "southKorea": { "name": "Corea del Sur", "region": "Asia" },
+        "france": { "name": "Francia", "region": "Europa" },
+        "germany": { "name": "Alemania", "region": "Europa" },
+        "brazil": { "name": "Brasil", "region": "América" }
+      }
     },
     "registration": {
       "badge": "TU PUERTA A LATINOAMÉRICA",
       "title": "Especializados en Registro en Latinoamérica",
-      "subtitle": "Somos tu aliado estratégico para registrar productos farmacéuticos y veterinarios en estos mercados."
+      "subtitle": "Somos tu aliado estratégico para registrar productos farmacéuticos y veterinarios en estos mercados.",
+      "countries": {
+        "guatemala": "Guatemala",
+        "elSalvador": "El Salvador",
+        "honduras": "Honduras",
+        "costaRica": "Costa Rica",
+        "panama": "Panamá",
+        "nicaragua": "Nicaragua",
+        "paraguay": "Paraguay",
+        "uruguay": "Uruguay",
+        "ecuador": "Ecuador",
+        "bolivia": "Bolivia"
+      }
     }
   },
   "About": {
     "badge": "Nosotros",
     "heading": "10 años navegando <em>la regulación LATAM.</em>",
-    "lead": "LavPharma es el respaldo regulatorio para empresas farmacéuticas y veterinarias extranjeras que ingresan a Latinoamérica — con revisores experimentados, trabajando en formato CTD, registrando bajo tu marca.",
+    "lead": "Para empresas extranjeras que ingresan a Latinoamérica, con personal con amplia experiencia en la industria, registrando bajo las modalidades de fabricante, holding o titular de producto y productos maquilados.",
     "mission": {
       "title": "Misión",
       "headline": "Abrir mercados LATAM — con precisión, a tiempo, al primer intento.",
-      "text": "Brindar servicios especializados en la gestión, inscripción y obtención de permisos para la distribución de medicamentos, productos veterinarios, cosméticos y productos de salud, garantizando el cumplimiento de las normativas sanitarias vigentes."
+      "text": "Brindar servicios especializados en la gestión, inscripción y obtención de permisos para la distribución de medicamentos, productos veterinarios, cosméticos, alimentos, insumos médicos y productos de salud, garantizando el cumplimiento de las normativas sanitarias vigentes."
     },
     "vision": {
       "title": "Visión",
-      "headline": "Ser el aliado regulatorio que las empresas eligen por nombre.",
-      "text": "Reconocida por nuestra eficiencia, experiencia y compromiso con la calidad, convirtiéndonos en el aliado estratégico preferido para empresas del sector salud y veterinario nacionales e internacionales."
+      "headline": "Ser aliado estratégico con fines regulatorios y comerciales.",
+      "text": "Para empresas del sector salud, veterinario, cosmético, insumos médicos, higiénicos y alimentos, nacionales e internacionales."
     },
     "valuesTitle": "Nuestros Valores",
     "valuesPrinciples": "PRINCIPIOS",
@@ -139,7 +159,7 @@
       "efficiency": { "title": "Eficiencia", "description": "Optimizamos procesos para ofrecer soluciones ágiles y oportunas." },
       "quality": { "title": "Compromiso con la Calidad", "description": "Buscamos la excelencia en cada servicio, asegurando precisión." },
       "confidentiality": { "title": "Confidencialidad", "description": "Protegemos la información de nuestros clientes con total discreción." },
-      "clientFocus": { "title": "Orientación al Cliente", "description": "Escuchamos y damos soluciones personalizadas a cada necesidad." },
+      "clientFocus": { "title": "Pronta Respuesta", "description": "Respondemos con agilidad para que tus procesos no se detengan." },
       "innovation": { "title": "Innovación", "description": "Mejoramos continuamente para adaptarnos al entorno regulatorio." }
     }
   },

@@ -64,11 +64,11 @@ export default function Contact() {
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white/[0.04] border border-white/10 rounded-2xl p-5 sm:p-8"
+            className="bg-white rounded-2xl p-5 sm:p-8"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <div>
-                <label htmlFor="contact-name" className="block font-mono text-[10.5px] text-white/55 tracking-[0.08em] uppercase mb-1.5">
+                <label htmlFor="contact-name" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
                   {t("form.name")}
                 </label>
                 <input
@@ -77,11 +77,11 @@ export default function Contact() {
                   name="name"
                   required
                   placeholder={t("form.namePlaceholder")}
-                  className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3.5 py-3 text-white text-sm placeholder-white/30 focus:outline-none focus:border-accent-blue transition-colors"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
                 />
               </div>
               <div>
-                <label htmlFor="contact-company" className="block font-mono text-[10.5px] text-white/55 tracking-[0.08em] uppercase mb-1.5">
+                <label htmlFor="contact-company" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
                   {t("form.company")}
                 </label>
                 <input
@@ -89,13 +89,13 @@ export default function Contact() {
                   type="text"
                   name="company"
                   placeholder={t("form.companyPlaceholder")}
-                  className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3.5 py-3 text-white text-sm placeholder-white/30 focus:outline-none focus:border-accent-blue transition-colors"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
                 />
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
               <div>
-                <label htmlFor="contact-email" className="block font-mono text-[10.5px] text-white/55 tracking-[0.08em] uppercase mb-1.5">
+                <label htmlFor="contact-email" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
                   {t("form.email")}
                 </label>
                 <input
@@ -104,11 +104,11 @@ export default function Contact() {
                   name="email"
                   required
                   placeholder={t("form.emailPlaceholder")}
-                  className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3.5 py-3 text-white text-sm placeholder-white/30 focus:outline-none focus:border-accent-blue transition-colors"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
                 />
               </div>
               <div>
-                <label htmlFor="contact-phone" className="block font-mono text-[10.5px] text-white/55 tracking-[0.08em] uppercase mb-1.5">
+                <label htmlFor="contact-phone" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
                   {t("form.phone")}
                 </label>
                 <input
@@ -116,12 +116,12 @@ export default function Contact() {
                   type="tel"
                   name="phone"
                   placeholder={t("form.phonePlaceholder")}
-                  className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3.5 py-3 text-white text-sm placeholder-white/30 focus:outline-none focus:border-accent-blue transition-colors"
+                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
                 />
               </div>
             </div>
             <div className="mb-4">
-              <label htmlFor="contact-message" className="block font-mono text-[10.5px] text-white/55 tracking-[0.08em] uppercase mb-1.5">
+              <label htmlFor="contact-message" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
                 {t("form.product")}
               </label>
               <textarea
@@ -130,7 +130,7 @@ export default function Contact() {
                 required
                 rows={4}
                 placeholder={t("form.productPlaceholder")}
-                className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3.5 py-3 text-white text-sm placeholder-white/30 focus:outline-none focus:border-accent-blue transition-colors resize-none"
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors resize-none"
               />
             </div>
             <button
@@ -145,10 +145,10 @@ export default function Contact() {
             </button>
 
             {status === "success" && (
-              <p className="text-green-400 text-sm text-center mt-3">{t("form.success")}</p>
+              <p className="text-green-600 text-sm text-center mt-3">{t("form.success")}</p>
             )}
             {status === "error" && (
-              <p className="text-red-400 text-sm text-center mt-3">{t("form.error")}</p>
+              <p className="text-red-600 text-sm text-center mt-3">{t("form.error")}</p>
             )}
           </form>
 

@@ -72,18 +72,18 @@ export default function Hero() {
       {/* Top edge highlight */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-blue/20 to-transparent" />
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 pt-20 pb-16 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 pt-10 sm:pt-20 pb-16 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           {/* Text content */}
-          <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-4 py-1.5 mb-6 animate-fade-in-up">
+          <div className="text-left">
+            <div className="inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-3 sm:px-4 py-1.5 mb-5 sm:mb-6 animate-fade-in-up">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_0_3px_rgba(43,108,223,0.18)]" />
-              <span className="text-accent-blue text-xs tracking-[2px] uppercase font-semibold">
+              <span className="text-accent-blue text-[10px] sm:text-xs tracking-[1.5px] sm:tracking-[2px] uppercase font-semibold">
                 {t("label")}
               </span>
             </div>
             <h1
-              className="text-navy-darker text-4xl sm:text-5xl lg:text-[72px] font-display font-medium leading-[0.97] tracking-tight mb-6 animate-fade-in-up"
+              className="text-navy-darker text-[34px] sm:text-5xl lg:text-[72px] font-display font-medium leading-[1.1] sm:leading-[0.97] tracking-tight mb-5 sm:mb-6 animate-fade-in-up"
               style={{ animationDelay: "0.15s" }}
             >
               {t.rich("title", {
@@ -91,18 +91,18 @@ export default function Hero() {
               })}
             </h1>
             <p
-              className="text-gray-600 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in-up"
+              className="text-gray-600 text-[15px] sm:text-lg leading-[1.7] sm:leading-relaxed mb-8 sm:mb-8 max-w-xl animate-fade-in-up"
               style={{ animationDelay: "0.3s" }}
             >
               {t("subtitle")}
             </p>
             <div
-              className="flex flex-wrap gap-3 justify-center lg:justify-start animate-fade-in-up"
+              className="flex flex-col sm:flex-row gap-3 animate-fade-in-up"
               style={{ animationDelay: "0.45s" }}
             >
               <a
                 href="#contacto"
-                className="bg-navy-darker hover:bg-navy text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center gap-2 cursor-pointer"
+                className="bg-navy-darker hover:bg-navy text-white px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer"
               >
                 {t("cta")}
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -111,7 +111,7 @@ export default function Hero() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white border border-[#C9E5D6] text-[#1A8754] px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center gap-2 cursor-pointer"
+                className="bg-white border border-[#C9E5D6] text-[#1A8754] px-7 py-3.5 rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer"
               >
                 <MessageCircle size={16} />
                 {t("whatsapp")}
@@ -120,20 +120,20 @@ export default function Hero() {
 
             {/* Stats row */}
             <div
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-10 pt-7 border-t border-gray-200/60 max-w-xl animate-fade-in-up"
+              className="grid grid-cols-4 gap-4 sm:gap-8 mt-10 sm:mt-10 pt-8 sm:pt-7 border-t border-gray-200/60 max-w-xl animate-fade-in-up"
               style={{ animationDelay: "0.6s" }}
             >
               {[
-                { num: 9, suffix: "+", labelKey: "stats.countries" },
+                { num: 10, suffix: "+", labelKey: "stats.countries" },
                 { num: 540, suffix: "+", labelKey: "stats.registrations" },
                 { num: 96, suffix: "%", labelKey: "stats.approval" },
                 { num: 10, suffix: " yr", labelKey: "stats.practice" },
               ].map((s, i) => (
                 <div key={i} className="text-left">
-                  <div className="text-navy-darker text-3xl sm:text-4xl font-display font-medium leading-none tracking-tight">
+                  <div className="text-navy-darker text-2xl sm:text-4xl font-display font-medium leading-none tracking-tight">
                     <Counter to={s.num} suffix={s.suffix} delay={700 + i * 120} />
                   </div>
-                  <div className="text-gray-500 text-[10.5px] tracking-[0.1em] uppercase font-medium mt-1.5 whitespace-nowrap">
+                  <div className="text-gray-500 text-[9px] sm:text-[10.5px] tracking-[0.08em] sm:tracking-[0.1em] uppercase font-medium mt-1 sm:mt-1.5">
                     {t(s.labelKey)}
                   </div>
                 </div>
