@@ -9,7 +9,7 @@ const LOCALES = ["en", "es"];
 const MIN_SOURCES = 3;
 const DESCRIPTION = { min: 140, max: 160 };
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
-const EM_DASH = /—/;
+const EM_DASH = /\u2014/;
 
 function toDateString(value) {
   return value instanceof Date ? value.toISOString().slice(0, 10) : value;
