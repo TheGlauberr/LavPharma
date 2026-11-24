@@ -14,7 +14,7 @@ function Avatar({ initials, photo, name }: { initials: string; photo?: string; n
         alt={name}
         width={64}
         height={64}
-        className="h-16 w-16 rounded-full object-cover flex-shrink-0"
+        className="h-16 w-16 rounded-full bg-slate-100 object-cover object-top flex-shrink-0"
       />
     );
   }

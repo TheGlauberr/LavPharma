@@ -14,7 +14,7 @@ export const AUTHORS: Record<string, Author> = {
   "Laura Vidal": {
     name: "Laura Vidal",
     initials: "LV",
-    photo: "/team/laura-vidal.jpg",
+    photo: "/team/laura-vidal.webp",
     linkedin: "",
   },
 };
