@@ -43,4 +43,5 @@ next-env.d.ts
 # project-specific
 .superpowers/
 .agent/
-.claude/
+.claude/*
+!.claude/skills/
