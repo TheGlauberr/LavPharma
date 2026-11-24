@@ -6,7 +6,8 @@
   "Nav": {
     "services": "Services",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resources": "Resources"
   },
   "Hero": {
     "label": "Regulatory Affairs · Pharma & Veterinary",
@@ -194,5 +195,48 @@
   "Footer": {
     "rights": "All rights reserved.",
     "tagline": "Regulatory Pharmaceutical & Veterinary Services"
+  },
+  "Resources": {
+    "metaTitle": "Resources | LAV PHARMA",
+    "metaDescription": "Plain-language guides to pharmaceutical and veterinary registration in Latin America, sourced from official regulators and dated so you know what is current.",
+    "badge": "Resources",
+    "title": "Regulatory guides for <em>Latin America.</em>",
+    "lead": "Plain answers to the questions manufacturers ask us most, built from official sources and dated so you know when we last checked them.",
+    "latest": "Latest",
+    "all": "All articles",
+    "empty": "The first articles are on their way.",
+    "readArticle": "Read the guide",
+    "breadcrumbHome": "Home",
+    "lastVerified": "Last verified",
+    "published": "Published",
+    "updated": "Updated",
+    "byline": "LAV PHARMA regulatory team",
+    "bylineReviewed": "Written by the LAV PHARMA regulatory team, reviewed by {name}",
+    "answerLabel": "Short answer",
+    "faqTitle": "Frequently asked questions",
+    "sourcesTitle": "Sources",
+    "accessed": "accessed {date}",
+    "relatedTitle": "Related guides",
+    "disclaimer": "General information, not regulatory advice. Rules change; confirm the current requirements with the authority or with us before you file.",
+    "authorTitle": "About the author",
+    "authorRole": "Pharmaceutical Chemist, CEO & Co-Founder",
+    "authorBody": "LAV PHARMA has handled pharmaceutical and veterinary registrations in Central and South America since 2016. Every guide is drafted from official sources by our regulatory team.",
+    "authorLinkedin": "LinkedIn profile",
+    "ctaTitle": "Planning a registration in {country}?",
+    "ctaBody": "Send us your product list and target markets. We reply within one business day with what each product needs.",
+    "ctaButton": "Send us your product list",
+    "ctaWhatsapp": "Ask on WhatsApp",
+    "ctaWhatsappMessage": "Hello, I read your guide on lavpharma.com and would like to talk about a registration.",
+    "ctaDefaultCountry": "Latin America",
+    "types": {
+      "guide": "Country guide",
+      "explainer": "Explainer",
+      "hub": "Regional hub",
+      "digest": "Monthly digest"
+    },
+    "sectors": {
+      "human": "Human medicines",
+      "vet": "Veterinary"
+    }
   }
 }
