@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Mail, Phone, MessageCircle } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 const WHATSAPP_NUMBER = "50372384539";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -34,19 +35,24 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#servicios" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
+                <Link href="/#servicios" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
                   {tNav("services")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#nosotros" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
+                <Link href="/#nosotros" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
                   {tNav("about")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contacto" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
+                <Link href="/resources" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
+                  {tNav("resources")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/#contacto" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
                   {tNav("contact")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
