@@ -1,125 +1,61 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { MapPin, Factory, Globe } from "lucide-react";
+import { MARKET_KEYS, ORIGIN_KEYS } from "@/lib/markets";
 import LatamMap from "./LatamMap";
-
-const ORIGIN_KEYS = [
-  "india", "spain", "southKorea", "france", "germany", "brazil",
-] as const;
-
-const REGISTRATION_KEYS = [
-  "guatemala", "elSalvador", "honduras", "costaRica", "panama",
-  "nicaragua", "paraguay", "uruguay", "ecuador", "bolivia",
-] as const;
+import GroupHeading, { padNumber } from "./ui/GroupHeading";
+import Reveal from "./ui/Reveal";
+import SplitSection from "./ui/SplitSection";
 
 export default function International() {
   const t = useTranslations("International");
-  const originRef = useRef<HTMLDivElement>(null);
-  const [originVisible, setOriginVisible] = useState(false);
-
-  useEffect(() => {
-    const el = originRef.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setOriginVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <section id="internacional">
-      {/* ─── Origin Countries Block ─── */}
-      <div className="bg-card-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-accent-blue/10 rounded-full px-4 py-1.5 mb-6">
-              <Globe size={16} className="text-accent-blue" />
-              <span className="text-accent-blue text-sm font-semibold tracking-wide">
-                {t("origin.badge")}
+    <SplitSection id="internacional" surface="tint" eyebrow={t("origin.badge")} title={t("title")} lead={t("subtitle")}>
+      <div>
+        <GroupHeading title={t("origin.label")} count={ORIGIN_KEYS.length} />
+        <p className="max-w-[560px] border-t border-line pt-5 pb-6 text-[15px] leading-relaxed text-mut">
+          {t("origin.subtitle")}
+        </p>
+        <ul className="grid grid-cols-2 border-b border-line md:grid-cols-3">
+          {ORIGIN_KEYS.map((key, i) => (
+            <Reveal
+              as="li"
+              key={key}
+              delay={i * 0.04}
+              className="flex items-baseline gap-3 border-t border-line py-5 pr-3"
+            >
+              <span className="font-mono text-[12px] text-faint">{padNumber(i + 1)}</span>
+              <span className="min-w-0">
+                <span className="block text-[16.5px] font-medium tracking-[-0.015em]">
+                  {t(`origin.countries.${key}.name`)}
+                </span>
+                <span className="eyebrow mt-1 block text-[11px]">{t(`origin.countries.${key}.region`)}</span>
               </span>
-            </div>
-            <h2 className="text-navy text-3xl sm:text-4xl font-bold mb-4">
-              {t("title")}
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              {t("origin.subtitle")}
-            </p>
-          </div>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
 
-          <div ref={originRef} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
-            {ORIGIN_KEYS.map((key, i) => (
-              <div
-                key={key}
-                className={`bg-white rounded-xl p-5 shadow-sm border border-card-border text-center hover:shadow-md hover:border-accent-blue/30 transition-all duration-300 ${
-                  originVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <div className="w-10 h-10 bg-accent-blue/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Factory size={16} className="text-accent-blue" />
-                </div>
-                <span className="text-navy font-semibold text-sm block">{t(`origin.countries.${key}.name`)}</span>
-                <span className="text-gray-400 text-xs">{t(`origin.countries.${key}.region`)}</span>
-              </div>
+      <div className="mt-16">
+        <GroupHeading title={t("registration.title")} count={MARKET_KEYS.length} />
+        <p className="max-w-[560px] border-t border-line pt-5 pb-6 text-[15px] leading-relaxed text-mut">
+          {t("registration.subtitle")}
+        </p>
+        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-10">
+          <Reveal>
+            <LatamMap />
+          </Reveal>
+          <ol className="grid grid-cols-2 border-b border-line">
+            {MARKET_KEYS.map((key, i) => (
+              <li key={key} className="flex items-baseline gap-3 border-t border-line py-4 pr-2">
+                <span className="font-mono text-[12px] text-faint">{padNumber(i + 1)}</span>
+                <span className="text-[15.5px] font-medium tracking-[-0.01em]">
+                  {t(`registration.countries.${key}`)}
+                </span>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
-
-      {/* ─── Registration Countries Block (Dark) ─── */}
-      <div className="bg-navy-dark pt-20 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 bg-accent-blue/10 border border-accent-blue/20 rounded-full px-4 py-1.5 mb-4">
-              <MapPin size={16} className="text-accent-blue" />
-              <span className="text-accent-blue text-sm font-semibold">
-                LATAM
-              </span>
-            </div>
-            <h3 className="text-white text-2xl sm:text-3xl font-bold mb-3">
-              {t("registration.title")}
-            </h3>
-            <p className="text-gray-400 max-w-xl mx-auto leading-relaxed">
-              {t("registration.subtitle")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:-ml-16">
-            {/* Animated network map */}
-            <div className="order-2 lg:order-1">
-              <LatamMap />
-            </div>
-
-            {/* Country grid */}
-            <div className="order-1 lg:order-2">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {REGISTRATION_KEYS.map((key) => (
-                  <div
-                    key={key}
-                    className="group bg-white/5 border border-white/10 rounded-xl px-5 py-4 flex items-center gap-3 hover:bg-accent-blue/10 hover:border-accent-blue/30 transition-all duration-200"
-                  >
-                    <div className="w-8 h-8 bg-accent-blue/15 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-accent-blue/25 transition-colors duration-200">
-                      <MapPin size={14} className="text-accent-blue" />
-                    </div>
-                    <span className="text-white font-medium text-sm">{t(`registration.countries.${key}`)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </SplitSection>
   );
 }

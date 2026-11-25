@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import type { Topology, GeometryCollection } from "topojson-specification";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 const HIGHLIGHTED = new Set([
   "320", // Guatemala
@@ -26,9 +27,8 @@ interface CountryFeature {
 }
 
 export default function LatamMap() {
-  const ref = useRef<HTMLDivElement>(null);
   const [countries, setCountries] = useState<CountryFeature[]>([]);
-  const [visible, setVisible] = useState(false);
+  const animated = !usePrefersReducedMotion();
 
   // Load TopoJSON
   useEffect(() => {
@@ -40,24 +40,11 @@ export default function LatamMap() {
           topo.objects.countries as GeometryCollection
         );
         setCountries(geo.features as unknown as CountryFeature[]);
+      })
+      .catch(() => {
+        // The map is decorative; the country list next to it carries the content.
+        setCountries([]);
       });
-  }, []);
-
-  // Scroll-triggered entrance
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setVisible(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
   }, []);
 
   const projection = useMemo(
@@ -82,25 +69,14 @@ export default function LatamMap() {
 
   return (
     <div
-      ref={ref}
-      className={`relative bg-navy-darker/60 rounded-2xl p-4 border border-white/5 transition-all duration-1000 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      }`}
+      className="relative aspect-[500/540] rounded-2xl border border-line bg-surface p-4"
     >
       <svg
         viewBox="30 20 500 540"
-        className="w-full h-auto max-w-lg mx-auto"
+        className="h-full w-full"
+        role="img"
         aria-label="Map of Latin America highlighting countries where LAV PHARMA registers products"
       >
-        <defs>
-          <filter id="country-glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
 
         {/* Non-highlighted countries first (back layer) */}
         {latamFeatures
@@ -112,11 +88,8 @@ export default function LatamMap() {
               <path
                 key={f.id}
                 d={d}
-                fill="#64748B"
-                fillOpacity={0.35}
-                stroke="#94A3B8"
-                strokeWidth={0.3}
-                className="transition-all duration-500"
+                strokeWidth={0.6}
+                className="fill-map-land stroke-surface transition-all duration-500"
               />
             );
           })}
@@ -131,12 +104,8 @@ export default function LatamMap() {
               <path
                 key={f.id}
                 d={d}
-                fill="#4A90D9"
-                fillOpacity={0.85}
-                stroke="#BFDBFE"
-                strokeWidth={1}
-                filter="url(#country-glow)"
-                className="transition-all duration-500"
+                strokeWidth={0.8}
+                className="fill-accent-blue stroke-surface transition-all duration-500"
               />
             );
           })}
@@ -149,8 +118,8 @@ export default function LatamMap() {
             if (!cx || !cy) return null;
             return (
               <g key={`dot-${f.id}`}>
-                {/* Pulse ring */}
-                <circle cx={cx} cy={cy} r="4" fill="none" stroke="#93C5FD" strokeWidth="1" opacity="0.6">
+                {animated ? (
+                <circle cx={cx} cy={cy} r="4" fill="none" strokeWidth="1" opacity="0.5" className="stroke-accent-deep">
                   <animate
                     attributeName="r" values="4;12;4"
                     dur={`${3 + (i % 3)}s`}
@@ -158,15 +127,15 @@ export default function LatamMap() {
                     repeatCount="indefinite"
                   />
                   <animate
-                    attributeName="opacity" values="0.6;0;0.6"
+                    attributeName="opacity" values="0.5;0;0.5"
                     dur={`${3 + (i % 3)}s`}
                     begin={`${i * 0.4}s`}
                     repeatCount="indefinite"
                   />
                 </circle>
-                {/* Solid dot */}
-                <circle cx={cx} cy={cy} r="3" fill="#93C5FD" opacity="0.9" />
-                <circle cx={cx} cy={cy} r="1.2" fill="#DBEAFE" opacity="0.95" />
+                ) : null}
+                <circle cx={cx} cy={cy} r="3" className="fill-accent-deep" />
+                <circle cx={cx} cy={cy} r="1.2" className="fill-surface" />
               </g>
             );
           })}

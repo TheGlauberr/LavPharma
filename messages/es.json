@@ -6,12 +6,15 @@
   "Nav": {
     "services": "Servicios",
     "about": "Nosotros",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "resources": "Recursos",
+    "themeDark": "Cambiar a modo oscuro",
+    "themeLight": "Cambiar a modo claro"
   },
   "Hero": {
     "label": "Asuntos Regulatorios · Farma & Veterinaria",
     "title": "Tu ruta más rápida a <em>Latinoamérica.</em>",
-    "subtitle": "Gestionamos registros sanitarios, compilación de dossiers y cumplimiento regulatorio continuo en 10 jurisdicciones de LATAM — para que tus productos se lancen a tiempo.",
+    "subtitle": "Gestionamos registros sanitarios, compilación de dossiers y cumplimiento regulatorio continuo en 10 jurisdicciones de LATAM, para que tus productos se lancen a tiempo.",
     "cta": "Iniciar un registro",
     "whatsapp": "WhatsApp",
     "dossiers": "Dossiers activos en 10 mercados",
@@ -19,7 +22,8 @@
       "countries": "Mercados",
       "registrations": "Registros",
       "approval": "Aprobación",
-      "practice": "En práctica"
+      "practice": "En práctica",
+      "yearsSuffix": " años"
     },
     "journey": {
       "live": "En vivo · Proyecto #LP-4471",
@@ -43,7 +47,8 @@
       "avgTime": "Tiempo promedio",
       "approvalRate": "Tasa de aprobación",
       "localAgents": "Agentes locales",
-      "countriesCount": "10 países"
+      "countriesCount": "10 países",
+      "avgTimeValue": "90 días"
     }
   },
   "Services": {
@@ -108,6 +113,7 @@
     "title": "Alcance Internacional",
     "subtitle": "Conectamos fabricantes globales con el mercado latinoamericano a través de nuestra experiencia regulatoria.",
     "origin": {
+      "label": "Origen de los fabricantes",
       "badge": "ALCANCE GLOBAL",
       "subtitle": "Registramos productos de fabricantes en estos países, gestionando toda la documentación técnica y regulatoria necesaria.",
       "countries": {
@@ -143,7 +149,7 @@
     "lead": "Para empresas extranjeras que ingresan a Latinoamérica, con personal con amplia experiencia en la industria, registrando bajo las modalidades de fabricante, holding o titular de producto y productos maquilados.",
     "mission": {
       "title": "Misión",
-      "headline": "Abrir mercados LATAM — con precisión, a tiempo, al primer intento.",
+      "headline": "Abrir mercados LATAM con precisión, a tiempo y al primer intento.",
       "text": "Brindar servicios especializados en la gestión, inscripción y obtención de permisos para la distribución de medicamentos, productos veterinarios, cosméticos, alimentos, insumos médicos y productos de salud, garantizando el cumplimiento de las normativas sanitarias vigentes."
     },
     "vision": {
@@ -177,7 +183,7 @@
       "company": "Empresa",
       "companyPlaceholder": "Acme Pharmaceuticals",
       "product": "Tipo de producto y mercados destino",
-      "productPlaceholder": "Ej. Atorvastatina genérica 20mg — buscando registro en México, Brasil, Colombia.",
+      "productPlaceholder": "Ej. Atorvastatina genérica 20mg. Buscamos registro en Guatemala, Panamá y Ecuador.",
       "submit": "Enviar mensaje",
       "success": "¡Mensaje enviado con éxito! Responderemos en un día hábil.",
       "error": "Hubo un error al enviar el mensaje. Por favor intenta de nuevo."
@@ -192,7 +198,53 @@
     }
   },
   "Footer": {
+    "links": "Enlaces",
+    "chat": "Escríbenos",
     "rights": "Todos los derechos reservados.",
     "tagline": "Regulatory Pharmaceutical & Veterinary Services"
+  },
+  "Resources": {
+    "metaTitle": "Recursos | LAV PHARMA",
+    "metaDescription": "Guías claras sobre registro sanitario farmacéutico y veterinario en Latinoamérica, basadas en fuentes oficiales y fechadas para saber qué está vigente.",
+    "badge": "Recursos",
+    "title": "Guías regulatorias para <em>Latinoamérica.</em>",
+    "lead": "Respuestas claras a las preguntas que más nos hacen los fabricantes, basadas en fuentes oficiales y con la fecha de la última verificación.",
+    "latest": "Lo más reciente",
+    "all": "Todos los artículos",
+    "empty": "Los primeros artículos vienen en camino.",
+    "readArticle": "Leer la guía",
+    "breadcrumbHome": "Inicio",
+    "lastVerified": "Última verificación",
+    "onThisPage": "En esta página",
+    "published": "Publicado",
+    "updated": "Actualizado",
+    "byline": "Equipo regulatorio de LAV PHARMA",
+    "bylineReviewed": "Escrito por el equipo regulatorio de LAV PHARMA, revisado por {name}",
+    "answerLabel": "Respuesta corta",
+    "faqTitle": "Preguntas frecuentes",
+    "sourcesTitle": "Fuentes",
+    "accessed": "consultado el {date}",
+    "relatedTitle": "Guías relacionadas",
+    "disclaimer": "Información general, no asesoría regulatoria. Las reglas cambian; confirme los requisitos vigentes con la autoridad o con nosotros antes de presentar.",
+    "authorTitle": "Sobre la autora",
+    "authorRole": "Química Farmacéutica, CEO y Cofundadora",
+    "authorBody": "LAV PHARMA gestiona registros farmacéuticos y veterinarios en Centro y Sudamérica desde 2016. Cada guía la redacta nuestro equipo regulatorio a partir de fuentes oficiales.",
+    "authorLinkedin": "Perfil de LinkedIn",
+    "ctaTitle": "¿Planea un registro en {country}?",
+    "ctaBody": "Envíenos su lista de productos y mercados de interés. Respondemos en un día hábil con lo que necesita cada producto.",
+    "ctaButton": "Enviar mi lista de productos",
+    "ctaWhatsapp": "Escribir por WhatsApp",
+    "ctaWhatsappMessage": "Hola, leí su guía en lavpharma.com y quiero conversar sobre un registro.",
+    "ctaDefaultCountry": "Latinoamérica",
+    "types": {
+      "guide": "Guía por país",
+      "explainer": "Explicativo",
+      "hub": "Panorama regional",
+      "digest": "Resumen mensual"
+    },
+    "sectors": {
+      "human": "Medicamentos de uso humano",
+      "vet": "Veterinario"
+    }
   }
 }

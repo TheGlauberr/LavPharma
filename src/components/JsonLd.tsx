@@ -1,8 +1,11 @@
+import { ORGANIZATION_ID, SITE_NAME } from "@/lib/site";
+
 export default function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "LAV PHARMA",
+    "@id": ORGANIZATION_ID,
+    name: SITE_NAME,
     alternateName: "LavPharma Regulatory Services",
     url: "https://lavpharma.com",
     logo: "https://lavpharma.com/logo.svg",
@@ -22,6 +25,7 @@ export default function JsonLd() {
       { "@type": "Country", name: "Honduras" },
       { "@type": "Country", name: "Costa Rica" },
       { "@type": "Country", name: "Panama" },
+      { "@type": "Country", name: "Nicaragua" },
       { "@type": "Country", name: "Paraguay" },
       { "@type": "Country", name: "Uruguay" },
       { "@type": "Country", name: "Ecuador" },
@@ -44,7 +48,6 @@ export default function JsonLd() {
       minValue: 10,
       maxValue: 50,
     },
-    sameAs: [],
   };
 
   return (

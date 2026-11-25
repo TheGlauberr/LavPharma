@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getTranslations, getMessages } from "next-intl/server";
@@ -9,10 +9,12 @@ import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
+import { localizedUrl, languageAlternates, rssAlternates, SITE_NAME } from "@/lib/site";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-display" });
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -34,18 +36,16 @@ export async function generateMetadata({
       ? "pharmaceutical registration Latin America, sanitary registration LATAM, veterinary product registration, regulatory affairs Central America, drug registration El Salvador Guatemala Honduras, dossier management, regulatory compliance, import permits pharmaceutical"
       : "registro sanitario Latinoamérica, registro farmacéutico LATAM, registro productos veterinarios, asuntos regulatorios Centroamérica, registro medicamentos El Salvador Guatemala Honduras, gestión de dossiers, cumplimiento regulatorio, permisos de importación farmacéuticos",
     alternates: {
-      canonical: `https://lavpharma.com/${locale}`,
-      languages: {
-        en: "https://lavpharma.com/en",
-        es: "https://lavpharma.com/es",
-      },
+      canonical: localizedUrl(locale),
+      languages: languageAlternates(),
+      types: rssAlternates(locale),
     },
     openGraph: {
       title: t("title"),
       description: t("description"),
       type: "website",
-      url: `https://lavpharma.com/${locale}`,
-      siteName: "LAV PHARMA",
+      url: localizedUrl(locale),
+      siteName: SITE_NAME,
       locale: locale === "es" ? "es_ES" : "en_US",
     },
     twitter: {
@@ -76,11 +76,17 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html
+      lang={locale}
+      className={`scroll-smooth ${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
+        {/* Sets data-theme before first paint; suppressHydrationWarning covers the attribute it adds. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <JsonLd />
       </head>
-      <body className={`${inter.className} ${fraunces.variable} antialiased`}>
+      <body className="font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}

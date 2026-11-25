@@ -6,12 +6,15 @@
   "Nav": {
     "services": "Services",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resources": "Resources",
+    "themeDark": "Switch to dark mode",
+    "themeLight": "Switch to light mode"
   },
   "Hero": {
     "label": "Regulatory Affairs · Pharma & Veterinary",
     "title": "Your fastest path to <em>Latin American</em> markets.",
-    "subtitle": "We handle sanitary registrations, dossier compilation, and ongoing regulatory compliance across 10 LATAM jurisdictions — so your products launch on schedule.",
+    "subtitle": "We handle sanitary registrations, dossier compilation, and ongoing regulatory compliance across 10 LATAM jurisdictions, so your products launch on schedule.",
     "cta": "Start a registration",
     "whatsapp": "WhatsApp",
     "dossiers": "Active dossiers in 10 markets",
@@ -19,7 +22,8 @@
       "countries": "Markets",
       "registrations": "Registrations",
       "approval": "Approval",
-      "practice": "In practice"
+      "practice": "In practice",
+      "yearsSuffix": " yr"
     },
     "journey": {
       "live": "Live · Project #LP-4471",
@@ -43,7 +47,8 @@
       "avgTime": "Avg. lead time",
       "approvalRate": "Approval rate",
       "localAgents": "Local agents",
-      "countriesCount": "10 countries"
+      "countriesCount": "10 countries",
+      "avgTimeValue": "90 days"
     }
   },
   "Services": {
@@ -108,6 +113,7 @@
     "title": "International Reach",
     "subtitle": "We connect global manufacturers with the Latin American market through our regulatory expertise.",
     "origin": {
+      "label": "Manufacturer origins",
       "badge": "GLOBAL REACH",
       "subtitle": "We register products from manufacturers in these countries, managing all necessary technical and regulatory documentation.",
       "countries": {
@@ -143,13 +149,13 @@
     "lead": "For foreign companies entering Latin America, backed by staff with extensive industry experience, registering under manufacturer, holding, or product holder modalities and contract-manufactured products.",
     "mission": {
       "title": "Mission",
-      "headline": "To unlock LATAM markets — accurately, on schedule, on the first filing.",
-      "text": "We provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, veterinary products, cosmetics, food, medical supplies, and health products — ensuring compliance with current regulations."
+      "headline": "To unlock LATAM markets accurately, on schedule and on the first filing.",
+      "text": "We provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, veterinary products, cosmetics, food, medical supplies, and health products, ensuring compliance with current regulations."
     },
     "vision": {
       "title": "Vision",
       "headline": "To be a strategic ally for regulatory and commercial purposes.",
-      "text": "For companies in the health, veterinary, cosmetic, medical supplies, hygiene, and food sectors — both national and international."
+      "text": "For companies in the health, veterinary, cosmetic, medical supplies, hygiene, and food sectors, both national and international."
     },
     "valuesTitle": "Our Values",
     "valuesPrinciples": "PRINCIPLES",
@@ -177,7 +183,7 @@
       "company": "Company",
       "companyPlaceholder": "Acme Pharmaceuticals",
       "product": "Product type & target markets",
-      "productPlaceholder": "e.g. Generic atorvastatin 20mg — seeking registration in Mexico, Brazil, Colombia.",
+      "productPlaceholder": "e.g. Generic atorvastatin 20mg. Seeking registration in Guatemala, Panama and Ecuador.",
       "submit": "Send message",
       "success": "Message sent successfully! We'll get back to you within one business day.",
       "error": "There was an error sending the message. Please try again."
@@ -192,7 +198,53 @@
     }
   },
   "Footer": {
+    "links": "Links",
+    "chat": "Chat with us",
     "rights": "All rights reserved.",
     "tagline": "Regulatory Pharmaceutical & Veterinary Services"
+  },
+  "Resources": {
+    "metaTitle": "Resources | LAV PHARMA",
+    "metaDescription": "Plain-language guides to pharmaceutical and veterinary registration in Latin America, sourced from official regulators and dated so you know what is current.",
+    "badge": "Resources",
+    "title": "Regulatory guides for <em>Latin America.</em>",
+    "lead": "Plain answers to the questions manufacturers ask us most, built from official sources and dated so you know when we last checked them.",
+    "latest": "Latest",
+    "all": "All articles",
+    "empty": "The first articles are on their way.",
+    "readArticle": "Read the guide",
+    "breadcrumbHome": "Home",
+    "lastVerified": "Last verified",
+    "onThisPage": "On this page",
+    "published": "Published",
+    "updated": "Updated",
+    "byline": "LAV PHARMA regulatory team",
+    "bylineReviewed": "Written by the LAV PHARMA regulatory team, reviewed by {name}",
+    "answerLabel": "Short answer",
+    "faqTitle": "Frequently asked questions",
+    "sourcesTitle": "Sources",
+    "accessed": "accessed {date}",
+    "relatedTitle": "Related guides",
+    "disclaimer": "General information, not regulatory advice. Rules change; confirm the current requirements with the authority or with us before you file.",
+    "authorTitle": "About the author",
+    "authorRole": "Pharmaceutical Chemist, CEO & Co-Founder",
+    "authorBody": "LAV PHARMA has handled pharmaceutical and veterinary registrations in Central and South America since 2016. Every guide is drafted from official sources by our regulatory team.",
+    "authorLinkedin": "LinkedIn profile",
+    "ctaTitle": "Planning a registration in {country}?",
+    "ctaBody": "Send us your product list and target markets. We reply within one business day with what each product needs.",
+    "ctaButton": "Send us your product list",
+    "ctaWhatsapp": "Ask on WhatsApp",
+    "ctaWhatsappMessage": "Hello, I read your guide on lavpharma.com and would like to talk about a registration.",
+    "ctaDefaultCountry": "Latin America",
+    "types": {
+      "guide": "Country guide",
+      "explainer": "Explainer",
+      "hub": "Regional hub",
+      "digest": "Monthly digest"
+    },
+    "sectors": {
+      "human": "Human medicines",
+      "vet": "Veterinary"
+    }
   }
 }

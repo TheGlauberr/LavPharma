@@ -1,65 +1,352 @@
 /* src/app/globals.css */
 @import "tailwindcss";
 
+/* dark: utilities follow the data-theme attribute set before paint in the root layout */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
+  /* Brand */
   --color-navy: #3D4456;
   --color-navy-dark: #2a2f3d;
   --color-navy-darker: #1a1f2e;
   --color-accent-blue: #4A90D9;
   --color-accent-blue-hover: #357abd;
-  --color-muted: #4b5563;
-  --color-card-border: #dce5f4;
-  --color-card-bg: #f0f4ff;
-  --color-card-bg-alt: #e8f0fe;
-  --color-whatsapp: #25D366;
   --color-accent-deep: #1E4FAA;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-deep: #1A8754;
 
-  --font-display: var(--font-display);
+  /* Precision system (light theme values; dark and section surfaces override them below) */
+  --color-page: #ffffff;
+  --color-surface: #ffffff;
+  --color-ink: #131826;
+  --color-ink-soft: #262d42;
+  --color-body: #2b3142;
+  --color-on-ink: #ffffff;
+  --color-mut: #5d6679;
+  --color-faint: #9aa3b5;
+  --color-line: #e4e8f0;
+  --color-line-strong: #b9c2d3;
+  --color-soft: #f5f7fb;
+  --color-tint: #eaf1fc;
+  --color-ring: #e3ecfb;
+  --color-link-line: #c6d4ee;
+  --color-map-land: #dde3ee;
+  --color-ok: #2E9E6A;
 
-  --animate-spin-slow: spin-slow 25s linear infinite;
-  --animate-pulse-soft: pulse-soft 4s ease-in-out infinite;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-fade-in-up: fade-in-up 0.8s ease-out both;
+  /* Section backgrounds */
+  --color-band: #f3f5f9;
+  --color-band-tint: #edf3fc;
+  --color-band-navy: #2a2f3d;
+  --color-band-deep: #1a1f2e;
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
-@keyframes pulse-soft {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.05); }
+:root {
+  color-scheme: light;
+  --shadow-card: 0 1px 0 #fff inset, 0 40px 80px -48px rgba(30, 79, 170, 0.35), 0 2px 6px rgba(19, 24, 38, 0.04);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-accent-deep: #7fb0f2;
+  --color-page: #0e121a;
+  --color-surface: #151b26;
+  --color-ink: #eef1f6;
+  --color-ink-soft: #d4dae5;
+  --color-body: #c9d0dc;
+  --color-on-ink: #0e121a;
+  --color-mut: #9ba4b6;
+  --color-faint: #737e92;
+  --color-line: #232a38;
+  --color-line-strong: #3a4458;
+  --color-soft: #171d29;
+  --color-tint: #17253b;
+  --color-ring: rgba(127, 176, 242, 0.25);
+  --color-link-line: #34507a;
+  --color-map-land: #283247;
+  --color-band: #141a26;
+  --color-whatsapp-deep: #25D366;
+  --color-band-tint: #111d31;
+  --color-band-navy: #1a2234;
+  --color-band-deep: #080b11;
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 40px 80px -48px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+html {
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+  interpolate-size: allow-keywords;
 }
 
-/* Screen-reader only utility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+@layer components {
+  /* One container and one section rhythm for every page */
+  .wrap {
+    width: 100%;
+    max-width: 1264px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  .section {
+    padding-block: 72px;
+    border-top: 1px solid var(--color-line);
+  }
+  @media (min-width: 768px) {
+    .wrap { padding-inline: 32px; }
+  }
+  @media (min-width: 1024px) {
+    .section { padding-block: 120px; }
+  }
+
+  /* Small labels are the only place Geist Mono is used */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-mut);
+  }
+
+  .display {
+    font-size: clamp(40px, 6vw, 84px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .display em, .title em { font-style: normal; color: var(--color-accent-deep); }
+
+  .title {
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .lead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-mut);
+  }
+  @media (min-width: 1024px) {
+    .lead { font-size: 19px; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.2;
+    border-radius: 10px;
+    padding: 14px 22px;
+    border: 1px solid var(--color-ink);
+    background: var(--color-ink);
+    color: var(--color-on-ink);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+    background: var(--color-ink-soft);
+    box-shadow: 0 10px 24px -12px rgba(19, 24, 38, 0.5);
+  }
+  .btn:focus-visible, .btn-ghost:focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-ghost {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    border-color: var(--color-line);
+  }
+  .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-line-strong); }
+  .btn-sm { padding: 10px 16px; font-size: 14px; }
+
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+  }
+
+  /*
+   * Section surfaces. Each one sets its background and re-points the color
+   * tokens, so every border, eyebrow, card and text inside adapts on its own.
+   */
+  .surface-band { background-color: var(--color-band); color: var(--color-ink); }
+  .surface-tint { background-color: var(--color-band-tint); color: var(--color-ink); }
+  .surface-navy,
+  .surface-deep {
+    --color-ink: #f2f4f8;
+    --color-ink-soft: #dfe4ee;
+    --color-body: #d5dbe6;
+    --color-on-ink: #1a1f2e;
+    --color-mut: #b3bbcb;
+    --color-faint: #8f99ad;
+    --color-line: rgba(255, 255, 255, 0.12);
+    --color-line-strong: rgba(255, 255, 255, 0.3);
+    --color-soft: rgba(255, 255, 255, 0.06);
+    --color-tint: rgba(255, 255, 255, 0.08);
+    --color-surface: rgba(255, 255, 255, 0.05);
+    --color-accent-deep: #9cc0f2;
+    --color-whatsapp-deep: #25D366;
+    --color-ring: rgba(156, 192, 242, 0.3);
+    --shadow-card: none;
+    color: var(--color-ink);
+  }
+  .surface-navy { background-color: var(--color-band-navy); }
+  .surface-deep { background-color: var(--color-band-deep); }
+
+  /* Translucent sticky bar: opaque by default, frosted where backdrop-filter works */
+  .glass-bar {
+    background-color: var(--color-page);
+    border-bottom: 1px solid var(--color-line);
+  }
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) and (background-color: color-mix(in srgb, red 50%, transparent)) {
+    .glass-bar {
+      background-color: color-mix(in srgb, var(--color-page) 70%, transparent);
+      border-bottom-color: color-mix(in srgb, var(--color-line-strong) 45%, transparent);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+  }
+
+  /* Hairline grid that fades out from the top right */
+  .hairline-grid {
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(900px 520px at 82% 30%, #000 0, transparent 75%);
+    mask-image: radial-gradient(900px 520px at 82% 30%, #000 0, transparent 75%);
+    opacity: 0.9;
+  }
+
+  .field {
+    width: 100%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: var(--color-ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field::placeholder { color: var(--color-faint); }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-accent-deep);
+    box-shadow: 0 0 0 4px var(--color-ring);
+  }
+}
+
+/* Native accordion: animates where ::details-content is supported, plain toggle elsewhere */
+details.faq::details-content {
+  block-size: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  transition: block-size 0.3s ease, content-visibility 0.3s allow-discrete;
 }
+details.faq[open]::details-content { block-size: auto; }
+details.faq summary::-webkit-details-marker { display: none; }
 
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Resources article body (Markdown rendered at build time) */
+.article-body { color: var(--color-ink); font-size: 17px; line-height: 1.7; }
+.article-body > * + * { margin-top: 1.25rem; }
+.article-body h2, .article-body h3 {
+  color: var(--color-ink);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  scroll-margin-top: 96px;
+  text-wrap: balance;
+}
+.article-body h2 { font-size: clamp(26px, 1.4rem + 0.8vw, 30px); margin-top: 72px; margin-bottom: 20px; }
+.article-body > h2:first-child { margin-top: 64px; }
+.article-body h3 { font-size: 21px; letter-spacing: -0.02em; margin-top: 40px; }
+.article-body p, .article-body li { color: var(--color-body); }
+.article-body a { color: var(--color-accent-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--color-link-line); }
+.article-body a:hover { text-decoration-color: var(--color-accent-deep); }
+.article-body strong { color: var(--color-ink); font-weight: 600; }
+.article-body ul, .article-body ol { padding-left: 1.3rem; }
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body li + li { margin-top: 0.5rem; }
+.article-body li::marker { color: var(--color-accent-blue); }
+.article-body ol li::marker { font-family: var(--font-mono); font-size: 0.85em; color: var(--color-mut); }
+.article-body blockquote {
+  border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-accent-deep);
+  background: var(--color-soft);
+  border-radius: 4px 14px 14px 4px;
+  padding: 18px 22px;
+}
+.article-body hr { border: 0; border-top: 1px solid var(--color-line); }
+.article-body .table-scroll { overflow-x: auto; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 15.5px; line-height: 1.55; }
+.article-body th, .article-body td {
+  padding: 16px 16px 16px 0;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--color-line);
+}
+.article-body tr:last-child > td { border-bottom: 1px solid var(--color-line); }
+.article-body thead th {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mut);
+  padding-top: 0;
+  border-top: 0;
+}
+.article-body td:first-child {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mut);
+  width: 34%;
+  min-width: 7.5rem;
+}
+.article-body td + td { padding-right: 0; }
+.article-body sup { line-height: 0; }
+.article-body sup a {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--color-accent-deep);
+  margin-left: 2px;
 }
