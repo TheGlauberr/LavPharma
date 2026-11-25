@@ -1,13 +1,9 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { Mail, Phone, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/site";
 
-const WHATSAPP_NUMBER = "50372384539";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hola, los contacto desde lavpharma.com"
-)}`;
+const LINK_CLASS = "text-[14.5px] text-mut transition-colors hover:text-ink";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -15,102 +11,73 @@ export default function Footer() {
   const tContact = useTranslations("Contact");
   const year = new Date().getFullYear();
 
+  const links = [
+    { href: "/#servicios", label: tNav("services") },
+    { href: "/#nosotros", label: tNav("about") },
+    { href: "/resources", label: tNav("resources") },
+    { href: "/#contacto", label: tNav("contact") },
+  ];
+
   return (
-    <footer className="bg-navy-darker">
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand column */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <img src="/logo-alt.svg" alt="LAV PHARMA" className="h-14 sm:h-16 w-auto mb-4" />
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              {t("tagline")}
-            </p>
-          </div>
+    <footer className="border-t border-line bg-soft">
+      <div className="wrap grid grid-cols-2 gap-x-6 gap-y-12 py-16 lg:grid-cols-[minmax(0,4fr)_repeat(3,minmax(0,2fr))] lg:gap-[72px] lg:py-20">
+        <div className="col-span-2 lg:col-span-1">
+          <Link href="/" className="inline-block rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-deep">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.svg" alt="LAV PHARMA" width={106} height={59} className="h-[76px] w-auto lg:h-[88px]" />
+          </Link>
+          <p className="mt-5 max-w-[300px] text-[14.5px] leading-relaxed text-mut">{t("tagline")}</p>
+        </div>
 
-          {/* Quick links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-              Links
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/#servicios" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
-                  {tNav("services")}
+        <nav aria-label={t("links")}>
+          <h2 className="eyebrow mb-4">{t("links")}</h2>
+          <ul className="space-y-3">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className={LINK_CLASS}>
+                  {link.label}
                 </Link>
               </li>
-              <li>
-                <Link href="/#nosotros" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
-                  {tNav("about")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
-                  {tNav("resources")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/#contacto" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm cursor-pointer">
-                  {tNav("contact")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
+        </nav>
 
-          {/* Contact info */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-              {tContact("info.title")}
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="mailto:info@lavpharma.com" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm flex items-center gap-2 cursor-pointer">
-                  <Mail size={14} className="flex-shrink-0" />
-                  info@lavpharma.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+50372384539" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm flex items-center gap-2 cursor-pointer">
-                  <Phone size={14} className="flex-shrink-0" />
-                  +503 7238 4539
-                </a>
-              </li>
-              <li>
-                <a href="tel:+50231859189" className="text-gray-400 hover:text-accent-blue transition-colors duration-200 text-sm flex items-center gap-2 cursor-pointer">
-                  <Phone size={14} className="flex-shrink-0" />
-                  +502 3185 9189
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div>
+          <h2 className="eyebrow mb-4">{tContact("info.title")}</h2>
+          <ul className="space-y-3">
+            <li>
+              <a href="mailto:info@lavpharma.com" className={`${LINK_CLASS} break-all`}>
+                info@lavpharma.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+50372384539" className={LINK_CLASS}>
+                +503 7238 4539
+              </a>
+            </li>
+            <li>
+              <a href="tel:+50231859189" className={LINK_CLASS}>
+                +502 3185 9189
+              </a>
+            </li>
+          </ul>
+        </div>
 
-          {/* Connect */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
-              WhatsApp
-            </h4>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-whatsapp/10 border border-whatsapp/30 text-whatsapp hover:bg-whatsapp/20 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer"
-            >
-              <MessageCircle size={16} />
-              Chat with us
-            </a>
-          </div>
+        <div className="col-span-2 sm:col-span-1">
+          <h2 className="eyebrow mb-4">WhatsApp</h2>
+          <a href={DEFAULT_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">
+            <MessageCircle size={16} aria-hidden="true" className="text-whatsapp-deep" />
+            {t("chat")}
+          </a>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-gray-500 text-xs">
+      <div className="border-t border-line">
+        <div className="wrap flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="eyebrow text-[11px]">
             &copy; {year} LAV PHARMA. {t("rights")}
           </p>
-          <p className="text-gray-600 text-xs">
-            Regulatory Pharmaceutical Services
-          </p>
+          <p className="eyebrow text-[11px]">lavpharma.com</p>
         </div>
       </div>
     </footer>

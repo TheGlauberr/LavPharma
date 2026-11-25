@@ -1,22 +1,16 @@
-"use client";
-
 import { MessageCircle } from "lucide-react";
-
-const WHATSAPP_NUMBER = "50372384539";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hola, los contacto desde lavpharma.com"
-)}`;
+import { DEFAULT_WHATSAPP_URL } from "@/lib/site";
 
 export default function WhatsAppButton() {
   return (
     <a
-      href={WHATSAPP_URL}
+      href={DEFAULT_WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 bg-whatsapp hover:bg-whatsapp/90 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 cursor-pointer"
       aria-label="Chat on WhatsApp"
+      className="fixed right-4 bottom-4 z-40 grid h-[52px] w-[52px] place-items-center rounded-full border border-white/60 bg-whatsapp text-white shadow-[0_16px_32px_-14px_rgba(19,24,38,0.55),0_0_0_4px_rgba(37,211,102,0.14)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-deep sm:right-6 sm:bottom-6 sm:h-14 sm:w-14"
     >
-      <MessageCircle size={28} />
+      <MessageCircle size={26} aria-hidden="true" />
     </a>
   );
 }
