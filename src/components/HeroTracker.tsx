@@ -67,9 +67,9 @@ export default function HeroTracker({ live, project, status, stages, metrics }: 
                 aria-hidden="true"
                 className={`grid h-[27px] w-[27px] flex-none place-items-center rounded-full border font-mono text-[11px] font-medium transition-all duration-300 ${
                   done
-                    ? "border-accent-deep bg-accent-deep text-white"
+                    ? "border-accent-deep bg-accent-deep text-page"
                     : isLive
-                      ? "border-accent-deep bg-white text-accent-deep shadow-[0_0_0_4px_#e3ecfb]"
+                      ? "border-accent-deep bg-surface text-accent-deep shadow-[0_0_0_4px_var(--color-ring)]"
                       : "border-line bg-soft text-faint"
                 }`}
               >

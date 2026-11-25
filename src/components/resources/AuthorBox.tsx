@@ -15,7 +15,7 @@ function Avatar({ initials, photo, name }: { initials: string; photo?: string; n
     );
   }
   return (
-    <span aria-hidden="true" className={`${AVATAR} grid place-items-center bg-ink text-xl font-semibold tracking-wide text-white`}>
+    <span aria-hidden="true" className={`${AVATAR} grid place-items-center bg-ink text-xl font-semibold tracking-wide text-on-ink`}>
       {initials}
     </span>
   );

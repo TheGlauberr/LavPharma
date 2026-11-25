@@ -69,7 +69,7 @@ export default function LatamMap() {
 
   return (
     <div
-      className="relative aspect-[500/540] rounded-2xl border border-line bg-soft p-4"
+      className="relative aspect-[500/540] rounded-2xl border border-line bg-surface p-4"
     >
       <svg
         viewBox="30 20 500 540"
@@ -88,10 +88,8 @@ export default function LatamMap() {
               <path
                 key={f.id}
                 d={d}
-                fill="#dde3ee"
-                stroke="#ffffff"
                 strokeWidth={0.6}
-                className="transition-all duration-500"
+                className="fill-map-land stroke-surface transition-all duration-500"
               />
             );
           })}
@@ -106,10 +104,8 @@ export default function LatamMap() {
               <path
                 key={f.id}
                 d={d}
-                fill="#4A90D9"
-                stroke="#ffffff"
                 strokeWidth={0.8}
-                className="transition-all duration-500"
+                className="fill-accent-blue stroke-surface transition-all duration-500"
               />
             );
           })}
@@ -123,7 +119,7 @@ export default function LatamMap() {
             return (
               <g key={`dot-${f.id}`}>
                 {animated ? (
-                <circle cx={cx} cy={cy} r="4" fill="none" stroke="#1E4FAA" strokeWidth="1" opacity="0.5">
+                <circle cx={cx} cy={cy} r="4" fill="none" strokeWidth="1" opacity="0.5" className="stroke-accent-deep">
                   <animate
                     attributeName="r" values="4;12;4"
                     dur={`${3 + (i % 3)}s`}
@@ -138,8 +134,8 @@ export default function LatamMap() {
                   />
                 </circle>
                 ) : null}
-                <circle cx={cx} cy={cy} r="3" fill="#1E4FAA" />
-                <circle cx={cx} cy={cy} r="1.2" fill="#ffffff" />
+                <circle cx={cx} cy={cy} r="3" className="fill-accent-deep" />
+                <circle cx={cx} cy={cy} r="1.2" className="fill-surface" />
               </g>
             );
           })}

@@ -1,6 +1,9 @@
 /* src/app/globals.css */
 @import "tailwindcss";
 
+/* dark: utilities follow the data-theme attribute set before paint in the root layout */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   /* Brand */
   --color-navy: #3D4456;
@@ -12,21 +15,65 @@
   --color-whatsapp: #25D366;
   --color-whatsapp-deep: #1A8754;
 
-  /* Precision system */
+  /* Precision system (light theme values; dark and section surfaces override them below) */
+  --color-page: #ffffff;
+  --color-surface: #ffffff;
   --color-ink: #131826;
   --color-ink-soft: #262d42;
+  --color-body: #2b3142;
+  --color-on-ink: #ffffff;
   --color-mut: #5d6679;
   --color-faint: #9aa3b5;
   --color-line: #e4e8f0;
   --color-line-strong: #b9c2d3;
   --color-soft: #f5f7fb;
   --color-tint: #eaf1fc;
+  --color-ring: #e3ecfb;
+  --color-link-line: #c6d4ee;
+  --color-map-land: #dde3ee;
   --color-ok: #2E9E6A;
+
+  /* Section backgrounds */
+  --color-band: #f3f5f9;
+  --color-band-tint: #edf3fc;
+  --color-band-navy: #2a2f3d;
+  --color-band-deep: #1a1f2e;
 }
 
 @theme inline {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: light;
+  --shadow-card: 0 1px 0 #fff inset, 0 40px 80px -48px rgba(30, 79, 170, 0.35), 0 2px 6px rgba(19, 24, 38, 0.04);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-accent-deep: #7fb0f2;
+  --color-page: #0e121a;
+  --color-surface: #151b26;
+  --color-ink: #eef1f6;
+  --color-ink-soft: #d4dae5;
+  --color-body: #c9d0dc;
+  --color-on-ink: #0e121a;
+  --color-mut: #9ba4b6;
+  --color-faint: #737e92;
+  --color-line: #232a38;
+  --color-line-strong: #3a4458;
+  --color-soft: #171d29;
+  --color-tint: #17253b;
+  --color-ring: rgba(127, 176, 242, 0.25);
+  --color-link-line: #34507a;
+  --color-map-land: #283247;
+  --color-band: #141a26;
+  --color-whatsapp-deep: #25D366;
+  --color-band-tint: #111d31;
+  --color-band-navy: #1a2234;
+  --color-band-deep: #080b11;
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 40px 80px -48px rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -36,7 +83,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: var(--color-page);
   color: var(--color-ink);
   font-size: 16px;
   line-height: 1.6;
@@ -112,7 +159,7 @@ body {
     padding: 14px 22px;
     border: 1px solid var(--color-ink);
     background: var(--color-ink);
-    color: #fff;
+    color: var(--color-on-ink);
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
   }
@@ -127,18 +174,60 @@ body {
   }
   .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
   .btn-ghost {
-    background: #fff;
+    background: var(--color-surface);
     color: var(--color-ink);
     border-color: var(--color-line);
   }
-  .btn-ghost:hover { background: #fff; border-color: var(--color-line-strong); }
+  .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-line-strong); }
   .btn-sm { padding: 10px 16px; font-size: 14px; }
 
   .card {
-    background: #fff;
+    background: var(--color-surface);
     border: 1px solid var(--color-line);
     border-radius: 16px;
-    box-shadow: 0 1px 0 #fff inset, 0 40px 80px -48px rgba(30, 79, 170, 0.35), 0 2px 6px rgba(19, 24, 38, 0.04);
+    box-shadow: var(--shadow-card);
+  }
+
+  /*
+   * Section surfaces. Each one sets its background and re-points the color
+   * tokens, so every border, eyebrow, card and text inside adapts on its own.
+   */
+  .surface-band { background-color: var(--color-band); color: var(--color-ink); }
+  .surface-tint { background-color: var(--color-band-tint); color: var(--color-ink); }
+  .surface-navy,
+  .surface-deep {
+    --color-ink: #f2f4f8;
+    --color-ink-soft: #dfe4ee;
+    --color-body: #d5dbe6;
+    --color-on-ink: #1a1f2e;
+    --color-mut: #b3bbcb;
+    --color-faint: #8f99ad;
+    --color-line: rgba(255, 255, 255, 0.12);
+    --color-line-strong: rgba(255, 255, 255, 0.3);
+    --color-soft: rgba(255, 255, 255, 0.06);
+    --color-tint: rgba(255, 255, 255, 0.08);
+    --color-surface: rgba(255, 255, 255, 0.05);
+    --color-accent-deep: #9cc0f2;
+    --color-whatsapp-deep: #25D366;
+    --color-ring: rgba(156, 192, 242, 0.3);
+    --shadow-card: none;
+    color: var(--color-ink);
+  }
+  .surface-navy { background-color: var(--color-band-navy); }
+  .surface-deep { background-color: var(--color-band-deep); }
+
+  /* Translucent sticky bar: opaque by default, frosted where backdrop-filter works */
+  .glass-bar {
+    background-color: var(--color-page);
+    border-bottom: 1px solid var(--color-line);
+  }
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) and (background-color: color-mix(in srgb, red 50%, transparent)) {
+    .glass-bar {
+      background-color: color-mix(in srgb, var(--color-page) 70%, transparent);
+      border-bottom-color: color-mix(in srgb, var(--color-line-strong) 45%, transparent);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
   }
 
   /* Hairline grid that fades out from the top right */
@@ -154,7 +243,7 @@ body {
 
   .field {
     width: 100%;
-    background: #fff;
+    background: var(--color-surface);
     border: 1px solid var(--color-line);
     border-radius: 10px;
     padding: 12px 14px;
@@ -166,7 +255,7 @@ body {
   .field:focus {
     outline: none;
     border-color: var(--color-accent-deep);
-    box-shadow: 0 0 0 4px #e3ecfb;
+    box-shadow: 0 0 0 4px var(--color-ring);
   }
 }
 
@@ -203,8 +292,8 @@ details.faq summary::-webkit-details-marker { display: none; }
 .article-body h2 { font-size: clamp(26px, 1.4rem + 0.8vw, 30px); margin-top: 72px; margin-bottom: 20px; }
 .article-body > h2:first-child { margin-top: 64px; }
 .article-body h3 { font-size: 21px; letter-spacing: -0.02em; margin-top: 40px; }
-.article-body p, .article-body li { color: #2b3142; }
-.article-body a { color: var(--color-accent-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #c6d4ee; }
+.article-body p, .article-body li { color: var(--color-body); }
+.article-body a { color: var(--color-accent-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--color-link-line); }
 .article-body a:hover { text-decoration-color: var(--color-accent-deep); }
 .article-body strong { color: var(--color-ink); font-weight: 600; }
 .article-body ul, .article-body ol { padding-left: 1.3rem; }

@@ -15,7 +15,7 @@ export default async function ResourceChips({ type, countries, sector }: Resourc
 
   return (
     <ul className="flex flex-wrap items-center gap-2">
-      <li className={`${CHIP} border-ink bg-ink text-white`}>{t(`types.${type}`)}</li>
+      <li className={`${CHIP} border-ink bg-ink text-on-ink`}>{t(`types.${type}`)}</li>
       {rest.map((label) => (
         <li key={label} className={`${CHIP} border-line text-mut`}>
           {label}
