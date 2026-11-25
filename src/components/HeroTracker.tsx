@@ -24,12 +24,11 @@ interface HeroTrackerProps {
 const INITIAL_STAGE = 2;
 const STAGE_INTERVAL_MS = 2600;
 
-/** Dossier tracker card. Cycles the live stage unless reduced motion is requested. */
+/** Dossier tracker card. Steps the live stage forward; a gentle highlight change, so it runs for everyone. */
 export default function HeroTracker({ live, project, status, stages, metrics }: HeroTrackerProps) {
   const [active, setActive] = useState(INITIAL_STAGE);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = window.setInterval(() => setActive((a) => (a + 1) % stages.length), STAGE_INTERVAL_MS);
     return () => window.clearInterval(id);
   }, [stages.length]);
