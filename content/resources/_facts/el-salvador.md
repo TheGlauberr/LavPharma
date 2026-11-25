@@ -18,6 +18,12 @@ Verified facts reused across articles. Each line: fact, source, date checked. Re
 - Stability study for climatic zone IV (Art. 20). Same source. Checked 2026-11-24.
 - 2013 recognition regulation: PAHO level IV, USA, Canada, Australia, Switzerland, Japan, EMA; 10 business days review. Source: https://www.srs.gob.sv/wp-content/uploads/2022/09/REGLAMENTO-ESPECIAL-PARA-RECONOCIMIENTO-DE-REGISTROS-SANITARIOS-EXTRANJEROS.pdf. Checked 2026-11-24. Whether it is applied in practice: NOT confirmed.
 
+## Holder and local roles
+
+- Titular del Registro: person in whose name the medicine's licence is issued (RG Art. 3 num. 44). Profesional Químico Farmacéutico Responsable answers for quality and truthfulness of the product, authorized by the holder (Art. 3 num. 39). Third-party manufacturing: holder responsible (Art. 3 num. 15). Source: Reglamento General LM. Checked 2026-11-24.
+- Profesional or apoderado responsable inscribed with power of attorney before any procedure (RG Art. 104); holder must always have both (Art. 105); cancellation at holder's request (Art. 113). Checked 2026-11-24.
+- Ley de Medicamentos: false documents by holder or manufacturer are a cancellation ground (Art. 35 c); per-lot QC certificate from national industry or holders of import and marketing authorization, verification cost charged to the holder (Art. 39); holder modifying authorization conditions without prior approval is a very serious infraction (Art. 79 d; some Art. 79 items marked unconstitutional, d not marked). Checked 2026-11-24.
+
 ## Fees
 
 - Tarifario item 1.1 (registration, renewal, alternate manufacturer): USD 1,500 biologics/biotech/vaccines/innovators; 1,000 generics with bioequivalence; 600 other. Payments valid 12 months (Art. 4). Source: https://www.srs.gob.sv/wp-content/uploads/2025/10/tarifario-SRS.pdf. Checked 2026-11-24. Column mapping from PDF layout; confirm with Laura.
