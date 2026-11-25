@@ -13,13 +13,28 @@ export interface Resource extends ResourceFrontmatter {
   html: string;
 }
 
-/** Article folders: every directory not starting with "_" (ledgers, backlog). */
+/**
+ * Drafts (no reviewedBy) show only on Vercel previews and local dev, so Laura can read them
+ * there. Everywhere else, including production and any future host, only reviewed articles ship.
+ */
+const SHOW_DRAFTS = process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "development";
+
+/** True when both language files name a reviewer, i.e. Laura approved the article. */
+function isReviewed(slug: string): boolean {
+  return ["en", "es"].every((locale) => {
+    const file = path.join(CONTENT_DIR, slug, `${locale}.md`);
+    return fs.existsSync(file) && Boolean(matter(fs.readFileSync(file, "utf8")).data.reviewedBy);
+  });
+}
+
+/** Article folders: every directory not starting with "_" (ledgers, backlog), minus unreviewed drafts outside previews. */
 export function getResourceSlugs(): string[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
   return fs
     .readdirSync(CONTENT_DIR, { withFileTypes: true })
     .filter((entry) => entry.isDirectory() && !entry.name.startsWith("_"))
     .map((entry) => entry.name)
+    .filter((slug) => SHOW_DRAFTS || isReviewed(slug))
     .sort();
 }
 
