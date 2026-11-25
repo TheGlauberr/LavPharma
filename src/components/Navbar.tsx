@@ -1,21 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { Link, usePathname } from "@/i18n/navigation";
 import LanguageToggle from "./LanguageToggle";
 
 export default function Navbar() {
   const t = useTranslations("Nav");
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 50);
-    }
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -26,81 +26,74 @@ export default function Navbar() {
     { href: "/resources", label: t("resources") },
     { href: "/#contacto", label: t("contact") },
   ];
+  const isCurrent = (href: string) => href === "/resources" && pathname.startsWith("/resources");
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-[72px] ${
-        scrolled
-          ? "bg-navy-darker/95 backdrop-blur-xl shadow-lg border-b border-white/5"
-          : "bg-navy-darker/90 backdrop-blur-xl border-b border-white/5"
+    <header
+      className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur-xl transition-[border-color,box-shadow] duration-300 ${
+        scrolled ? "border-line shadow-[0_8px_24px_-20px_rgba(19,24,38,0.35)]" : "border-line"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex items-center justify-between h-full">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-accent-blue/40 rounded-lg">
-            <img
-              src="/logo-alt.svg"
-              alt="LAV PHARMA"
-              className="h-10 sm:h-11 w-auto"
-            />
+      <nav aria-label="Main" className="wrap flex h-16 items-center gap-3 md:h-[76px] md:gap-10">
+        <Link
+          href="/"
+          className="-my-1 flex-shrink-0 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-deep"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="LAV PHARMA" width={106} height={59} className="h-[46px] w-auto md:h-[56px]" />
+        </Link>
+
+        <ul className="ml-auto hidden items-center gap-8 lg:flex">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                aria-current={isCurrent(link.href) ? "page" : undefined}
+                className="text-[14.5px] text-mut transition-colors hover:text-ink aria-[current=page]:text-ink"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="ml-auto flex items-center gap-3 lg:ml-0 lg:gap-6">
+          <LanguageToggle />
+          <Link href="/#contacto" className="btn btn-sm hidden min-[400px]:inline-flex">
+            {t("contact")}
+            <ArrowRight size={16} aria-hidden="true" />
           </Link>
-
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-white/75 text-[13.5px] font-medium px-3.5 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all duration-150 cursor-pointer"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Right side */}
-          <div className="hidden md:flex items-center gap-3">
-            <LanguageToggle />
-            <Link
-              href="/#contacto"
-              className="bg-accent-blue hover:bg-accent-blue-hover text-white text-[13px] font-semibold px-4 py-2 rounded-lg transition-colors inline-flex items-center gap-1.5 cursor-pointer"
-            >
-              {t("contact")} →
-            </Link>
-          </div>
-
-          {/* Mobile hamburger */}
-          <div className="md:hidden flex items-center gap-3">
-            <LanguageToggle />
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 text-white cursor-pointer hover:text-white/80 transition-colors duration-200"
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => setMobileOpen((open) => !open)}
+            className="-mr-2 grid h-10 w-10 place-items-center rounded-lg text-ink hover:bg-soft lg:hidden"
+            aria-label="Menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-navy-darker/95 backdrop-blur-xl border-t border-white/5">
-          <div className="px-4 py-4 space-y-1">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block text-white/75 font-medium text-base px-3 py-2.5 rounded-lg hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
-              >
-                {link.label}
-              </Link>
+      {mobileOpen ? (
+        <div id="mobile-menu" className="border-t border-line bg-white lg:hidden">
+          <ul className="wrap py-2">
+            {links.map((link, i) => (
+              <li key={link.href} className={i > 0 ? "border-t border-line" : ""}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-between py-4 text-[16px] font-medium text-ink"
+                >
+                  {link.label}
+                  <ArrowRight size={16} aria-hidden="true" className="text-faint" />
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-      )}
-    </nav>
+      ) : null}
+    </header>
   );
 }
