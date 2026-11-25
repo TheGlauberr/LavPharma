@@ -1,206 +1,166 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/site";
+import Reveal from "./ui/Reveal";
+import SplitSection from "./ui/SplitSection";
 
-const WHATSAPP_NUMBER = "50372384539";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hola, los contacto desde lavpharma.com"
-)}`;
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mojywqwp";
+
+type Status = "idle" | "sending" | "success" | "error";
+
+interface FieldProps {
+  id: string;
+  name: string;
+  label: string;
+  placeholder: string;
+  type?: string;
+  required?: boolean;
+}
+
+function Field({ id, name, label, placeholder, type = "text", required = false }: FieldProps) {
+  return (
+    <div>
+      <label htmlFor={id} className="eyebrow mb-2 block text-[11px]">
+        {label}
+      </label>
+      <input id={id} type={type} name={name} required={required} placeholder={placeholder} className="field" />
+    </div>
+  );
+}
+
+function ContactDetails() {
+  const t = useTranslations("Contact.info");
+  const rows = [
+    {
+      label: t("email"),
+      content: (
+        <a href="mailto:info@lavpharma.com" className="hover:text-accent-deep">
+          info@lavpharma.com
+        </a>
+      ),
+    },
+    {
+      label: t("phone"),
+      content: (
+        <>
+          <a href="tel:+50372384539" className="block hover:text-accent-deep">
+            +503 7238 4539
+          </a>
+          <a href="tel:+50231859189" className="block hover:text-accent-deep">
+            +502 3185 9189
+          </a>
+        </>
+      ),
+    },
+    { label: t("location"), content: t("address") },
+  ];
+
+  return (
+    <div className="mt-10">
+      <dl className="border-b border-line">
+        {rows.map((row) => (
+          <div key={row.label} className="grid grid-cols-[96px_minmax(0,1fr)] gap-4 border-t border-line py-4">
+            <dt className="eyebrow pt-0.5 text-[11px]">{row.label}</dt>
+            <dd className="text-[15px] leading-relaxed">{row.content}</dd>
+          </div>
+        ))}
+      </dl>
+      <a
+        href={DEFAULT_WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-ghost mt-6 w-full sm:w-auto"
+      >
+        <MessageCircle size={16} aria-hidden="true" className="text-whatsapp-deep" />
+        WhatsApp
+      </a>
+    </div>
+  );
+}
 
 export default function Contact() {
   const t = useTranslations("Contact");
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
-
     const form = e.currentTarget;
-    const data = new FormData(form);
 
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        body: data,
+        body: new FormData(form),
         headers: { Accept: "application/json" },
       });
-
-      if (res.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
+      if (!res.ok) {
         setStatus("error");
+        return;
       }
+      setStatus("success");
+      form.reset();
     } catch {
       setStatus("error");
     }
   }
 
   return (
-    <section id="contacto" className="py-24 bg-navy">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 lg:mb-14">
+    <SplitSection
+      id="contacto"
+      eyebrow={t("badge")}
+      title={t("title")}
+      lead={t("subtitle")}
+      asideExtra={<ContactDetails />}
+    >
+      <Reveal>
+        <form onSubmit={handleSubmit} className="card grid gap-4 p-5 sm:p-8">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Field id="contact-name" name="name" required label={t("form.name")} placeholder={t("form.namePlaceholder")} />
+            <Field id="contact-company" name="company" label={t("form.company")} placeholder={t("form.companyPlaceholder")} />
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Field
+              id="contact-email"
+              name="email"
+              type="email"
+              required
+              label={t("form.email")}
+              placeholder={t("form.emailPlaceholder")}
+            />
+            <Field
+              id="contact-phone"
+              name="phone"
+              type="tel"
+              label={t("form.phone")}
+              placeholder={t("form.phonePlaceholder")}
+            />
+          </div>
           <div>
-            <div className="inline-flex items-center gap-2 bg-accent-blue/[0.18] rounded-full px-3.5 py-1.5 mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_0_3px_rgba(43,108,223,0.18)]" />
-              <span className="text-[#9DBEFF] text-[11px] tracking-[0.18em] uppercase font-semibold">
-                {t("badge")}
-              </span>
-            </div>
-            <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              {t("title")}
-            </h2>
+            <label htmlFor="contact-message" className="eyebrow mb-2 block text-[11px]">
+              {t("form.product")}
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              required
+              rows={5}
+              placeholder={t("form.productPlaceholder")}
+              className="field resize-none"
+            />
           </div>
-          <p className="text-gray-400 text-base lg:text-lg max-w-md leading-relaxed lg:text-right">
-            {t("subtitle")}
+          <button type="submit" disabled={status === "sending"} className="btn mt-2 w-full">
+            {status === "sending" ? "..." : t("form.submit")}
+            {status !== "sending" ? <ArrowRight size={16} aria-hidden="true" /> : null}
+          </button>
+          <p role="status" aria-live="polite" className="text-center text-sm empty:hidden">
+            {status === "success" ? <span className="text-ok">{t("form.success")}</span> : null}
+            {status === "error" ? <span className="text-red-600">{t("form.error")}</span> : null}
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
-          {/* Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white rounded-2xl p-5 sm:p-8"
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-              <div>
-                <label htmlFor="contact-name" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
-                  {t("form.name")}
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  name="name"
-                  required
-                  placeholder={t("form.namePlaceholder")}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-company" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
-                  {t("form.company")}
-                </label>
-                <input
-                  id="contact-company"
-                  type="text"
-                  name="company"
-                  placeholder={t("form.companyPlaceholder")}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-              <div>
-                <label htmlFor="contact-email" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
-                  {t("form.email")}
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  name="email"
-                  required
-                  placeholder={t("form.emailPlaceholder")}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="contact-phone" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
-                  {t("form.phone")}
-                </label>
-                <input
-                  id="contact-phone"
-                  type="tel"
-                  name="phone"
-                  placeholder={t("form.phonePlaceholder")}
-                  className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors"
-                />
-              </div>
-            </div>
-            <div className="mb-4">
-              <label htmlFor="contact-message" className="block font-mono text-[10.5px] text-gray-500 tracking-[0.08em] uppercase mb-1.5">
-                {t("form.product")}
-              </label>
-              <textarea
-                id="contact-message"
-                name="message"
-                required
-                rows={4}
-                placeholder={t("form.productPlaceholder")}
-                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3.5 py-3 text-navy-darker text-sm placeholder-gray-400 focus:outline-none focus:border-accent-blue transition-colors resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="w-full bg-accent-blue hover:bg-accent-blue-hover disabled:opacity-50 disabled:cursor-not-allowed text-white py-3.5 rounded-xl font-semibold text-sm transition-colors duration-200 cursor-pointer inline-flex items-center justify-center gap-2"
-            >
-              {status === "sending" ? "..." : t("form.submit")}
-              {status !== "sending" && (
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              )}
-            </button>
-
-            {status === "success" && (
-              <p className="text-green-600 text-sm text-center mt-3">{t("form.success")}</p>
-            )}
-            {status === "error" && (
-              <p className="text-red-600 text-sm text-center mt-3">{t("form.error")}</p>
-            )}
-          </form>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex gap-4 items-start">
-              <div className="w-10 h-10 rounded-xl bg-accent-blue/15 text-[#9DBEFF] grid place-items-center flex-shrink-0">
-                <Mail size={16} />
-              </div>
-              <div>
-                <div className="font-mono text-[10.5px] text-white/50 tracking-[0.08em] uppercase">{t("info.email")}</div>
-                <div className="text-white text-sm mt-1 leading-relaxed">
-                  <a href="mailto:info@lavpharma.com" className="hover:text-accent-blue transition-colors block">info@lavpharma.com</a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex gap-4 items-start">
-              <div className="w-10 h-10 rounded-xl bg-accent-blue/15 text-[#9DBEFF] grid place-items-center flex-shrink-0">
-                <Phone size={16} />
-              </div>
-              <div>
-                <div className="font-mono text-[10.5px] text-white/50 tracking-[0.08em] uppercase">{t("info.phone")}</div>
-                <div className="text-white text-sm mt-1 leading-relaxed">
-                  <a href="tel:+50372384539" className="hover:text-accent-blue transition-colors block">+503 7238 4539</a>
-                  <a href="tel:+50231859189" className="hover:text-accent-blue transition-colors block">+502 3185 9189</a>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-5 flex gap-4 items-start">
-              <div className="w-10 h-10 rounded-xl bg-accent-blue/15 text-[#9DBEFF] grid place-items-center flex-shrink-0">
-                <MapPin size={16} />
-              </div>
-              <div>
-                <div className="font-mono text-[10.5px] text-white/50 tracking-[0.08em] uppercase">{t("info.location")}</div>
-                <div className="text-white text-sm mt-1 leading-relaxed">{t("info.address")}</div>
-              </div>
-            </div>
-
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 w-full bg-[#1A8754] hover:bg-[#15703f] text-white py-3.5 rounded-xl font-semibold text-sm transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <MessageCircle size={14} />
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+        </form>
+      </Reveal>
+    </SplitSection>
   );
 }

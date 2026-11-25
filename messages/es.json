@@ -20,7 +20,8 @@
       "countries": "Mercados",
       "registrations": "Registros",
       "approval": "Aprobación",
-      "practice": "En práctica"
+      "practice": "En práctica",
+      "yearsSuffix": " años"
     },
     "journey": {
       "live": "En vivo · Proyecto #LP-4471",
@@ -44,7 +45,8 @@
       "avgTime": "Tiempo promedio",
       "approvalRate": "Tasa de aprobación",
       "localAgents": "Agentes locales",
-      "countriesCount": "10 países"
+      "countriesCount": "10 países",
+      "avgTimeValue": "90 días"
     }
   },
   "Services": {
@@ -109,6 +111,7 @@
     "title": "Alcance Internacional",
     "subtitle": "Conectamos fabricantes globales con el mercado latinoamericano a través de nuestra experiencia regulatoria.",
     "origin": {
+      "label": "Origen de los fabricantes",
       "badge": "ALCANCE GLOBAL",
       "subtitle": "Registramos productos de fabricantes en estos países, gestionando toda la documentación técnica y regulatoria necesaria.",
       "countries": {
@@ -193,6 +196,8 @@
     }
   },
   "Footer": {
+    "links": "Enlaces",
+    "chat": "Escríbenos",
     "rights": "Todos los derechos reservados.",
     "tagline": "Regulatory Pharmaceutical & Veterinary Services"
   },

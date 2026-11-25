@@ -20,7 +20,8 @@
       "countries": "Markets",
       "registrations": "Registrations",
       "approval": "Approval",
-      "practice": "In practice"
+      "practice": "In practice",
+      "yearsSuffix": " yr"
     },
     "journey": {
       "live": "Live · Project #LP-4471",
@@ -44,7 +45,8 @@
       "avgTime": "Avg. lead time",
       "approvalRate": "Approval rate",
       "localAgents": "Local agents",
-      "countriesCount": "10 countries"
+      "countriesCount": "10 countries",
+      "avgTimeValue": "90 days"
     }
   },
   "Services": {
@@ -109,6 +111,7 @@
     "title": "International Reach",
     "subtitle": "We connect global manufacturers with the Latin American market through our regulatory expertise.",
     "origin": {
+      "label": "Manufacturer origins",
       "badge": "GLOBAL REACH",
       "subtitle": "We register products from manufacturers in these countries, managing all necessary technical and regulatory documentation.",
       "countries": {
@@ -193,6 +196,8 @@
     }
   },
   "Footer": {
+    "links": "Links",
+    "chat": "Chat with us",
     "rights": "All rights reserved.",
     "tagline": "Regulatory Pharmaceutical & Veterinary Services"
   },
