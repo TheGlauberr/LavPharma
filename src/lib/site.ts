@@ -37,3 +37,6 @@ export function rssAlternates(locale: string): Record<string, string> {
 export function whatsappUrl(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
+/** WhatsApp link used by the site-wide buttons. */
+export const DEFAULT_WHATSAPP_URL = whatsappUrl("Hola, los contacto desde lavpharma.com");

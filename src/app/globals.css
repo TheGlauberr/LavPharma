@@ -2,61 +2,186 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand */
   --color-navy: #3D4456;
   --color-navy-dark: #2a2f3d;
   --color-navy-darker: #1a1f2e;
   --color-accent-blue: #4A90D9;
   --color-accent-blue-hover: #357abd;
-  --color-muted: #4b5563;
-  --color-card-border: #dce5f4;
-  --color-card-bg: #f0f4ff;
-  --color-card-bg-alt: #e8f0fe;
-  --color-whatsapp: #25D366;
   --color-accent-deep: #1E4FAA;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-deep: #1A8754;
 
-  --font-display: var(--font-display);
-
-  --animate-spin-slow: spin-slow 25s linear infinite;
-  --animate-pulse-soft: pulse-soft 4s ease-in-out infinite;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-fade-in-up: fade-in-up 0.8s ease-out both;
+  /* Precision system */
+  --color-ink: #131826;
+  --color-ink-soft: #262d42;
+  --color-mut: #5d6679;
+  --color-faint: #9aa3b5;
+  --color-line: #e4e8f0;
+  --color-line-strong: #b9c2d3;
+  --color-soft: #f5f7fb;
+  --color-tint: #eaf1fc;
+  --color-ok: #2E9E6A;
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
-@keyframes pulse-soft {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.05); }
+html {
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+  interpolate-size: allow-keywords;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+body {
+  background: #fff;
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+@layer components {
+  /* One container and one section rhythm for every page */
+  .wrap {
+    width: 100%;
+    max-width: 1264px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  .section {
+    padding-block: 72px;
+    border-top: 1px solid var(--color-line);
+  }
+  @media (min-width: 768px) {
+    .wrap { padding-inline: 32px; }
+  }
+  @media (min-width: 1024px) {
+    .section { padding-block: 120px; }
+  }
+
+  /* Small labels are the only place Geist Mono is used */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-mut);
+  }
+
+  .display {
+    font-size: clamp(40px, 6vw, 84px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+  .display em, .title em { font-style: normal; color: var(--color-accent-deep); }
+
+  .title {
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  .lead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-mut);
+  }
+  @media (min-width: 1024px) {
+    .lead { font-size: 19px; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.2;
+    border-radius: 10px;
+    padding: 14px 22px;
+    border: 1px solid var(--color-ink);
+    background: var(--color-ink);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+    background: var(--color-ink-soft);
+    box-shadow: 0 10px 24px -12px rgba(19, 24, 38, 0.5);
+  }
+  .btn:focus-visible, .btn-ghost:focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-ghost {
+    background: #fff;
+    color: var(--color-ink);
+    border-color: var(--color-line);
+  }
+  .btn-ghost:hover { background: #fff; border-color: var(--color-line-strong); }
+  .btn-sm { padding: 10px 16px; font-size: 14px; }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 16px;
+    box-shadow: 0 1px 0 #fff inset, 0 40px 80px -48px rgba(30, 79, 170, 0.35), 0 2px 6px rgba(19, 24, 38, 0.04);
+  }
+
+  /* Hairline grid that fades out from the top right */
+  .hairline-grid {
+    background-image:
+      linear-gradient(var(--color-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(900px 520px at 82% 30%, #000 0, transparent 75%);
+    mask-image: radial-gradient(900px 520px at 82% 30%, #000 0, transparent 75%);
+    opacity: 0.9;
+  }
+
+  .field {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: var(--color-ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .field::placeholder { color: var(--color-faint); }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-accent-deep);
+    box-shadow: 0 0 0 4px #e3ecfb;
+  }
 }
 
-/* Screen-reader only utility */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+/* Native accordion: animates where ::details-content is supported, plain toggle elsewhere */
+details.faq::details-content {
+  block-size: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+  transition: block-size 0.3s ease, content-visibility 0.3s allow-discrete;
 }
+details.faq[open]::details-content { block-size: auto; }
+details.faq summary::-webkit-details-marker { display: none; }
 
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -65,37 +190,74 @@
 }
 
 /* Resources article body (Markdown rendered at build time) */
-.article-body { color: var(--color-navy); font-size: 1.0625rem; line-height: 1.75; }
+.article-body { color: var(--color-ink); font-size: 17px; line-height: 1.7; }
 .article-body > * + * { margin-top: 1.25rem; }
 .article-body h2, .article-body h3 {
-  font-family: var(--font-display), Georgia, serif;
-  color: var(--color-navy-darker);
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
+  color: var(--color-ink);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
   scroll-margin-top: 96px;
+  text-wrap: balance;
 }
-.article-body h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); margin-top: 3rem; }
-.article-body h3 { font-size: 1.3rem; margin-top: 2.25rem; }
-.article-body a { color: var(--color-accent-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--color-card-border); }
-.article-body a:hover { text-decoration-color: var(--color-accent-blue); }
-.article-body strong { color: var(--color-navy-darker); font-weight: 600; }
-.article-body ul, .article-body ol { padding-left: 1.4rem; }
+.article-body h2 { font-size: clamp(26px, 1.4rem + 0.8vw, 30px); margin-top: 72px; margin-bottom: 20px; }
+.article-body > h2:first-child { margin-top: 64px; }
+.article-body h3 { font-size: 21px; letter-spacing: -0.02em; margin-top: 40px; }
+.article-body p, .article-body li { color: #2b3142; }
+.article-body a { color: var(--color-accent-deep); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #c6d4ee; }
+.article-body a:hover { text-decoration-color: var(--color-accent-deep); }
+.article-body strong { color: var(--color-ink); font-weight: 600; }
+.article-body ul, .article-body ol { padding-left: 1.3rem; }
 .article-body ul { list-style: disc; }
 .article-body ol { list-style: decimal; }
 .article-body li + li { margin-top: 0.5rem; }
 .article-body li::marker { color: var(--color-accent-blue); }
+.article-body ol li::marker { font-family: var(--font-mono); font-size: 0.85em; color: var(--color-mut); }
 .article-body blockquote {
-  border-left: 3px solid var(--color-accent-blue);
-  background: var(--color-card-bg);
-  border-radius: 0 0.75rem 0.75rem 0;
-  padding: 1rem 1.25rem;
-  color: var(--color-navy-darker);
+  border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-accent-deep);
+  background: var(--color-soft);
+  border-radius: 4px 14px 14px 4px;
+  padding: 18px 22px;
 }
-.article-body .table-scroll { overflow-x: auto; border: 1px solid var(--color-card-border); border-radius: 1rem; }
-.article-body table { width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.55; }
-.article-body th, .article-body td { padding: 0.8rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--color-card-border); }
-.article-body th { background: var(--color-card-bg); color: var(--color-navy-darker); font-weight: 600; }
-.article-body tr:last-child td { border-bottom: 0; }
-.article-body td:first-child { font-weight: 600; color: var(--color-navy-darker); min-width: 9rem; }
-.article-body sup a { text-decoration: none; font-size: 0.75em; font-family: ui-monospace, monospace; }
+.article-body hr { border: 0; border-top: 1px solid var(--color-line); }
+.article-body .table-scroll { overflow-x: auto; }
+.article-body table { width: 100%; border-collapse: collapse; font-size: 15.5px; line-height: 1.55; }
+.article-body th, .article-body td {
+  padding: 16px 16px 16px 0;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--color-line);
+}
+.article-body tr:last-child > td { border-bottom: 1px solid var(--color-line); }
+.article-body thead th {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mut);
+  padding-top: 0;
+  border-top: 0;
+}
+.article-body td:first-child {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mut);
+  width: 34%;
+  min-width: 7.5rem;
+}
+.article-body td + td { padding-right: 0; }
+.article-body sup { line-height: 0; }
+.article-body sup a {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--color-accent-deep);
+  margin-left: 2px;
+}

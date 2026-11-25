@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getTranslations, getMessages } from "next-intl/server";
@@ -12,8 +12,8 @@ import Analytics from "@/components/Analytics";
 import { localizedUrl, languageAlternates, rssAlternates, SITE_NAME } from "@/lib/site";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-display" });
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -75,11 +75,11 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className={`scroll-smooth ${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <JsonLd />
       </head>
-      <body className={`${inter.className} ${fraunces.variable} antialiased`}>
+      <body className="font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
