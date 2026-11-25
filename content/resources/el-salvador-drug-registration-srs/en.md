@@ -10,6 +10,7 @@ sector: human
 published: "2026-11-24"
 updated: "2026-11-24"
 lastVerified: "2026-11-24"
+reviewedBy: "Laura Vidal"
 faq:
   - q: "Is the DNM still the drug regulator in El Salvador?"
     a: "No. The Law of the Superintendencia de Regulación Sanitaria declared the DNM in dissolution and made the SRS its successor. The law entered into force on 7 August 2024, so registrations are now granted by the SRS."
