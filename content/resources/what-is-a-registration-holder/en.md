@@ -8,8 +8,9 @@ countries:
   - Central America
 sector: human
 published: "2026-11-24"
-updated: "2026-11-24"
-lastVerified: "2026-11-24"
+updated: "2026-11-25"
+lastVerified: "2026-11-25"
+reviewedBy: "Laura Vidal"
 faq:
   - q: "Is the registration holder the same as the manufacturer?"
     a: "Not necessarily. RTCA 11.03.59:18 defines the holder as the natural or legal person that owns the product, and the manufacturer as the authorized facility that makes it. When a third party manufactures, a manufacturing contract between the holder and the manufacturer is part of the file, and the holder remains responsible for the product."
@@ -20,7 +21,7 @@ faq:
   - q: "How do I change the holder of a registration?"
     a: "Under Annex 1 of the RTCA, a change of holder needs the authority's prior approval. The file includes proof of payment, an application signed by the profesional responsable, new labels, a document from the holder or its legal representative declaring the change, and a manufacturing contract with the new holder."
   - q: "Does my distributor need to hold the registration to import the product?"
-    a: "The RTCA application lists distributors separately from the holder, and adding or changing a distributor is a notification that does not need prior approval. Import and establishment licenses are a separate matter under each country's law."
+    a: "No. The RTCA application lists distributors separately from the holder. Although Annex 1 of the RTCA treats a change of distributor as a notification, in practice the authorities ask for an approval to change it. Even if you hold the registration, you need a local distributor to sell the product. Import and establishment licenses are a separate matter under each country's law."
 sources:
   - title: "RTCA 11.03.59:18 Productos Farmacéuticos. Medicamentos para Uso Humano. Requisitos de Registro Sanitario, and Annex II mutual recognition (Resolution 446-2021 COMIECO-XCIV, Diario Oficial of El Salvador, 7 July 2021)"
     publisher: "COMIECO, copy hosted by the Superintendencia de Regulación Sanitaria"
@@ -96,23 +97,27 @@ A change of holder is not a formality. Annex 1 of the RTCA lists it among the ch
 
 Panama's decree lists a similar set: an application signed by the profesional responsable, a legal document supporting the change, packaging and proof of payment.<sup><a href="#source-4">4</a></sup>
 
-Compare this with a distributor. The RTCA application lists distributors separately from the holder, and adding or changing a distributor is a simple notification that needs no prior approval.<sup><a href="#source-1">1</a></sup> Changing the legal representative or the profesional responsable needs prior approval and a new power of attorney.<sup><a href="#source-1">1</a></sup>
+Compare this with a distributor. The RTCA application lists distributors separately from the holder, and its Annex 1 treats adding or changing a distributor as a notification.<sup><a href="#source-1">1</a></sup> In practice the authorities ask for an approval to change distributors, but it is a much simpler filing than a change of holder. Changing the legal representative or the profesional responsable needs prior approval and a new power of attorney.<sup><a href="#source-1">1</a></sup>
 
 ## The options for a foreign manufacturer
 
-**1. Hold the registration yourself, as a foreign company.** The RTCA definition of holder sets no residence requirement; what must be local is the legal representative and the profesional responsable.<sup><a href="#source-1">1</a></sup> Panama's regulator confirms that registering from abroad requires a legal representative residing in Panama, authorized by the holder.<sup><a href="#source-5">5</a></sup> You keep ownership of the registration. You still need people in each country you can trust to file, answer observations and keep powers of attorney current.
+**1. Hold the registration yourself, as a foreign company.** The RTCA definition of holder sets no residence requirement; what must be local is the legal representative and the profesional responsable.<sup><a href="#source-1">1</a></sup> Panama's regulator confirms that registering from abroad requires a legal representative residing in Panama, authorized by the holder.<sup><a href="#source-5">5</a></sup> You keep ownership of the registration. You still need people in each country you can trust to file, answer observations and keep powers of attorney current, and a local distributor to sell the product.
 
 **2. Hold it through your own local subsidiary.** You keep control inside your group and have a local entity of your own. The cost is setting up and running a company in each country, which usually only pays off where sales volume is large.
 
 **3. Let your distributor hold it.** It is often the fastest way to start, because the distributor already has a local team. The trade off is control: in the eyes of the regulator the holder is the owner of the product.<sup><a href="#source-1">1</a></sup>
 
-**4. Appoint an independent regulatory company.** An independent firm can act as legal representative and profesional responsable while you remain the holder, or hold the registration for you under a contract that obliges it to transfer the registration back. Because it does not sell the product, it has no commercial reason to keep the registration from your next distributor. You do depend on another firm and its fees, so check its track record and the transfer terms before you sign.
+**4. Appoint an independent regulatory company.** An independent firm can act as legal representative and profesional responsable while you remain the holder, or hold the registration for you under a contract that obliges it to transfer the registration back. Because it does not sell the product, it has no commercial reason to keep the registration from your next distributor. You do depend on another firm and its fees, so check its track record and the transfer terms before you sign. If the firm holds the registration, there must also be a manufacturing contract between it and you as the manufacturer, and any later transfer depends on that contract or the assignment of the registration.
+
+## Our recommendation
+
+We recommend that the manufacturer holds the registration. That way you make the decisions about your products and brands, and you do not depend on your distributor's work plan.
 
 ## Risks of letting a distributor hold your registration
 
 - **You do not own the registration.** The regulator treats the holder as the owner of the product, and every later change needs the holder's document.<sup><a href="#source-1">1</a></sup>
-- **Switching distributors becomes a change of holder.** If you hold the registration, adding a new distributor is a notification. If the old distributor holds it, moving to a new one needs prior approval and a document from the current holder, which is the distributor you are leaving.<sup><a href="#source-1">1</a></sup>
+- **Switching distributors becomes a change of holder.** If you hold the registration, changing distributors is a simple filing. If the old distributor holds it, moving to a new one needs a change of holder with prior approval and a document from the current holder, which is the distributor you are leaving.<sup><a href="#source-1">1</a></sup>
 - **Your market access follows their decisions.** In El Salvador a registration lapses if the holder does not market the product within five years, or stops marketing it for three consecutive years.<sup><a href="#source-3">3</a></sup>
 - **Their compliance becomes your exposure.** False sworn statements and false documents are grounds for cancellation, whoever filed them.<sup><a href="#source-1">1</a>, <a href="#source-3">3</a></sup>
 
-If a distributor must hold the registration, write the exit into the contract: an obligation to sign the change of holder documents on request, delivery of the full dossier, and the powers of attorney you will need. See the [Central America registration explainer](/en/resources/central-america-rtca-11-03-59) for how one dossier serves several countries, and the [El Salvador guide](/en/resources/el-salvador-drug-registration-srs) for that country's rules on the profesional responsable.
+If a distributor must hold the registration, write the exit into the contract: an obligation to sign the change of holder documents on request, delivery of the full dossier, and the powers of attorney you will need. See the [El Salvador guide](/en/resources/el-salvador-drug-registration-srs) for that country's rules on the profesional responsable.

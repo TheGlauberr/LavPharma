@@ -8,8 +8,9 @@ countries:
   - El Salvador
 sector: human
 published: "2026-11-24"
-updated: "2026-11-24"
-lastVerified: "2026-11-24"
+updated: "2026-11-25"
+lastVerified: "2026-11-25"
+reviewedBy: "Laura Vidal"
 faq:
   - q: "¿La DNM sigue siendo la autoridad de medicamentos en El Salvador?"
     a: "No. La Ley de la Superintendencia de Regulación Sanitaria declaró en disolución a la DNM y estableció que la SRS la sucede. La ley entró en vigencia el 7 de agosto de 2024, por lo que hoy los registros los otorga la SRS."
@@ -142,7 +143,7 @@ El RTCA exige en general un registro por cada país o laboratorio fabricante, pe
 
 La ley de la SRS le permite reconocer oficialmente decisiones regulatorias de agencias catalogadas como de referencia por organismos internacionales, y otorgar el reconocimiento de registros conforme a los instrumentos de la integración centroamericana.<sup><a href="#source-1">1</a></sup>
 
-Un reglamento de 2013, que sigue publicado en el sitio de la SRS, establece una vía de reconocimiento para medicamentos registrados por agencias certificadas de nivel IV por la OPS y por las autoridades de Estados Unidos, Canadá, Australia, Suiza, Japón y la Agencia Europea de Medicamentos. Se exige igualmente el expediente completo del artículo 20, y la autoridad dispone de 10 días hábiles para el análisis técnico de una solicitud completa.<sup><a href="#source-5">5</a></sup> Consúltenos si su producto califica.
+Un reglamento de 2013, que sigue publicado en el sitio de la SRS, describe una vía de reconocimiento para medicamentos registrados por agencias de referencia como la FDA o la Agencia Europea de Medicamentos.<sup><a href="#source-5">5</a></sup> Según nuestra experiencia, la SRS no aplica hoy esa vía, así que no cuente con ella al planificar sus plazos. Una aprobación de una agencia de referencia sigue siendo útil en el expediente. Consúltenos por el estado actual.
 
 ## Tarifas
 

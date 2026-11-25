@@ -8,7 +8,7 @@ countries:
   - Centroamérica
 sector: human
 published: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-25"
 lastVerified: "2026-11-24"
 faq:
   - q: "¿Existe un registro sanitario único válido en toda Centroamérica?"
@@ -20,7 +20,7 @@ faq:
   - q: "¿Cuánto dura un registro sanitario?"
     a: "Cinco años desde su otorgamiento, renovable por períodos iguales, según los numerales 6.2 y 10 del RTCA. Un reconocimiento tiene la misma vigencia que el registro original."
   - q: "¿El mecanismo de evaluación conjunta con apoyo de la OPS sigue recibiendo expedientes?"
-    a: "Las últimas noticias públicas que encontramos son de 2021 y 2022. La OPS anunció que el mecanismo empezó a recibir expedientes el 1 de agosto de 2020, para medicamentos de síntesis química. No encontramos un aviso oficial actual sobre su estado, así que confírmelo con las autoridades antes de contar con él."
+    a: "Sí, según nuestra experiencia sigue recibiendo expedientes en 2026, pero no aplica a todos los medicamentos: solo admite ciertas moléculas. Antes de elegir esta ruta, confirme con las autoridades si su molécula califica."
   - q: "¿Panamá aplica el RTCA?"
     a: "Sí. Panamá firmó la Resolución 446-2021 y el RTCA incluye varias notas que aplican solo a Panamá. El Decreto Ejecutivo 27 de 2024, que reglamenta la Ley 419 de 2024, también exige cumplir las normas del RTCA adoptadas por la Dirección Nacional de Farmacia y Drogas y agrega un procedimiento abreviado para productos aprobados por autoridades de alto estándar."
 sources:
@@ -135,7 +135,7 @@ La evaluación conjunta es otra herramienta. No reconoce un registro existente: 
 - En agosto de 2022 la agencia oficial de noticias de Guatemala informó que el Ministerio de Salud se adhirió al mecanismo y que, luego de la verificación, cada producto podrá ingresar con el registro respectivo a cada país participante.<sup><a href="#source-6">6</a></sup>
 - En junio de 2022 la OPS describió la revisión conjunta como una comisión de los países participantes que verifica si un medicamento cumple la Reglamentación Técnica Centroamericana, y que termina con una revisión técnica única que debe anexarse al trámite de registro sanitario de cada país participante. Esa reunión de directores de regulación sanitaria de la región, la última noticia pública que encontramos, revisó el estado de la revisión conjunta de expedientes.<sup><a href="#source-5">5</a></sup>
 
-No encontramos ningún aviso oficial posterior a 2022 sobre si el mecanismo sigue recibiendo expedientes, cuántos ha evaluado o qué productos admite hoy. Trátelo como una opción a confirmar con las autoridades, no como una ruta segura.
+Las autoridades no publican avisos recientes sobre el mecanismo, pero según nuestra experiencia sigue recibiendo expedientes en 2026. No aplica a todos los medicamentos: solo admite ciertas moléculas, así que confirme primero si la suya califica.
 
 ## La posición de Panamá
 
@@ -165,8 +165,8 @@ La vigencia de cinco años proviene del RTCA, que aplica en los seis países.<su
 ## Cómo ordenar el trabajo
 
 1. **Revise primero el alcance.** Confirme que su producto no está en una categoría que queda a la legislación nacional (por ejemplo biológicos u homeopáticos) y revise las reglas de bioequivalencia y de patentes o protección de datos en cada país.<sup><a href="#source-1">1</a></sup>
-2. **Arme un expediente base según el numeral 7 del RTCA** y agregue las notas por país: estabilidad en zona IVb para Panamá, ejemplar de producto para Nicaragua y Panamá, y las opciones de CPP en Costa Rica, Guatemala, El Salvador y Honduras.<sup><a href="#source-1">1</a></sup>
+2. **Arme un expediente base según el numeral 7 del RTCA** y agregue las notas por país: estabilidad en zona IVb para Panamá, ejemplar de producto para Nicaragua y Panamá, y las opciones de CPP en Costa Rica, Guatemala, El Salvador y Honduras.<sup><a href="#source-1">1</a></sup> Pida un CPP para cada país: el certificado debe indicar el país al que se importará el producto, así que no se puede usar el mismo CPP para varios países.
 3. **Defina quién será el titular del registro en cada país** y nombre al representante legal y al profesional responsable. Vea [qué es el titular del registro sanitario](/resources/what-is-a-registration-holder).
 4. **Planifique los originales legalizados.** Cada autoridad pide originales o copias legalizadas según su propia normativa, y cada certificado debe seguir vigente al presentarse.<sup><a href="#source-1">1</a></sup>
-5. **Elija la ruta en cada país:** registro nacional, reconocimiento mutuo si el producto se fabrica en la región, el procedimiento abreviado de Panamá si su producto está aprobado por una autoridad de alto estándar listada, o la evaluación conjunta si las autoridades confirman que está abierta.<sup><a href="#source-1">1</a>, <a href="#source-3">3</a>, <a href="#source-8">8</a></sup>
+5. **Elija la ruta en cada país:** registro nacional, reconocimiento mutuo si el producto se fabrica en la región, el procedimiento abreviado de Panamá si su producto está aprobado por una autoridad de alto estándar listada, o la evaluación conjunta si su molécula está entre las que admite.<sup><a href="#source-1">1</a>, <a href="#source-3">3</a>, <a href="#source-8">8</a></sup>
 6. **Mantenga los expedientes al día después de la aprobación.** Las modificaciones post-registro siguen el Anexo 1 del RTCA en cada país donde tenga registro, y deben estar aprobadas antes de que se otorgue la renovación.<sup><a href="#source-1">1</a></sup>

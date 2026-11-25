@@ -8,8 +8,9 @@ countries:
   - El Salvador
 sector: human
 published: "2026-11-24"
-updated: "2026-11-24"
-lastVerified: "2026-11-24"
+updated: "2026-11-25"
+lastVerified: "2026-11-25"
+reviewedBy: "Laura Vidal"
 faq:
   - q: "Is the DNM still the drug regulator in El Salvador?"
     a: "No. The Law of the Superintendencia de Regulación Sanitaria declared the DNM in dissolution and made the SRS its successor. The law entered into force on 7 August 2024, so registrations are now granted by the SRS."
@@ -142,7 +143,7 @@ The RTCA generally requires one registration per manufacturing site or country, 
 
 The SRS law allows the SRS to officially recognize regulatory decisions of agencies that international bodies list as reference agencies, and to recognize registrations under the Central American integration instruments.<sup><a href="#source-1">1</a></sup>
 
-A 2013 regulation, still published on the SRS website, sets a recognition route for medicines registered by agencies certified at PAHO level IV and by the authorities of the United States, Canada, Australia, Switzerland, Japan and the European Medicines Agency. The full Article 20 dossier is still required, and the authority has 10 business days for the technical review of a complete file.<sup><a href="#source-5">5</a></sup> Ask us whether your product qualifies.
+A 2013 regulation, still published on the SRS website, describes a recognition route for medicines registered by reference agencies such as the FDA or the European Medicines Agency.<sup><a href="#source-5">5</a></sup> In our experience the SRS does not apply that route today, so do not count on it when planning timelines. An approval from a reference agency is still useful in the dossier. Ask us about the current status.
 
 ## Fees
 
