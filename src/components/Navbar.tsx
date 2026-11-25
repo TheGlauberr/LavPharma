@@ -59,7 +59,7 @@ export default function Navbar() {
 
         <div className="ml-auto flex items-center gap-3 lg:ml-0 lg:gap-6">
           <LanguageToggle />
-          <Link href="/#contacto" className="btn btn-sm hidden min-[400px]:inline-flex">
+          <Link href="/#contacto" className="btn btn-sm hidden min-[370px]:inline-flex">
             {t("contact")}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>

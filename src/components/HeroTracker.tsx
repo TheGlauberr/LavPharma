@@ -92,7 +92,7 @@ export default function HeroTracker({ live, project, status, stages, metrics }: 
 
       <dl className="mt-4 grid grid-cols-3 gap-4 border-t border-line pt-[18px]">
         {metrics.map((metric) => (
-          <div key={metric.label} className="flex min-w-0 flex-col-reverse gap-1">
+          <div key={metric.label} className="flex min-w-0 flex-col-reverse justify-end gap-1">
             <dt className="eyebrow text-[11px] sm:text-[12px]">{metric.label}</dt>
             <dd className="whitespace-nowrap text-[15.5px] font-semibold tracking-[-0.03em] sm:text-[19px]">
               {metric.value}
