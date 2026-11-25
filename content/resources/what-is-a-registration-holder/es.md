@@ -8,8 +8,9 @@ countries:
   - Centroamérica
 sector: human
 published: "2026-11-24"
-updated: "2026-11-24"
-lastVerified: "2026-11-24"
+updated: "2026-11-25"
+lastVerified: "2026-11-25"
+reviewedBy: "Laura Vidal"
 faq:
   - q: "¿El titular del registro es lo mismo que el fabricante?"
     a: "No necesariamente. El RTCA 11.03.59:18 define al titular como la persona natural o jurídica propietaria del producto, y al laboratorio fabricante como la entidad autorizada que lo fabrica. Cuando fabrica un tercero, el contrato de fabricación entre titular y fabricante forma parte del expediente, y el titular sigue siendo el responsable del producto."
@@ -20,7 +21,7 @@ faq:
   - q: "¿Cómo se cambia el titular de un registro?"
     a: "Según el Anexo 1 del RTCA, el cambio de titular requiere aprobación previa de la autoridad. Se presenta comprobante de pago, solicitud firmada por el profesional responsable, nuevas etiquetas, un documento del titular o su representante legal que declare el cambio y el contrato de fabricación con el nuevo titular."
   - q: "¿Mi distribuidor tiene que ser el titular para importar el producto?"
-    a: "La solicitud del RTCA registra a los distribuidores por separado del titular, y agregar o cambiar un distribuidor es una notificación que no requiere aprobación previa. Las licencias de importación y de establecimiento son un tema aparte según la ley de cada país."
+    a: "No. La solicitud del RTCA registra a los distribuidores por separado del titular. Aunque el Anexo 1 del RTCA trata el cambio de distribuidor como notificación, en la práctica las autoridades piden una aprobación para cambiarlo. Aun si usted es el titular, necesita un distribuidor local para comercializar el producto. Las licencias de importación y de establecimiento son un tema aparte según la ley de cada país."
 sources:
   - title: "RTCA 11.03.59:18 Productos Farmacéuticos. Medicamentos para Uso Humano. Requisitos de Registro Sanitario, y Anexo II de reconocimiento mutuo (Resolución 446-2021 COMIECO-XCIV, Diario Oficial de El Salvador, 7 de julio de 2021)"
     publisher: "COMIECO, copia publicada por la Superintendencia de Regulación Sanitaria"
@@ -96,23 +97,27 @@ El cambio de titular no es un simple trámite. El Anexo 1 del RTCA lo incluye en
 
 El decreto de Panamá pide algo similar: solicitud firmada por el profesional responsable, documento legal que avale el cambio, empaques y comprobante de pago.<sup><a href="#source-4">4</a></sup>
 
-Compare con un distribuidor. La solicitud del RTCA registra a los distribuidores por separado del titular, y el cambio o ampliación de distribuidor es una simple notificación que no requiere aprobación previa.<sup><a href="#source-1">1</a></sup> Cambiar al representante legal o al profesional responsable requiere aprobación previa y un nuevo poder.<sup><a href="#source-1">1</a></sup>
+Compare con un distribuidor. La solicitud del RTCA registra a los distribuidores por separado del titular, y su Anexo 1 trata el cambio o ampliación de distribuidor como una notificación.<sup><a href="#source-1">1</a></sup> En la práctica, las autoridades piden una aprobación para cambiar de distribuidor, pero es un trámite mucho más simple que cambiar de titular. Cambiar al representante legal o al profesional responsable requiere aprobación previa y un nuevo poder.<sup><a href="#source-1">1</a></sup>
 
 ## Las opciones de un fabricante extranjero
 
-**1. Ser usted el titular, como empresa extranjera.** La definición de titular del RTCA no exige residencia; lo que debe ser local es el representante legal y el profesional responsable.<sup><a href="#source-1">1</a></sup> La autoridad de Panamá confirma que para registrar desde otro país se requiere un representante legal que resida en Panamá, autorizado por el titular.<sup><a href="#source-5">5</a></sup> Usted conserva la propiedad del registro. Igual necesita en cada país personas de confianza para presentar, responder observaciones y mantener los poderes al día.
+**1. Ser usted el titular, como empresa extranjera.** La definición de titular del RTCA no exige residencia; lo que debe ser local es el representante legal y el profesional responsable.<sup><a href="#source-1">1</a></sup> La autoridad de Panamá confirma que para registrar desde otro país se requiere un representante legal que resida en Panamá, autorizado por el titular.<sup><a href="#source-5">5</a></sup> Usted conserva la propiedad del registro. Igual necesita en cada país personas de confianza para presentar, responder observaciones y mantener los poderes al día, y un distribuidor local para comercializar el producto.
 
 **2. Tener el registro a nombre de su propia filial local.** El control queda dentro de su grupo y tiene una entidad local propia. El costo es crear y mantener una empresa en cada país, algo que normalmente solo se justifica con volúmenes de venta grandes.
 
 **3. Dejar que su distribuidor sea el titular.** Suele ser la forma más rápida de empezar, porque el distribuidor ya tiene equipo local. El costo es el control: para la autoridad, el titular es el propietario del producto.<sup><a href="#source-1">1</a></sup>
 
-**4. Designar una empresa regulatoria independiente.** Una firma independiente puede actuar como representante legal y profesional responsable mientras usted sigue siendo el titular, o tener el registro a su nombre bajo un contrato que la obligue a devolverlo. Como no vende el producto, no tiene un motivo comercial para retener el registro frente a su próximo distribuidor. Sí depende usted de otra firma y de sus honorarios, así que revise su trayectoria y las condiciones de traspaso antes de firmar.
+**4. Designar una empresa regulatoria independiente.** Una firma independiente puede actuar como representante legal y profesional responsable mientras usted sigue siendo el titular, o tener el registro a su nombre bajo un contrato que la obligue a devolverlo. Como no vende el producto, no tiene un motivo comercial para retener el registro frente a su próximo distribuidor. Sí depende usted de otra firma y de sus honorarios, así que revise su trayectoria y las condiciones de traspaso antes de firmar. Si la firma es la titular, también debe existir un contrato de fabricación entre ella y usted como fabricante, y el traspaso posterior depende de lo que diga ese contrato o la cesión de titularidad.
+
+## Nuestra recomendación
+
+Recomendamos que el fabricante sea el titular. Así usted toma las decisiones sobre sus productos y sus marcas, y no depende del plan de trabajo de su distribuidor.
 
 ## Riesgos de que el distribuidor sea el titular
 
 - **El registro no es suyo.** La autoridad trata al titular como propietario del producto, y cada cambio posterior requiere un documento del titular.<sup><a href="#source-1">1</a></sup>
-- **Cambiar de distribuidor se vuelve un cambio de titular.** Si usted es el titular, agregar un distribuidor nuevo es una notificación. Si el titular es el distribuidor anterior, pasar a uno nuevo requiere aprobación previa y un documento del titular actual, es decir, del distribuidor que usted deja.<sup><a href="#source-1">1</a></sup>
+- **Cambiar de distribuidor se vuelve un cambio de titular.** Si usted es el titular, cambiar de distribuidor es un trámite sencillo. Si el titular es el distribuidor anterior, pasar a uno nuevo requiere un cambio de titular con aprobación previa y un documento del titular actual, es decir, del distribuidor que usted deja.<sup><a href="#source-1">1</a></sup>
 - **Su acceso al mercado depende de sus decisiones.** En El Salvador el registro caduca si el titular no comercializa el producto en cinco años o deja de comercializarlo durante tres años consecutivos.<sup><a href="#source-3">3</a></sup>
 - **Su cumplimiento se vuelve su riesgo.** Las declaraciones juradas falsas y los documentos falsos son causa de cancelación, sin importar quién los presentó.<sup><a href="#source-1">1</a>, <a href="#source-3">3</a></sup>
 
-Si un distribuidor debe ser el titular, deje la salida escrita en el contrato: la obligación de firmar los documentos del cambio de titular cuando usted lo pida, la entrega del expediente completo y los poderes que va a necesitar. Vea la [guía sobre el registro en Centroamérica](/resources/central-america-rtca-11-03-59) para saber cómo un expediente sirve para varios países, y la [guía de El Salvador](/resources/el-salvador-drug-registration-srs) para las reglas del profesional responsable en ese país.
+Si un distribuidor debe ser el titular, deje la salida escrita en el contrato: la obligación de firmar los documentos del cambio de titular cuando usted lo pida, la entrega del expediente completo y los poderes que va a necesitar. Vea la [guía de El Salvador](/resources/el-salvador-drug-registration-srs) para las reglas del profesional responsable en ese país.

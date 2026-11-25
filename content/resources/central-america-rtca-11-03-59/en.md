@@ -8,7 +8,7 @@ countries:
   - Central America
 sector: human
 published: "2026-11-24"
-updated: "2026-11-24"
+updated: "2026-11-25"
 lastVerified: "2026-11-24"
 faq:
   - q: "Is there a single drug registration valid in all of Central America?"
@@ -20,7 +20,7 @@ faq:
   - q: "How long is a registration valid?"
     a: "Five years from the date it is granted, renewable for equal periods, under sections 6.2 and 10 of the RTCA. A recognition keeps the same validity as the original registration."
   - q: "Is the PAHO joint evaluation mechanism still accepting dossiers?"
-    a: "The last public updates we found are from 2021 and 2022. PAHO announced that the mechanism began receiving dossiers on 1 August 2020, for chemical synthesis medicines. We found no current official notice on its status, so confirm with the authorities before you plan on it."
+    a: "Yes, in our experience it is still accepting dossiers in 2026, but it does not cover every medicine: it only takes certain molecules. Before choosing this route, confirm with the authorities that your molecule qualifies."
   - q: "Does Panama follow the RTCA?"
     a: "Yes. Panama signed Resolution 446-2021, and the RTCA includes several notes that apply only to Panama. Panama's Executive Decree 27 of 2024, which regulates Law 419 of 2024, also requires compliance with the RTCA norms adopted by its Dirección Nacional de Farmacia y Drogas and adds an abbreviated route for products approved by high standard authorities."
 sources:
@@ -135,7 +135,7 @@ The joint evaluation mechanism is a different tool. It does not recognize an exi
 - In August 2022 Guatemala's official news agency reported that the health ministry had joined the mechanism, and that after verification each product could enter each participating country with that country's own registration.<sup><a href="#source-6">6</a></sup>
 - In June 2022 PAHO described the joint review as a commission of the participating countries that checks whether a medicine meets the Central American technical regulations, ending in a single technical review that must be attached to the registration process of each participating country. That meeting of the region's regulatory directors, the last public update we found, reviewed the status of the joint evaluation of dossiers.<sup><a href="#source-5">5</a></sup>
 
-We found no official notice after 2022 on whether the mechanism still receives dossiers, how many it has reviewed, or its current product scope. Treat it as an option to confirm with the authorities, not as a planned route.
+The authorities do not publish recent notices about the mechanism, but in our experience it is still accepting dossiers in 2026. It does not cover every medicine: it only takes certain molecules, so first confirm that yours qualifies.
 
 ## Panama's position
 
@@ -165,8 +165,8 @@ The five year validity comes from the RTCA, which applies in all six countries.<
 ## Practical sequencing
 
 1. **Check scope first.** Confirm your product is not in a category left to national law (for example biologics or homeopathics), and check bioequivalence and patent or data protection rules in each target country.<sup><a href="#source-1">1</a></sup>
-2. **Build one core dossier to section 7 of the RTCA**, then add the country notes: zone IVb stability for Panama, a product unit for Nicaragua and Panama, and the CPP options in Costa Rica, Guatemala, El Salvador and Honduras.<sup><a href="#source-1">1</a></sup>
+2. **Build one core dossier to section 7 of the RTCA**, then add the country notes: zone IVb stability for Panama, a product unit for Nicaragua and Panama, and the CPP options in Costa Rica, Guatemala, El Salvador and Honduras.<sup><a href="#source-1">1</a></sup> Request one CPP per country: the certificate must name the country the product will be imported into, so the same CPP cannot be used for several countries.
 3. **Decide who holds the registration in each country** and appoint the local legal representative and profesional responsable. See [what a registration holder is](/en/resources/what-is-a-registration-holder).
 4. **Plan legalized originals.** Each authority needs originals or legalized copies, legalized under its own rules, and every certificate must still be valid when filed.<sup><a href="#source-1">1</a></sup>
-5. **Pick the route per country:** a national registration, mutual recognition if the product is made in the region, Panama's abbreviated route if your product is approved by a listed high standard authority, or the joint evaluation if the authorities confirm it is open.<sup><a href="#source-1">1</a>, <a href="#source-3">3</a>, <a href="#source-8">8</a></sup>
+5. **Pick the route per country:** a national registration, mutual recognition if the product is made in the region, Panama's abbreviated route if your product is approved by a listed high standard authority, or the joint evaluation if your molecule is one it accepts.<sup><a href="#source-1">1</a>, <a href="#source-3">3</a>, <a href="#source-8">8</a></sup>
 6. **Keep the files in step after approval.** Post-registration changes follow Annex 1 of the RTCA in every country where you hold a registration, and changes must be approved before renewal is granted.<sup><a href="#source-1">1</a></sup>
