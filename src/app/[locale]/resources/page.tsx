@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/components/Footer";
 import FeaturedResource from "@/components/resources/FeaturedResource";
 import ResourceRow from "@/components/resources/ResourceRow";
+import Reveal from "@/components/ui/Reveal";
 import { getResources, resourcePath } from "@/lib/resources/content";
 import { resourcesMetadata } from "@/lib/resources/metadata";
 
@@ -30,42 +31,33 @@ export default async function ResourcesIndex({ params }: PageProps) {
 
   return (
     <main>
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#F0F6FF] to-[#E4EEFB] pt-32 pb-16 sm:pt-40 sm:pb-20">
-        <div className="pointer-events-none absolute top-[-10%] right-[5%] h-[420px] w-[420px] rounded-full bg-accent-blue/[0.07] blur-[120px]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 bg-accent-blue/10 rounded-full px-3.5 py-1.5 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shadow-[0_0_0_3px_rgba(43,108,223,0.18)]" />
-            <span className="text-accent-deep text-[11px] tracking-[0.18em] uppercase font-semibold">
-              {t("badge")}
-            </span>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-end">
-            <h1 className="text-navy-darker text-4xl sm:text-5xl lg:text-6xl font-display font-medium leading-[1.05] tracking-tight">
-              {t.rich("title", {
-                em: (chunks) => <em className="italic font-normal text-accent-deep">{chunks}</em>,
-              })}
+      <section className="relative overflow-hidden">
+        <div aria-hidden="true" className="hairline-grid pointer-events-none absolute inset-0" />
+        <div className="wrap relative grid gap-6 py-14 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end lg:gap-[72px] lg:py-[104px]">
+          <div>
+            <p className="eyebrow">{t("badge")}</p>
+            <h1 className="mt-6 text-[clamp(38px,5vw,68px)] font-semibold leading-[1.0] tracking-[-0.045em] text-balance">
+              {t.rich("title", { em: (chunks) => <em className="not-italic text-accent-deep">{chunks}</em> })}
             </h1>
-            <p className="text-gray-500 text-base lg:text-[17px] leading-relaxed max-w-md lg:justify-self-end">
-              {t("lead")}
-            </p>
           </div>
+          <p className="lead max-w-[460px]">{t("lead")}</p>
         </div>
       </section>
 
-      <section className="bg-white pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8">
+      <section className="border-t border-line pt-10 pb-[72px] lg:pt-14 lg:pb-[120px]">
+        <div className="wrap">
           {featured ? (
-            <FeaturedResource article={featured} locale={locale} />
+            <Reveal>
+              <FeaturedResource article={featured} locale={locale} />
+            </Reveal>
           ) : (
-            <p className="py-16 text-muted text-lg">{t("empty")}</p>
+            <p className="py-16 text-lg text-mut">{t("empty")}</p>
           )}
 
           {rest.length > 0 ? (
-            <div className="mt-20 grid gap-8 lg:grid-cols-[14rem_1fr]">
-              <h2 className="text-[11px] tracking-[0.18em] uppercase font-semibold text-accent-deep lg:pt-8">
-                {t("all")}
-              </h2>
-              <ul className="border-b border-card-border">
+            <div className="mt-20 grid gap-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-[72px]">
+              <h2 className="eyebrow lg:pt-8">{t("all")}</h2>
+              <ul className="border-b border-line">
                 {rest.map((article) => (
                   <ResourceRow key={article.slug} article={article} locale={locale} />
                 ))}

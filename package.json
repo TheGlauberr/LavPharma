@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --test src/lib/resources/validate.test.mjs",
+    "test": "node --test src/lib/resources/validate.test.mjs src/lib/resources/toc.test.mjs",
     "check:resources": "node scripts/check-resources.mjs"
   },
   "dependencies": {

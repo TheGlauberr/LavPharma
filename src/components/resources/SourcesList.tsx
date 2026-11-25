@@ -11,29 +11,28 @@ export default async function SourcesList({ sources, locale }: SourcesListProps)
   const t = await getTranslations("Resources");
 
   return (
-    <section aria-labelledby="sources-heading" className="mt-16">
-      <h2
-        id="sources-heading"
-        className="font-display text-navy-darker text-2xl sm:text-3xl font-medium tracking-tight mb-6"
-      >
+    <section aria-labelledby="sources-heading" className="mt-[72px]">
+      <h2 id="sources-heading" className="mb-5 text-[clamp(26px,1.4rem+0.8vw,30px)] font-semibold leading-[1.15] tracking-[-0.035em] scroll-mt-24">
         {t("sourcesTitle")}
       </h2>
-      <ol className="space-y-4">
+      <ol className="border-b border-line">
         {sources.map((source, i) => (
-          <li key={source.url} id={`source-${i + 1}`} className="flex gap-4 text-[15px] leading-relaxed">
-            <span className="font-mono text-[12px] text-accent-deep pt-1 w-6 flex-shrink-0">
-              [{i + 1}]
-            </span>
+          <li
+            key={source.url}
+            id={`source-${i + 1}`}
+            className="grid scroll-mt-24 grid-cols-[32px_minmax(0,1fr)] gap-3 border-t border-line py-4 text-[15px] leading-relaxed target:bg-soft"
+          >
+            <span className="pt-0.5 font-mono text-[12px] font-medium text-accent-deep">{i + 1}</span>
             <span className="min-w-0">
               <a
                 href={source.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-navy-darker font-medium underline decoration-card-border underline-offset-4 hover:decoration-accent-blue break-words"
+                className="break-words font-medium text-ink underline decoration-line-strong underline-offset-4 hover:decoration-accent-deep"
               >
                 {source.title}
               </a>
-              <span className="text-muted">
+              <span className="text-mut">
                 {" "}
                 {source.publisher}, {t("accessed", { date: formatDate(source.accessed, locale) })}.
               </span>

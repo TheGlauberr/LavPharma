@@ -5,12 +5,15 @@ import ArticleBody from "@/components/resources/ArticleBody";
 import ArticleCta from "@/components/resources/ArticleCta";
 import ArticleHeader from "@/components/resources/ArticleHeader";
 import ArticleJsonLd from "@/components/resources/ArticleJsonLd";
+import ArticleToc from "@/components/resources/ArticleToc";
 import AuthorBox from "@/components/resources/AuthorBox";
 import FaqList from "@/components/resources/FaqList";
+import LastVerified from "@/components/resources/LastVerified";
 import RelatedResources from "@/components/resources/RelatedResources";
 import SourcesList from "@/components/resources/SourcesList";
 import { getResource, getResourceParams, resourcePath } from "@/lib/resources/content";
 import { resourcesMetadata } from "@/lib/resources/metadata";
+import { extractHeadings } from "@/lib/resources/toc";
 
 export const dynamicParams = false;
 
@@ -42,28 +45,31 @@ export default async function ResourceArticle({ params }: PageProps) {
   const t = await getTranslations("Resources");
   const tNav = await getTranslations("Nav");
   const article = getResource(slug, locale);
+  const toc = [
+    ...extractHeadings(article.html),
+    { id: "faq-heading", text: t("faqTitle") },
+    { id: "sources-heading", text: t("sourcesTitle") },
+  ];
 
   return (
     <main>
-      <ArticleJsonLd
-        article={article}
-        homeLabel={t("breadcrumbHome")}
-        sectionLabel={tNav("resources")}
-      />
-      <ArticleHeader article={article} />
-      <div className="bg-white pb-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+      <ArticleJsonLd article={article} homeLabel={t("breadcrumbHome")} sectionLabel={tNav("resources")} />
+      <article className="wrap grid grid-cols-1 gap-12 pt-8 pb-[72px] lg:grid-cols-[minmax(0,760px)_260px] lg:justify-between lg:gap-16 lg:pt-14 lg:pb-[120px] xl:grid-cols-[minmax(0,760px)_280px] xl:gap-24">
+        <div className="min-w-0">
+          <ArticleHeader article={article} />
           <ArticleBody html={article.html} />
           <FaqList items={article.faq} />
           <SourcesList sources={article.sources} locale={locale} />
-          <p className="mt-10 border-l-2 border-card-border pl-4 text-[14px] leading-relaxed text-muted">
-            {t("disclaimer")}
-          </p>
+          <p className="mt-10 border-l-2 border-line pl-4 text-[14px] leading-relaxed text-mut">{t("disclaimer")}</p>
           <AuthorBox reviewedBy={article.reviewedBy} />
           <ArticleCta country={article.countries.length === 1 ? article.countries[0] : undefined} />
           <RelatedResources slugs={article.related} locale={locale} />
         </div>
-      </div>
+        <aside className="hidden lg:sticky lg:top-[104px] lg:mt-[136px] lg:grid lg:gap-8 lg:self-start">
+          <LastVerified date={article.lastVerified} locale={locale} />
+          <ArticleToc label={t("onThisPage")} entries={toc} />
+        </aside>
+      </article>
       <Footer />
     </main>
   );

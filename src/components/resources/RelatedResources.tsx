@@ -15,14 +15,11 @@ export default async function RelatedResources({ slugs, locale }: RelatedResourc
 
   const t = await getTranslations("Resources");
   return (
-    <section aria-labelledby="related-heading" className="mt-16">
-      <h2
-        id="related-heading"
-        className="text-[11px] tracking-[0.18em] uppercase font-semibold text-accent-deep mb-2"
-      >
+    <section aria-labelledby="related-heading" className="mt-[72px]">
+      <h2 id="related-heading" className="eyebrow mb-3">
         {t("relatedTitle")}
       </h2>
-      <ul className="border-b border-card-border">
+      <ul className="border-b border-line">
         {articles.map((article) => (
           <ResourceRow key={article.slug} article={article} locale={locale} />
         ))}

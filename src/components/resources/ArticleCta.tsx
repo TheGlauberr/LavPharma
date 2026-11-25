@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { whatsappUrl } from "@/lib/site";
 
@@ -12,41 +12,27 @@ export default async function ArticleCta({ country }: ArticleCtaProps) {
   const place = country ?? t("ctaDefaultCountry");
 
   return (
-    <section
-      aria-labelledby="cta-heading"
-      className="relative mt-16 overflow-hidden rounded-2xl bg-navy-darker p-7 sm:p-10"
-    >
-      <svg
+    <section aria-labelledby="cta-heading" className="relative mt-10 overflow-hidden rounded-2xl bg-ink p-6 text-white sm:p-10">
+      <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 opacity-[0.12]"
-        viewBox="0 0 100 100"
-        fill="none"
-      >
-        <circle cx="50" cy="50" r="40" stroke="#4A90D9" strokeWidth="0.6" />
-        <circle cx="50" cy="50" r="28" stroke="#4A90D9" strokeWidth="0.6" />
-        <circle cx="50" cy="50" r="16" stroke="#4A90D9" strokeWidth="0.6" />
-      </svg>
-      <h2
-        id="cta-heading"
-        className="relative font-display text-white text-2xl sm:text-3xl font-medium tracking-tight max-w-xl"
-      >
+        className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(420px_260px_at_100%_0%,#000,transparent_75%)]"
+      />
+      <h2 id="cta-heading" className="relative max-w-xl text-[26px] font-semibold leading-[1.15] tracking-[-0.03em] sm:text-[30px]">
         {t("ctaTitle", { country: place })}
       </h2>
-      <p className="relative mt-3 text-gray-400 text-base leading-relaxed max-w-xl">{t("ctaBody")}</p>
-      <div className="relative mt-7 flex flex-col sm:flex-row gap-3">
-        <Link
-          href="/#contacto"
-          className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent-blue px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-blue-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-        >
-          {t("ctaButton")} →
+      <p className="relative mt-3 max-w-xl text-[16px] leading-relaxed text-white/70">{t("ctaBody")}</p>
+      <div className="relative mt-7 flex flex-col gap-3 sm:flex-row">
+        <Link href="/#contacto" className="btn border-white bg-white text-ink hover:bg-white/90">
+          {t("ctaButton")}
+          <ArrowRight size={16} aria-hidden="true" />
         </Link>
         <a
           href={whatsappUrl(t("ctaWhatsappMessage"))}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 rounded-lg border border-whatsapp/30 bg-whatsapp/10 px-5 py-3 text-sm font-medium text-whatsapp transition-colors hover:bg-whatsapp/20"
+          className="btn border-white/20 bg-transparent text-white hover:border-white/40 hover:bg-white/5"
         >
-          <MessageCircle size={16} />
+          <MessageCircle size={16} aria-hidden="true" className="text-whatsapp" />
           {t("ctaWhatsapp")}
         </a>
       </div>
