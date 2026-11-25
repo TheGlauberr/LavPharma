@@ -12,7 +12,7 @@
   "Hero": {
     "label": "Regulatory Affairs · Pharma & Veterinary",
     "title": "Your fastest path to <em>Latin American</em> markets.",
-    "subtitle": "We handle sanitary registrations, dossier compilation, and ongoing regulatory compliance across 10 LATAM jurisdictions — so your products launch on schedule.",
+    "subtitle": "We handle sanitary registrations, dossier compilation, and ongoing regulatory compliance across 10 LATAM jurisdictions, so your products launch on schedule.",
     "cta": "Start a registration",
     "whatsapp": "WhatsApp",
     "dossiers": "Active dossiers in 10 markets",
@@ -144,13 +144,13 @@
     "lead": "For foreign companies entering Latin America, backed by staff with extensive industry experience, registering under manufacturer, holding, or product holder modalities and contract-manufactured products.",
     "mission": {
       "title": "Mission",
-      "headline": "To unlock LATAM markets — accurately, on schedule, on the first filing.",
-      "text": "We provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, veterinary products, cosmetics, food, medical supplies, and health products — ensuring compliance with current regulations."
+      "headline": "To unlock LATAM markets accurately, on schedule and on the first filing.",
+      "text": "We provide specialized services in the management, registration, and obtaining of permits for the distribution of medications, veterinary products, cosmetics, food, medical supplies, and health products, ensuring compliance with current regulations."
     },
     "vision": {
       "title": "Vision",
       "headline": "To be a strategic ally for regulatory and commercial purposes.",
-      "text": "For companies in the health, veterinary, cosmetic, medical supplies, hygiene, and food sectors — both national and international."
+      "text": "For companies in the health, veterinary, cosmetic, medical supplies, hygiene, and food sectors, both national and international."
     },
     "valuesTitle": "Our Values",
     "valuesPrinciples": "PRINCIPLES",
@@ -178,7 +178,7 @@
       "company": "Company",
       "companyPlaceholder": "Acme Pharmaceuticals",
       "product": "Product type & target markets",
-      "productPlaceholder": "e.g. Generic atorvastatin 20mg — seeking registration in Mexico, Brazil, Colombia.",
+      "productPlaceholder": "e.g. Generic atorvastatin 20mg. Seeking registration in Guatemala, Panama and Ecuador.",
       "submit": "Send message",
       "success": "Message sent successfully! We'll get back to you within one business day.",
       "error": "There was an error sending the message. Please try again."
