@@ -111,8 +111,10 @@ export default function Hero() {
           </Reveal>
         </div>
       </section>
-      <Stats />
-      <Markets />
+      <div className="surface-band">
+        <Stats />
+        <Markets />
+      </div>
     </>
   );
 }

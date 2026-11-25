@@ -46,14 +46,6 @@ export default async function ArticleHeader({ article }: ArticleHeaderProps) {
       <div className="mt-6 lg:hidden">
         <LastVerified date={article.lastVerified} locale={article.locale} />
       </div>
-
-      <aside
-        aria-label={t("answerLabel")}
-        className="mt-8 rounded-[4px_14px_14px_4px] border border-l-[3px] border-line border-l-accent-deep bg-soft px-[22px] py-[22px] lg:mt-10 lg:px-8 lg:py-7"
-      >
-        <p className="eyebrow">{t("answerLabel")}</p>
-        <p className="mt-2.5 text-[17px] leading-[1.6] tracking-[-0.01em] lg:text-[19px]">{article.answer}</p>
-      </aside>
     </header>
   );
 }

@@ -9,7 +9,7 @@ export default function International() {
   const t = useTranslations("International");
 
   return (
-    <SplitSection id="internacional" eyebrow={t("origin.badge")} title={t("title")} lead={t("subtitle")}>
+    <SplitSection id="internacional" surface="tint" eyebrow={t("origin.badge")} title={t("title")} lead={t("subtitle")}>
       <div>
         <GroupHeading title={t("origin.label")} count={ORIGIN_KEYS.length} />
         <p className="max-w-[560px] border-t border-line pt-5 pb-6 text-[15px] leading-relaxed text-mut">

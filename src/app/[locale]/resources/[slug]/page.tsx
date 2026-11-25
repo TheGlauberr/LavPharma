@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Footer from "@/components/Footer";
+import ArticleAnswer from "@/components/resources/ArticleAnswer";
 import ArticleBody from "@/components/resources/ArticleBody";
 import ArticleCta from "@/components/resources/ArticleCta";
 import ArticleHeader from "@/components/resources/ArticleHeader";
@@ -54,21 +55,30 @@ export default async function ResourceArticle({ params }: PageProps) {
   return (
     <main>
       <ArticleJsonLd article={article} homeLabel={t("breadcrumbHome")} sectionLabel={tNav("resources")} />
-      <article className="wrap grid grid-cols-1 gap-12 pt-8 pb-[72px] lg:grid-cols-[minmax(0,760px)_260px] lg:justify-between lg:gap-16 lg:pt-14 lg:pb-[120px] xl:grid-cols-[minmax(0,760px)_280px] xl:gap-24">
-        <div className="min-w-0">
-          <ArticleHeader article={article} />
-          <ArticleBody html={article.html} />
-          <FaqList items={article.faq} />
-          <SourcesList sources={article.sources} locale={locale} />
-          <p className="mt-10 border-l-2 border-line pl-4 text-[14px] leading-relaxed text-mut">{t("disclaimer")}</p>
-          <AuthorBox reviewedBy={article.reviewedBy} />
-          <ArticleCta country={article.countries.length === 1 ? article.countries[0] : undefined} />
-          <RelatedResources slugs={article.related} locale={locale} />
+      <article>
+        <div className="surface-band border-b border-line">
+          <div className="wrap pt-8 pb-10 lg:pt-14 lg:pb-14">
+            <div className="max-w-[760px]">
+              <ArticleHeader article={article} />
+            </div>
+          </div>
         </div>
-        <aside className="hidden lg:sticky lg:top-[104px] lg:mt-[136px] lg:grid lg:gap-8 lg:self-start">
-          <LastVerified date={article.lastVerified} locale={locale} />
-          <ArticleToc label={t("onThisPage")} entries={toc} />
-        </aside>
+        <div className="wrap grid grid-cols-1 gap-12 pt-8 pb-[72px] lg:grid-cols-[minmax(0,760px)_260px] lg:justify-between lg:gap-16 lg:pt-12 lg:pb-[120px] xl:grid-cols-[minmax(0,760px)_280px] xl:gap-24">
+          <div className="min-w-0">
+            <ArticleAnswer answer={article.answer} />
+            <ArticleBody html={article.html} />
+            <FaqList items={article.faq} />
+            <SourcesList sources={article.sources} locale={locale} />
+            <p className="mt-10 border-l-2 border-line pl-4 text-[14px] leading-relaxed text-mut">{t("disclaimer")}</p>
+            <AuthorBox reviewedBy={article.reviewedBy} />
+            <ArticleCta country={article.countries.length === 1 ? article.countries[0] : undefined} />
+            <RelatedResources slugs={article.related} locale={locale} />
+          </div>
+          <aside className="hidden rounded-2xl bg-band p-5 lg:sticky lg:top-[104px] lg:grid lg:gap-7 lg:self-start">
+            <LastVerified date={article.lastVerified} locale={locale} />
+            <ArticleToc label={t("onThisPage")} entries={toc} />
+          </aside>
+        </div>
       </article>
       <Footer />
     </main>

@@ -19,12 +19,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-line bg-soft">
+    <footer className="surface-deep">
       <div className="wrap grid grid-cols-2 gap-x-6 gap-y-12 py-16 lg:grid-cols-[minmax(0,4fr)_repeat(3,minmax(0,2fr))] lg:gap-[72px] lg:py-20">
         <div className="col-span-2 lg:col-span-1">
           <Link href="/" className="inline-block rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-deep">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="LAV PHARMA" width={106} height={59} className="h-[76px] w-auto lg:h-[88px]" />
+            <img src="/logo-alt.svg" alt="LAV PHARMA" width={106} height={59} className="h-[76px] w-auto lg:h-[88px]" />
           </Link>
           <p className="mt-5 max-w-[300px] text-[14.5px] leading-relaxed text-mut">{t("tagline")}</p>
         </div>

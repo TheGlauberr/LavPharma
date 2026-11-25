@@ -21,6 +21,7 @@ export default function About() {
   return (
     <SplitSection
       id="nosotros"
+      surface="navy"
       eyebrow={t("badge")}
       title={t.rich("heading", { em: (chunks) => <em>{chunks}</em> })}
       lead={t("lead")}

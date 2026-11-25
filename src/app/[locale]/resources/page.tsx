@@ -31,7 +31,7 @@ export default async function ResourcesIndex({ params }: PageProps) {
 
   return (
     <main>
-      <section className="relative overflow-hidden">
+      <section className="surface-tint relative overflow-hidden">
         <div aria-hidden="true" className="hairline-grid pointer-events-none absolute inset-0" />
         <div className="wrap relative grid gap-6 py-14 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end lg:gap-[72px] lg:py-[104px]">
           <div>

@@ -110,6 +110,7 @@ export default function Contact() {
   return (
     <SplitSection
       id="contacto"
+      surface="band"
       eyebrow={t("badge")}
       title={t("title")}
       lead={t("subtitle")}
@@ -157,7 +158,7 @@ export default function Contact() {
           </button>
           <p role="status" aria-live="polite" className="text-center text-sm empty:hidden">
             {status === "success" ? <span className="text-ok">{t("form.success")}</span> : null}
-            {status === "error" ? <span className="text-red-600">{t("form.error")}</span> : null}
+            {status === "error" ? <span className="text-red-600 dark:text-red-400">{t("form.error")}</span> : null}
           </p>
         </form>
       </Reveal>
