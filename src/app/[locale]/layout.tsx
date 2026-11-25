@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
 import Analytics from "@/components/Analytics";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import { localizedUrl, languageAlternates, rssAlternates, SITE_NAME } from "@/lib/site";
 import "../globals.css";
 
@@ -75,8 +76,14 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`scroll-smooth ${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang={locale}
+      className={`scroll-smooth ${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
+        {/* Sets data-theme before first paint; suppressHydrationWarning covers the attribute it adds. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <JsonLd />
       </head>
       <body className="font-sans antialiased">

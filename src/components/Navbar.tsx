@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const t = useTranslations("Nav");
@@ -30,17 +31,25 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur-xl transition-[border-color,box-shadow] duration-300 ${
-        scrolled ? "border-line shadow-[0_8px_24px_-20px_rgba(19,24,38,0.35)]" : "border-line"
+      className={`glass-bar sticky top-0 z-50 transition-shadow duration-300 ${
+        scrolled ? "shadow-[0_8px_24px_-20px_rgba(19,24,38,0.35)]" : ""
       }`}
     >
-      <nav aria-label="Main" className="wrap flex h-16 items-center gap-3 md:h-[76px] md:gap-10">
+      <nav aria-label="Main" className="wrap flex h-16 items-center gap-2 md:h-[76px] md:gap-10">
         <Link
           href="/"
           className="-my-1 flex-shrink-0 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-deep"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="LAV PHARMA" width={106} height={59} className="h-[46px] w-auto md:h-[56px]" />
+          <img src="/logo.svg" alt="LAV PHARMA" width={106} height={59} className="h-[46px] w-auto md:h-[56px] dark:hidden" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-alt.svg"
+            alt="LAV PHARMA"
+            width={106}
+            height={59}
+            className="hidden h-[46px] w-auto md:h-[56px] dark:block"
+          />
         </Link>
 
         <ul className="ml-auto hidden items-center gap-8 lg:flex">
@@ -57,8 +66,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="ml-auto flex items-center gap-3 lg:ml-0 lg:gap-6">
+        <div className="ml-auto flex items-center gap-1.5 sm:gap-3 lg:ml-0 lg:gap-5">
           <LanguageToggle />
+          <ThemeToggle />
           <Link href="/#contacto" className="btn btn-sm hidden min-[370px]:inline-flex">
             {t("contact")}
             <ArrowRight size={16} aria-hidden="true" />
@@ -77,7 +87,7 @@ export default function Navbar() {
       </nav>
 
       {mobileOpen ? (
-        <div id="mobile-menu" className="border-t border-line bg-white lg:hidden">
+        <div id="mobile-menu" className="border-t border-line bg-page lg:hidden">
           <ul className="wrap py-2">
             {links.map((link, i) => (
               <li key={link.href} className={i > 0 ? "border-t border-line" : ""}>

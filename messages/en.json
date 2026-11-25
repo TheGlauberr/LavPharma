@@ -7,7 +7,9 @@
     "services": "Services",
     "about": "About Us",
     "contact": "Contact",
-    "resources": "Resources"
+    "resources": "Resources",
+    "themeDark": "Switch to dark mode",
+    "themeLight": "Switch to light mode"
   },
   "Hero": {
     "label": "Regulatory Affairs · Pharma & Veterinary",

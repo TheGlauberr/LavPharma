@@ -7,7 +7,9 @@
     "services": "Servicios",
     "about": "Nosotros",
     "contact": "Contacto",
-    "resources": "Recursos"
+    "resources": "Recursos",
+    "themeDark": "Cambiar a modo oscuro",
+    "themeLight": "Cambiar a modo claro"
   },
   "Hero": {
     "label": "Asuntos Regulatorios · Farma & Veterinaria",
