@@ -11,9 +11,10 @@ export function generateStaticParams() {
   return getResourceParams();
 }
 
-const NAVY = "#1a1f2e";
-const ACCENT = "#4A90D9";
-const MUTED = "#9DBEFF";
+const INK = "#131826";
+const MUTED = "#5d6679";
+const LINE = "#e4e8f0";
+const DEEP = "#1E4FAA";
 
 export default async function Image({
   params,
@@ -23,11 +24,12 @@ export default async function Image({
   const { locale, slug } = await params;
   const article = getResource(slug, locale);
   const fontDir = join(process.cwd(), "assets", "fonts");
-  const [fraunces, inter] = await Promise.all([
-    readFile(join(fontDir, "Fraunces-SemiBold.ttf")),
-    readFile(join(fontDir, "Inter-Medium.ttf")),
+  const [geistMedium, geistSemiBold, geistMono] = await Promise.all([
+    readFile(join(fontDir, "Geist-Medium.ttf")),
+    readFile(join(fontDir, "Geist-SemiBold.ttf")),
+    readFile(join(fontDir, "GeistMono-Medium.ttf")),
   ]);
-  const titleSize = article.title.length > 90 ? 52 : 60;
+  const titleSize = article.title.length > 90 ? 54 : 62;
 
   return new ImageResponse(
     (
@@ -38,22 +40,28 @@ export default async function Image({
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: NAVY,
+          background: "white",
+          backgroundImage: `linear-gradient(${LINE} 1px, transparent 1px), linear-gradient(90deg, ${LINE} 1px, transparent 1px)`,
+          backgroundSize: "64px 64px",
           padding: "64px 72px",
-          fontFamily: "Inter",
+          fontFamily: "Geist",
+          borderTop: `10px solid ${DEEP}`,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           {article.countries.map((country) => (
             <div
               key={country}
               style={{
                 display: "flex",
-                color: MUTED,
-                border: `2px solid ${ACCENT}`,
-                borderRadius: 999,
-                padding: "8px 22px",
-                fontSize: 26,
+                fontFamily: "Geist Mono",
+                color: "white",
+                background: INK,
+                borderRadius: 8,
+                padding: "8px 18px",
+                fontSize: 22,
+                letterSpacing: 2,
+                textTransform: "uppercase",
               }}
             >
               {country}
@@ -63,28 +71,33 @@ export default async function Image({
         <div
           style={{
             display: "flex",
-            color: "white",
-            fontFamily: "Fraunces",
+            color: INK,
+            fontWeight: 600,
             fontSize: titleSize,
-            lineHeight: 1.12,
-            letterSpacing: -1,
+            lineHeight: 1.06,
+            letterSpacing: -2,
+            background: "white",
+            padding: "8px 0",
           }}
         >
           {article.title}
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", color: "white", fontSize: 30, letterSpacing: 4 }}>
+          <div style={{ display: "flex", color: INK, fontWeight: 600, fontSize: 30, letterSpacing: 1 }}>
             LAV PHARMA
           </div>
-          <div style={{ display: "flex", color: MUTED, fontSize: 24 }}>lavpharma.com</div>
+          <div style={{ display: "flex", fontFamily: "Geist Mono", color: MUTED, fontSize: 22 }}>
+            lavpharma.com
+          </div>
         </div>
       </div>
     ),
     {
       ...size,
       fonts: [
-        { name: "Fraunces", data: fraunces, style: "normal", weight: 600 },
-        { name: "Inter", data: inter, style: "normal", weight: 500 },
+        { name: "Geist", data: geistMedium, style: "normal", weight: 500 },
+        { name: "Geist", data: geistSemiBold, style: "normal", weight: 600 },
+        { name: "Geist Mono", data: geistMono, style: "normal", weight: 500 },
       ],
     },
   );
