@@ -6,6 +6,8 @@ import Clarity from "@microsoft/clarity";
 
 const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_ID || "";
 const GTM_ID = "GTM-593KF836";
+// Cloudflare Web Analytics (free, cookie-less page views). Public site token, not a secret.
+const CF_BEACON_TOKEN = "8a35a5289a274d49ad6867bef2034f11";
 
 export default function Analytics() {
   useEffect(() => {
@@ -26,6 +28,14 @@ export default function Analytics() {
           })(window,document,'script','dataLayer','${GTM_ID}');
         `}
       </Script>
+
+      {/* Cloudflare Web Analytics */}
+      <Script
+        id="cf-web-analytics"
+        strategy="afterInteractive"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: CF_BEACON_TOKEN })}
+      />
 
       {/* Google Tag Manager (noscript) */}
       <noscript>
