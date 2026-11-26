@@ -8,7 +8,7 @@ Folders and files starting with `_` are not published. Pick the next item, resea
 | 2 | central-america-rtca-11-03-59 | Central America drug registration explained: RTCA 11.03.59 | explainer | Central America | human | Done (drafted), waiting for Laura |
 | 3 | what-is-a-registration-holder | What is a registration holder (titular del registro) | explainer | Central America | human | Done (drafted), waiting for Laura |
 | 4 | guatemala-drug-registration-mspas | How to register a medicine in Guatemala (MSPAS / DRCPFA) | guide | Guatemala | human | Done (drafted), waiting for Laura |
-| 5 | central-america-vet-registration-rtca-65-05-51 | Veterinary product registration in Central America (RTCA 65.05.51) | explainer | Central America | vet | Planned |
+| 5 | central-america-vet-registration-rtca-65-05-51 | Veterinary product registration in Central America (RTCA 65.05.51:18) | explainer | Central America | vet | Done (drafted), waiting for Laura |
 | 6 | cpp-gmp-apostille-documents | CPP, GMP and apostille: the foreign documents you need | explainer | Latin America | human | Planned |
 | 7 | ecuador-drug-registration-arcsa | How to register a medicine in Ecuador (ARCSA) | guide | Ecuador | human | Planned |
 | 8 | honduras-drug-registration-arsa | How to register a medicine in Honduras (ARSA) | guide | Honduras | human | Planned |
